@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "denverhairdesign",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-denverhairdesign-dev-190441-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/ddf7442b037deac39bffccf9806961383247d91b"
+}
