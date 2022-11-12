@@ -1,0 +1,40 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateStylist(
+  $input: CreateStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  createStylist(input: $input, condition: $condition) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateStylist(
+  $input: UpdateStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  updateStylist(input: $input, condition: $condition) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteStylist(
+  $input: DeleteStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  deleteStylist(input: $input, condition: $condition) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
