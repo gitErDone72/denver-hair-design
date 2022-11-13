@@ -1,0 +1,31 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onCreateStylist(filter: $filter) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onUpdateStylist(filter: $filter) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onDeleteStylist(filter: $filter) {
+    id
+    name
+    description
+    phone
+    createdAt
+    updatedAt
+  }
+}
