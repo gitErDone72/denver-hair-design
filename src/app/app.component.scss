@@ -1,3 +1,10 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
 html {
   font-size: 62.5%;
 }
@@ -21,7 +28,7 @@ body {
       flex: 3 0 auto;
       fill: white;
       width: 80%;
-      max-width: 20rem;
+      max-width: 14rem;
     }
     .copy_message {
       flex: 2 0 auto;
