@@ -1,0 +1,19 @@
+.header {
+  flex: 0 0 var(--header-height);
+  height: var(--header-height);
+  transform: translateY(0);
+  transition: transform 500ms;
+  z-index: 50;
+  cursor: pointer;
+
+  &_home {
+    transform: translateY(calc(var(--header-height) * -1));
+  }
+
+  &__logo {
+    padding: 1.5rem 2rem;
+    height: var(--header-height);
+    width: 100vw;
+    fill:  white;
+  }
+}

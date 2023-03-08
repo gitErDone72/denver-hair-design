@@ -1,1 +1,12 @@
-<app-restaurants></app-restaurants>
+<div class="wrapper">
+  <div class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
+    <svg class="header__logo">
+      <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
+    </svg>
+  </div>
+  <div class="page-container" [@routeAnimations]="getRouteAnimationData()">
+    <router-outlet></router-outlet>
+  </div>
+  <dhd-main-nav [expanded]="isHomePage"></dhd-main-nav>
+  <dhd-footer></dhd-footer>
+</div>

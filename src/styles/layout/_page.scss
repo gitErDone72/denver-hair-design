@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem var(--footer-height);
+  background: var(--color-primary-dark);
+
+  &_type {
+    &_thumbs-only {
+      padding-top: 0;
+    }
+  }
+}

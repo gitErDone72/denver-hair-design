@@ -1,0 +1,46 @@
+.footer {
+  flex: 0 0 var(--footer-height);
+  display: flex;
+  align-items: center;
+  z-index: 51;
+  padding: 0 2rem;
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-light);
+
+  &__contact-info {
+    flex: 1 0 1px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+  }
+
+  &__phone {
+    color: white;
+    font-weight: 500;
+  }
+
+  &__address {
+
+  }
+
+  &__social-media {
+    flex: 0 0 auto;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+
+  &__icon {
+    flex: 0 0 var(--hit-zone);
+    width: var(--hit-zone);
+    height: var(--hit-zone);
+    font-size: 3.4rem;
+    color: var(--color-primary-light);
+    @include flexCenter();
+    justify-content: flex-end;
+  }
+}

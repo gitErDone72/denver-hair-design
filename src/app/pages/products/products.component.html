@@ -1,0 +1,10 @@
+<div class="section" *ngFor="let productBrand of allProducts; index as i">
+  <div class="section__title">{{productBrand.brand}}</div>
+  <div class="grid grid_products">
+    <div class="products__item" *ngFor="let product of allProducts[i].products">
+      <dhd-thumbnail [type]="thumbnailType" [image]="product.image">
+        {{product.name}}
+      </dhd-thumbnail>
+    </div>
+  </div>
+</div>

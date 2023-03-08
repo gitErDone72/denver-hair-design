@@ -1,0 +1,29 @@
+.services {
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+    margin-bottom: 1.8rem;
+    border-left: 0.3em solid var(--color-primary-accent);
+    padding-left: 1.3rem;
+  }
+
+  &__name {
+    font-weight: 500;
+    flex: 0 1 auto;
+  }
+
+  &__elipses {
+    flex: 1 1 auto;
+    border-bottom: 2px dotted var(--color-primary-light);
+    margin: 0 1.3rem 0 1rem;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: .7em;
+    font-style: italic;
+    flex: 0 1 auto;
+    color: var(--color-primary-light);
+  }
+}
