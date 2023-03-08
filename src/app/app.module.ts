@@ -12,10 +12,6 @@ import { ChairRentalComponent } from './pages/chair-rental/chair-rental.componen
 import { HomeComponent } from './pages/home/home.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { faInfoSquare, faMapMarkerAlt, faPhoneRotary } from '@fortawesome/pro-solid-svg-icons';
-import { faSearch } from '@fortawesome/pro-regular-svg-icons';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
@@ -38,21 +34,10 @@ import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FontAwesomeModule,
     AmplifyAuthenticatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(iconLibrary: FaIconLibrary) {
-    iconLibrary.addIcons(
-      faPhoneRotary,
-      faInstagram,
-      faFacebook,
-      faMapMarkerAlt,
-      faSearch,
-      faInfoSquare
-    )
-  }
 }
