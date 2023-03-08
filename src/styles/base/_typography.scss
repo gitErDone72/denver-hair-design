@@ -1,0 +1,18 @@
+/**
+ * Basic typography style for copy text
+ */
+
+body {
+  color: white;
+  font: normal 160% / 1.4 var(--font-stack);
+}
+
+.section {
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 2.7rem;
+  }
+}

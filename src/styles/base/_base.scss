@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

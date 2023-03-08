@@ -1,0 +1,8 @@
+<div class="section" *ngFor="let serviceType of allServices; index as i">
+   <div class="section__title">{{serviceType.type}}</div>
+    <div class="services__item" *ngFor="let service of allServices[i].salonServices">
+        <div class="services__name">{{service.name}}</div>
+       <div class="services__elipses"></div>
+        <div class="services__price">from {{service.startingPrice | currency}}</div>
+    </div>
+</div>

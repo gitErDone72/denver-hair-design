@@ -1,0 +1,45 @@
+.main-nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+  width: 14rem;
+  height: 24rem;
+  right: 50%;
+  bottom: var(--footer-height);
+  transform: translateX(50%);
+  overflow: hidden;
+  box-shadow: 0 0 14px 4px var(--color-primary-dark);
+  transition: height 250ms;
+
+  &_collapsed {
+    height: var(--hit-zone);
+    transition: height 250ms;
+  }
+
+  &__link {
+    @include flexCenter();
+    flex: 0 0 auto;
+    height: var(--hit-zone);
+    font-size: 1.7rem;
+    background-color: var(--color-primary-light);
+
+    &_active {
+      order: -1;
+      background-color: var(--color-primary-accent);
+    }
+
+    @include on-event(true) {
+      color: var(--color-primary-dark);
+      text-decoration-line: none;
+      transition: background-color 250ms;
+    }
+
+    ;
+
+    @include on-event {
+      background-color: var(--color-primary);
+    }
+  }
+}

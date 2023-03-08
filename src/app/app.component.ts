@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChildrenOutletContexts, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { slideInAnimation } from './shared/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  animations: [
+    slideInAnimation
+  ]
 })
-export class AppComponent {
-  title = 'denver-hair-design';
+export class AppComponent implements OnInit {
+  isHomePage: boolean = true;
+  constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
+
+  ngOnInit(): void {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+      this.isHomePage = event.url === '/';
+    })
+  }
+
+  getRouteAnimationData() {
+    const context = this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+    return context;
+  }
+
 }
