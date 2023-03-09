@@ -5,7 +5,7 @@
   justify-content: space-between;
   z-index: 3;
   width: 14rem;
-  height: 24rem;
+  height: calc((var(--hit-zone) * 5) + 20px);
   right: 50%;
   bottom: var(--footer-height);
   transform: translateX(50%);
@@ -22,7 +22,7 @@
     @include flexCenter();
     flex: 0 0 auto;
     height: var(--hit-zone);
-    font-size: 1.7rem;
+    font-size: 2.1rem;
     background-color: var(--color-primary-light);
 
     &_active {
