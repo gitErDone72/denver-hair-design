@@ -10,20 +10,17 @@
   &__contact-info {
     flex: 1 0 1px;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 0.8em;
+    align-items: center;
+    font-size: 1.2em;
   }
 
-  &__phone {
-    color: white;
-    font-weight: 500;
+  &__contact-info &__icon:first-of-type {
+    padding-left: 0;
   }
 
-  &__address {
-
+  &__text {
+    margin-left: -6px;
+    margin-bottom: -4px;
   }
 
   &__social-media {
@@ -31,16 +28,18 @@
     align-self: stretch;
     display: flex;
     align-items: center;
-    padding: 1.5rem 0;
+  }
+
+  &__social-media &__icon:last-of-type {
+    padding-right: 0;
   }
 
   &__icon {
     flex: 0 0 var(--hit-zone);
     width: var(--hit-zone);
     height: var(--hit-zone);
-    font-size: 3.4rem;
-    color: var(--color-primary-light);
-    @include flexCenter();
-    justify-content: flex-end;
+    fill: var(--color-primary-light);
+    font-size: 9px;
+    padding: 1em;
   }
 }
