@@ -17,7 +17,9 @@ body {
 .page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 2rem;
