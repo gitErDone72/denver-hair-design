@@ -3,4 +3,9 @@
   // min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
   position: relative;
   overflow: auto;
+  &:has(.page.home){
+    position: static;
+    overflow: visible;
+  }
 }
+

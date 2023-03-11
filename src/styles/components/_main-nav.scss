@@ -5,7 +5,7 @@
   justify-content: space-between;
   z-index: 3;
   width: 14rem;
-  height: calc((var(--hit-zone) * 5) + 20px);
+  height: var(--main-nav-height);
   right: 50%;
   bottom: var(--footer-height);
   transform: translateX(50%);

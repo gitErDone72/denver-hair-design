@@ -1,11 +1,15 @@
 .home {
-  padding-top: 0;
+  @include flexCenter();
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: calc(100vh - var(--footer-height) - var(--main-nav-height));
+
   &__icon {
     fill: white;
-    width: 15rem;
-    height: 26rem;
+    height: 60%;
     margin: 0 auto;
   }
 }
-
-
