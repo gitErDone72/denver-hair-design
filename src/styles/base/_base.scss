@@ -17,9 +17,10 @@ html {
 
 body {
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100vh;
   /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background-color: var(--color-primary-dark);
 
   @include respond(tab-port) {
     padding: 0;
