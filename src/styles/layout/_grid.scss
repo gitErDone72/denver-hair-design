@@ -3,6 +3,8 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   gap: 10px;
+  margin: 0 auto;
+
   &_stylists {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -11,10 +13,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  &_gallery {
-  }
+  &_gallery {}
 
-  &_services {
-
-  }
+  &_services {}
 }

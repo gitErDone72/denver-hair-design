@@ -9,4 +9,9 @@
       padding-top: 0;
     }
   }
+
+  @include respond(phone){
+    max-width: 70rem;
+    margin: 0 auto;
+  }
 }

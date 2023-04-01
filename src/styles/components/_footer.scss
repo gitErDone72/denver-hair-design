@@ -12,6 +12,9 @@
     display: flex;
     align-items: center;
     font-size: 1.2em;
+    @include respond(phone){
+      margin-right: 4rem;
+    }
   }
 
   &__contact-info &__icon:first-of-type {
@@ -37,6 +40,9 @@
 
   &__social-media &__icon:last-of-type {
     padding-right: 0;
+    @include respond(phone){
+      padding-right: inherit;
+    }
   }
 
   &__icon {
@@ -46,5 +52,9 @@
     fill: var(--color-primary-light);
     font-size: 9px;
     padding: 1em;
+  }
+
+  @include respond(phone){
+    margin: 0 auto;
   }
 }
