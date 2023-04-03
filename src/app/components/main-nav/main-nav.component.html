@@ -1,5 +1,4 @@
-<a class="main-nav__link" routerLinkActive="main-nav__link_active" routerLink="/stylists" (click)="toggleExpanded()">Stylists</a>
-<a class="main-nav__link" routerLinkActive="main-nav__link_active" routerLink="/services" (click)="toggleExpanded()">Services</a>
-<a class="main-nav__link" routerLinkActive="main-nav__link_active" routerLink="/products" (click)="toggleExpanded()">Products</a>
-<a class="main-nav__link" routerLinkActive="main-nav__link_active" routerLink="/gallery" (click)="toggleExpanded()">Gallery</a>
-<a class="main-nav__link" routerLinkActive="main-nav__link_active" routerLink="/chair-rental" (click)="toggleExpanded()">Chair Rental</a>
+<a *ngFor="let navItem of navItems; let i = index" [class]="'main-nav__link main-nav__link_'+i" routerLinkActive="main-nav__link_active"
+  [routerLink]="navItem.routerLink" (click)="toggleExpanded()">
+  {{navItem.name}}
+</a>
