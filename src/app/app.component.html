@@ -1,10 +1,11 @@
 <div class="wrapper">
-  <div class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
+  <header class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
     <svg class="header__logo">
       <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
     </svg>
-  </div>
+  </header>
   <div class="page-container" [@routeAnimations]="getRouteAnimationData()">
+  <!-- <div class="page-container"> -->
     <router-outlet></router-outlet>
   </div>
   <dhd-main-nav [expanded]="isHomePage"></dhd-main-nav>
