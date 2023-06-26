@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, ProductType } from 'src/app/shared/product.model';
-import { SiteSections } from 'src/app/shared/SiteSections.enum';
+import { SiteSections } from 'src/app/shared/site-sections.enum';
 
 @Component({
   templateUrl: './products.component.html',

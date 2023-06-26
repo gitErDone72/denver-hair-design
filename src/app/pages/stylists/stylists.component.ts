@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteSections } from 'src/app/shared/SiteSections.enum';
+import { SiteSections } from 'src/app/shared/site-sections.enum';
 
 @Component({
   templateUrl: './stylists.component.html',

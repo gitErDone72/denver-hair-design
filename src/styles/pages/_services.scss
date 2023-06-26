@@ -4,8 +4,6 @@
     align-items: flex-end;
     line-height: 1;
     margin-bottom: 1.8rem;
-    border-left: 0.3em solid var(--color-primary-accent);
-    padding-left: 1.3rem;
   }
 
   &__name {
@@ -20,9 +18,10 @@
   }
 
   &__price {
-    font-weight: 500;
-    font-size: .7em;
+    font-family: "big-caslon-fb", serif;
+    font-weight: 700;
     font-style: italic;
+    font-size: .7em;
     flex: 0 1 auto;
     color: var(--color-primary-light);
   }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SiteSections as SiteSection } from 'src/app/shared/SiteSections.enum';
+import { SiteSections as SiteSection } from 'src/app/shared/site-sections.enum';
 
 @Component({
   selector: 'dhd-thumbnail',
