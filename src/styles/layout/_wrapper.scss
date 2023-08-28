@@ -7,14 +7,14 @@
   position: relative;
   overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: var(--footer-height);
-    left: 0;
-    height: var(--footer-height);
-    z-index: 1;
-    @include transparentGradient();
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   right: 0;
+  //   bottom: var(--footer-height);
+  //   left: 0;
+  //   height: var(--footer-height);
+  //   z-index: 1;
+  //   @include transparentGradient();
+  // }
 }

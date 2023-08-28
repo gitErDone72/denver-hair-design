@@ -12,13 +12,21 @@
     display: flex;
     align-items: center;
     font-size: 1.2em;
-    @include respond(phone){
+
+    @include respond(phone) {
       margin-right: 4rem;
     }
   }
 
   &__contact-info &__icon:first-of-type {
     padding-left: 0;
+  }
+
+  &__button {
+    // background-color: green;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
   }
 
   &__text {
@@ -36,11 +44,17 @@
     align-self: stretch;
     display: flex;
     align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__social-media &__icon:last-of-type {
     padding-right: 0;
-    @include respond(phone){
+
+    @include respond(phone) {
       padding-right: inherit;
     }
   }
@@ -54,7 +68,7 @@
     padding: 1em;
   }
 
-  @include respond(phone){
+  @include respond(phone) {
     margin: 0 auto;
   }
 }

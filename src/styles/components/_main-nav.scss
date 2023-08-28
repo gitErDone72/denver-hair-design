@@ -7,7 +7,7 @@ $navItemsLength: length($list: $navItems);
   width: 14rem;
   height: var(--main-nav-height);
   right: 50%;
-  bottom: var(--footer-height);
+  bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
   transition: height 250ms;
 
@@ -29,7 +29,6 @@ $navItemsLength: length($list: $navItems);
     height: var(--hit-zone);
     font-size: 2.1rem;
     background-color: var(--color-primary-light);
-    box-shadow: 0 0 14px 4px var(--color-primary-dark);
     transition: top 250ms;
 
     @for $i from 0 through $navItemsLength {
