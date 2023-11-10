@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChildrenOutletContexts, NavigationEnd, Router } from '@angular/router';
+import { ChildrenOutletContexts, NavigationEnd, OutletContext, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { slideInAnimation } from './shared/animations';
 
@@ -20,8 +20,9 @@ export class AppComponent implements OnInit {
     })
   }
 
-  getRouteAnimationData() {
-    const context = this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  getRouteAnimationData() : OutletContext | null {
+    const context: OutletContext = this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+    console.log('context: ', context);
     return context;
   }
 
