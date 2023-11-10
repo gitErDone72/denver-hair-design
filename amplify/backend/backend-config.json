@@ -7,7 +7,9 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDate": "2024-11-09T22:59:12.153Z",
+              "apiKeyExpirationDays": 365,
+              "description": "dhdGraphQLAPIKey"
             },
             "authenticationType": "API_KEY"
           }
