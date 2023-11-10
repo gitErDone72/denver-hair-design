@@ -1,4 +1,17 @@
 {
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-denverhairdesign-staging-55208-authRole",
+      "UnauthRoleArn": "arn:aws:iam::408984025657:role/amplify-denverhairdesign-staging-55208-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::408984025657:role/amplify-denverhairdesign-staging-55208-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-denverhairdesign-staging-55208-deployment",
+      "UnauthRoleName": "amplify-denverhairdesign-staging-55208-unauthRole",
+      "StackName": "amplify-denverhairdesign-staging-55208",
+      "StackId": "arn:aws:cloudformation:us-east-1:408984025657:stack/amplify-denverhairdesign-staging-55208/0813a970-bbe3-11ed-b6d5-12f9630ea3bd",
+      "AmplifyAppId": "d3sye5rjzi2dnw"
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-denverhairdesign-dev-214543-authRole",
