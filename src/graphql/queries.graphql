@@ -1,4 +1,5 @@
 # this is an auto generated file. This will be overwritten
+
 query GetRestaurant($id: ID!) {
   getRestaurant(id: $id) {
     id
@@ -7,8 +8,10 @@ query GetRestaurant($id: ID!) {
     city
     createdAt
     updatedAt
+    __typename
   }
 }
+
 query ListRestaurants(
   $filter: ModelRestaurantFilterInput
   $limit: Int
@@ -22,7 +25,9 @@ query ListRestaurants(
       city
       createdAt
       updatedAt
+      __typename
     }
     nextToken
+    __typename
   }
 }

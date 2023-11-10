@@ -1,4 +1,5 @@
 # this is an auto generated file. This will be overwritten
+
 subscription OnCreateRestaurant(
   $filter: ModelSubscriptionRestaurantFilterInput
 ) {
@@ -9,8 +10,10 @@ subscription OnCreateRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
+
 subscription OnUpdateRestaurant(
   $filter: ModelSubscriptionRestaurantFilterInput
 ) {
@@ -21,8 +24,10 @@ subscription OnUpdateRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
+
 subscription OnDeleteRestaurant(
   $filter: ModelSubscriptionRestaurantFilterInput
 ) {
@@ -33,5 +38,6 @@ subscription OnDeleteRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
