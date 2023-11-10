@@ -9,11 +9,13 @@ $navItemsLength: length($list: $navItems);
   right: 50%;
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
-  transition: height 250ms;
+  transition: all 250ms;
 
   &_collapsed {
     height: var(--hit-zone);
-    transition: height 500ms;
+    width: 100vw;
+    bottom: calc(var(--footer-height));
+    transition: all 500ms;
   }
 
   &_collapsed &_active {
