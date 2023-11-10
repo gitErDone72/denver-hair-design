@@ -1,4 +1,7 @@
 {
+  "providers": [
+    "awscloudformation"
+  ],
   "projectName": "denverhairdesign",
   "version": "3.1",
   "frontend": "javascript",
@@ -6,12 +9,9 @@
     "framework": "angular",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "dist/denver-hair-design",
-      "BuildCommand": "npm run-script build",
-      "StartCommand": "ng serve"
+      "DistributionDir": "dist",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm run start"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }
