@@ -1,4 +1,5 @@
 # this is an auto generated file. This will be overwritten
+
 mutation CreateRestaurant(
   $input: CreateRestaurantInput!
   $condition: ModelRestaurantConditionInput
@@ -10,8 +11,10 @@ mutation CreateRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
+
 mutation UpdateRestaurant(
   $input: UpdateRestaurantInput!
   $condition: ModelRestaurantConditionInput
@@ -23,8 +26,10 @@ mutation UpdateRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
+
 mutation DeleteRestaurant(
   $input: DeleteRestaurantInput!
   $condition: ModelRestaurantConditionInput
@@ -36,5 +41,6 @@ mutation DeleteRestaurant(
     city
     createdAt
     updatedAt
+    __typename
   }
 }
