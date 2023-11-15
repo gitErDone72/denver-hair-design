@@ -6,8 +6,8 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 365,
-      "apiKeyExpirationDate": "2024-11-09T22:59:12.153Z",
-      "keyDescription": "dhdGraphQLAPIKey"
+      "apiKeyExpirationDate": "2024-11-14T03:44:48.503Z",
+      "keyDescription": "This is my API description..."
     },
     "conflictResolution": {},
     "additionalAuthTypes": []
