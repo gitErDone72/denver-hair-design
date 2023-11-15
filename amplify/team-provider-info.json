@@ -10,6 +10,11 @@
       "StackName": "amplify-denverhairdesign-staging-55208",
       "StackId": "arn:aws:cloudformation:us-east-1:408984025657:stack/amplify-denverhairdesign-staging-55208/0813a970-bbe3-11ed-b6d5-12f9630ea3bd",
       "AmplifyAppId": "d3sye5rjzi2dnw"
+    },
+    "categories": {
+      "api": {
+        "denverhairdesign": {}
+      }
     }
   },
   "dev": {
