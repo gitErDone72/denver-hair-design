@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { StylistsComponent } from './pages/stylists/stylists.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,12 @@ const routes: Routes = [
   {
     path: 'stylists',
     component: StylistsComponent,
+    pathMatch: 'full',
+    data: { animation: 'stylistsPage' }
+  },
+  {
+    path: 'restaurants',
+    component: RestaurantsComponent,
     pathMatch: 'full',
     data: { animation: 'stylistsPage' }
   },

@@ -41,3 +41,39 @@ subscription OnDeleteRestaurant(
     __typename
   }
 }
+
+subscription OnCreateStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onCreateStylist(filter: $filter) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onUpdateStylist(filter: $filter) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteStylist($filter: ModelSubscriptionStylistFilterInput) {
+  onDeleteStylist(filter: $filter) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}

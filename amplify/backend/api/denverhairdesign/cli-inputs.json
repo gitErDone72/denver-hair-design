@@ -4,12 +4,16 @@
     "apiName": "denverhairdesign",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 365,
-      "apiKeyExpirationDate": "2024-11-14T03:44:48.503Z",
-      "keyDescription": "This is my API description..."
+      "mode": "AWS_IAM"
     },
     "conflictResolution": {},
-    "additionalAuthTypes": []
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2025-02-25T02:13:35.155Z",
+        "keyDescription": "graphqlAPI"
+      }
+    ]
   }
 }
