@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3154bbaed",
+  "policyUUID": "154bbaed",
+  "bucketName": "denverhairdesigne9d404905f8a47b6abaaa235bc4e01e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Trigger9a77e231",
+  "groupAccess": {}
+}

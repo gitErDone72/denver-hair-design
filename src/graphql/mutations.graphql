@@ -44,3 +44,48 @@ mutation DeleteRestaurant(
     __typename
   }
 }
+
+mutation CreateStylist(
+  $input: CreateStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  createStylist(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateStylist(
+  $input: UpdateStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  updateStylist(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteStylist(
+  $input: DeleteStylistInput!
+  $condition: ModelStylistConditionInput
+) {
+  deleteStylist(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}

@@ -4,6 +4,7 @@ import { APIService, Restaurant } from '../API.service';
 
 /** Subscription type will be inferred from this library */
 import { ZenObservable } from 'zen-observable-ts';
+import { Subscription } from 'rxjs';
 // ...
 
 
@@ -29,8 +30,7 @@ export class RestaurantsComponent implements OnInit {
     });
   }
 
-
-  async ngOnInit() {
+ngOnInit() {
     this.api.ListRestaurants().then(event => {
       this.restaurants = event.items as Restaurant[];
     });
@@ -41,7 +41,7 @@ export class RestaurantsComponent implements OnInit {
         const newRestaurant = event.value.data.onCreateRestaurant;
         this.restaurants = [newRestaurant, ...this.restaurants];
       }
-    );
+    ) as Subscription;
   }
 
   onCreate(restaurant: Restaurant) {

@@ -8,3 +8,10 @@ type Restaurant @model {
   description: String!
   city: String!
 }
+
+type Stylist @model {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  socialMedia: String!
+}

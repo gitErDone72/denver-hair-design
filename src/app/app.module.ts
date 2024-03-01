@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { StylistsComponent } from './pages/stylists/stylists.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import { StylistsComponent } from './pages/stylists/stylists.component';
     ThumbnailComponent,
     MainNavComponent,
     ErrorPageComponent,
-    FooterComponent
+    FooterComponent,
+    RestaurantsComponent
    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AmplifyAuthenticatorModule
+    AmplifyAuthenticatorModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

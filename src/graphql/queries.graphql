@@ -31,3 +31,35 @@ query ListRestaurants(
     __typename
   }
 }
+
+query GetStylist($id: ID!) {
+  getStylist(id: $id) {
+    id
+    firstName
+    lastName
+    socialMedia
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListStylists(
+  $filter: ModelStylistFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStylists(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      firstName
+      lastName
+      socialMedia
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}

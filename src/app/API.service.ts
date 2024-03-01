@@ -13,6 +13,9 @@ export type __SubscriptionContainer = {
   onCreateRestaurant: OnCreateRestaurantSubscription;
   onUpdateRestaurant: OnUpdateRestaurantSubscription;
   onDeleteRestaurant: OnDeleteRestaurantSubscription;
+  onCreateStylist: OnCreateStylistSubscription;
+  onUpdateStylist: OnUpdateStylistSubscription;
+  onDeleteStylist: OnDeleteStylistSubscription;
 };
 
 export type CreateRestaurantInput = {
@@ -91,6 +94,43 @@ export type DeleteRestaurantInput = {
   id: string;
 };
 
+export type CreateStylistInput = {
+  id?: string | null;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+};
+
+export type ModelStylistConditionInput = {
+  firstName?: ModelStringInput | null;
+  lastName?: ModelStringInput | null;
+  socialMedia?: ModelStringInput | null;
+  and?: Array<ModelStylistConditionInput | null> | null;
+  or?: Array<ModelStylistConditionInput | null> | null;
+  not?: ModelStylistConditionInput | null;
+};
+
+export type Stylist = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateStylistInput = {
+  id: string;
+  firstName?: string | null;
+  lastName?: string | null;
+  socialMedia?: string | null;
+};
+
+export type DeleteStylistInput = {
+  id: string;
+};
+
 export type ModelRestaurantFilterInput = {
   id?: ModelIDInput | null;
   name?: ModelStringInput | null;
@@ -120,6 +160,22 @@ export type ModelIDInput = {
 export type ModelRestaurantConnection = {
   __typename: "ModelRestaurantConnection";
   items: Array<Restaurant | null>;
+  nextToken?: string | null;
+};
+
+export type ModelStylistFilterInput = {
+  id?: ModelIDInput | null;
+  firstName?: ModelStringInput | null;
+  lastName?: ModelStringInput | null;
+  socialMedia?: ModelStringInput | null;
+  and?: Array<ModelStylistFilterInput | null> | null;
+  or?: Array<ModelStylistFilterInput | null> | null;
+  not?: ModelStylistFilterInput | null;
+};
+
+export type ModelStylistConnection = {
+  __typename: "ModelStylistConnection";
+  items: Array<Stylist | null>;
   nextToken?: string | null;
 };
 
@@ -162,6 +218,15 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array<string | null> | null;
 };
 
+export type ModelSubscriptionStylistFilterInput = {
+  id?: ModelSubscriptionIDInput | null;
+  firstName?: ModelSubscriptionStringInput | null;
+  lastName?: ModelSubscriptionStringInput | null;
+  socialMedia?: ModelSubscriptionStringInput | null;
+  and?: Array<ModelSubscriptionStylistFilterInput | null> | null;
+  or?: Array<ModelSubscriptionStylistFilterInput | null> | null;
+};
+
 export type CreateRestaurantMutation = {
   __typename: "Restaurant";
   id: string;
@@ -192,6 +257,36 @@ export type DeleteRestaurantMutation = {
   updatedAt: string;
 };
 
+export type CreateStylistMutation = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateStylistMutation = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteStylistMutation = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type GetRestaurantQuery = {
   __typename: "Restaurant";
   id: string;
@@ -210,6 +305,30 @@ export type ListRestaurantsQuery = {
     name: string;
     description: string;
     city: string;
+    createdAt: string;
+    updatedAt: string;
+  } | null>;
+  nextToken?: string | null;
+};
+
+export type GetStylistQuery = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListStylistsQuery = {
+  __typename: "ModelStylistConnection";
+  items: Array<{
+    __typename: "Stylist";
+    id: string;
+    firstName: string;
+    lastName: string;
+    socialMedia: string;
     createdAt: string;
     updatedAt: string;
   } | null>;
@@ -242,6 +361,36 @@ export type OnDeleteRestaurantSubscription = {
   name: string;
   description: string;
   city: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateStylistSubscription = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateStylistSubscription = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteStylistSubscription = {
+  __typename: "Stylist";
+  id: string;
+  firstName: string;
+  lastName: string;
+  socialMedia: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -328,6 +477,84 @@ export class APIService {
     )) as any;
     return <DeleteRestaurantMutation>response.data.deleteRestaurant;
   }
+  async CreateStylist(
+    input: CreateStylistInput,
+    condition?: ModelStylistConditionInput
+  ): Promise<CreateStylistMutation> {
+    const statement = `mutation CreateStylist($input: CreateStylistInput!, $condition: ModelStylistConditionInput) {
+        createStylist(input: $input, condition: $condition) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateStylistMutation>response.data.createStylist;
+  }
+  async UpdateStylist(
+    input: UpdateStylistInput,
+    condition?: ModelStylistConditionInput
+  ): Promise<UpdateStylistMutation> {
+    const statement = `mutation UpdateStylist($input: UpdateStylistInput!, $condition: ModelStylistConditionInput) {
+        updateStylist(input: $input, condition: $condition) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateStylistMutation>response.data.updateStylist;
+  }
+  async DeleteStylist(
+    input: DeleteStylistInput,
+    condition?: ModelStylistConditionInput
+  ): Promise<DeleteStylistMutation> {
+    const statement = `mutation DeleteStylist($input: DeleteStylistInput!, $condition: ModelStylistConditionInput) {
+        deleteStylist(input: $input, condition: $condition) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteStylistMutation>response.data.deleteStylist;
+  }
   async GetRestaurant(id: string): Promise<GetRestaurantQuery> {
     const statement = `query GetRestaurant($id: ID!) {
         getRestaurant(id: $id) {
@@ -382,6 +609,61 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <ListRestaurantsQuery>response.data.listRestaurants;
+  }
+  async GetStylist(id: string): Promise<GetStylistQuery> {
+    const statement = `query GetStylist($id: ID!) {
+        getStylist(id: $id) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetStylistQuery>response.data.getStylist;
+  }
+  async ListStylists(
+    filter?: ModelStylistFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListStylistsQuery> {
+    const statement = `query ListStylists($filter: ModelStylistFilterInput, $limit: Int, $nextToken: String) {
+        listStylists(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            firstName
+            lastName
+            socialMedia
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListStylistsQuery>response.data.listStylists;
   }
   OnCreateRestaurantListener(
     filter?: ModelSubscriptionRestaurantFilterInput
@@ -461,6 +743,87 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     ) as Observable<
       SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteRestaurant">>
+    >;
+  }
+
+  OnCreateStylistListener(
+    filter?: ModelSubscriptionStylistFilterInput
+  ): Observable<
+    SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateStylist">>
+  > {
+    const statement = `subscription OnCreateStylist($filter: ModelSubscriptionStylistFilterInput) {
+        onCreateStylist(filter: $filter) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateStylist">>
+    >;
+  }
+
+  OnUpdateStylistListener(
+    filter?: ModelSubscriptionStylistFilterInput
+  ): Observable<
+    SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateStylist">>
+  > {
+    const statement = `subscription OnUpdateStylist($filter: ModelSubscriptionStylistFilterInput) {
+        onUpdateStylist(filter: $filter) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateStylist">>
+    >;
+  }
+
+  OnDeleteStylistListener(
+    filter?: ModelSubscriptionStylistFilterInput
+  ): Observable<
+    SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteStylist">>
+  > {
+    const statement = `subscription OnDeleteStylist($filter: ModelSubscriptionStylistFilterInput) {
+        onDeleteStylist(filter: $filter) {
+          __typename
+          id
+          firstName
+          lastName
+          socialMedia
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteStylist">>
     >;
   }
 }

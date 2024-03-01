@@ -14,6 +14,18 @@
     "categories": {
       "api": {
         "denverhairdesign": {}
+      },
+      "auth": {
+        "denverhairdesign4b7e1089": {}
+      },
+      "function": {
+        "S3Trigger9a77e231": {
+          "deploymentBucketName": "amplify-denverhairdesign-staging-55208-deployment",
+          "s3Key": "amplify-builds/S3Trigger9a77e231-61396f6354502b317465-build.zip"
+        }
+      },
+      "storage": {
+        "s3154bbaed": {}
       }
     }
   },
