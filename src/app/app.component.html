@@ -8,5 +8,5 @@
     <router-outlet></router-outlet>
   </div>
   <dhd-main-nav [expanded]="isHomePage"></dhd-main-nav>
-  <dhd-footer></dhd-footer>
+  <dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>
 </div>

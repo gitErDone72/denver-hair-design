@@ -4,17 +4,15 @@
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow: hidden;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   right: 0;
-  //   bottom: var(--footer-height);
-  //   left: 0;
-  //   height: var(--footer-height);
-  //   z-index: 1;
-  //   @include transparentGradient();
-  // }
+  @include backgroundGradient(
+    "/assets/img/pages/home_1.jpg",
+    cover,
+    center,
+    saturation,
+    0.6
+  );
+  &:not(:has(.page.home)) {
+  }
+  transition: background-image 0.5s ease-in-out;
 }
