@@ -8,7 +8,6 @@
 /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
 @mixin on-event($self: false) {
   @if $self {
-
     &,
     &:hover,
     &:active,
@@ -16,10 +15,7 @@
     &:focus-within {
       @content;
     }
-  }
-
-  @else {
-
+  } @else {
     &:hover,
     &:active,
     &:focus,
@@ -61,49 +57,69 @@
   justify-content: center;
 }
 
-@mixin transparentGradient($opaqueSide: bottom) {
-  background-image: linear-gradient(
-    to $opaqueSide,
-    rgba(var(--rgb-primary-dark), 0),
-    var(--color-primary-dark)
-  );
+@mixin backgroundGradient(
+  $backgroundImage: false,
+  $backgroundSize: cover,
+  $backgroundPosition: center,
+  $backgroundBlendMode: multiply,
+  $gradientOpacity: 0.6
+) {
+  @if $backgroundImage {
+    background-image: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(134, 133, 131, $gradientOpacity) 1px
+      ),
+      url($backgroundImage);
+    background-size: $backgroundSize;
+    background-position: $backgroundPosition;
+    background-blend-mode: $backgroundBlendMode;
+  } @else {
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(var(--rgb-primary-dark), 0),
+      var(--color-primary-dark)
+    );
+  }
 }
 
-
 // MEDIA QUERY MANAGER
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
+// 0 - 600px:      Phone
+// 600 - 900px:    Tablet portrait
+// 900 - 1200px:   Tablet landscape
+// [1200 - 1800] is where our normal styles apply
+// 1800px + :      Big desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
+// ORDER: Base + typography > general layout + grid > page layout > components
 
-1em = 16px
-*/
+// 1em = 16px
+
 @mixin respond($breakpoint) {
-  @if $breakpoint ==phone {
+  @if $breakpoint == phone {
     @media only screen and (min-width: 37.5em) {
-      @content
-    }; //600px
+      @content;
+    }
+    //600px
   }
 
-  @if $breakpoint ==tab-port {
+  @if $breakpoint == tab-port {
     @media only screen and (min-width: 56.25em) {
-      @content
-    }; //900px
+      @content;
+    }
+    //900px
   }
 
-  @if $breakpoint ==tab-land {
+  @if $breakpoint == tab-land {
     @media only screen and (min-width: 75em) {
-      @content
-    }; //1200px
+      @content;
+    }
+    //1200px
   }
 
-  @if $breakpoint ==big-desktop {
+  @if $breakpoint == big-desktop {
     @media only screen and (max-width: 112.5em) {
-      @content
-    }; //1800
+      @content;
+    }
+    //1800
   }
 }

@@ -1,16 +1,14 @@
 .home {
-  @include flexCenter();
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
   height: calc(100vh - var(--footer-height) - var(--main-nav-height));
+  @include flexCenter();
+  justify-content: flex-start;
+  padding: 0;
 
   &__icon {
-    fill: white;
+    fill: var(--color-white);
     height: 60%;
     max-height: 30rem;
     margin: 0 auto;
   }
 }
+
