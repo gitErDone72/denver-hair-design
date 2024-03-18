@@ -1,4 +1,5 @@
 .services {
+  @include backgroundWithImage("/assets/img/pages/services_1.jpg");
   &__item {
     display: flex;
     align-items: flex-end;
@@ -21,7 +22,7 @@
     font-family: "big-caslon-fb", serif;
     font-weight: 700;
     font-style: italic;
-    font-size: .7em;
+    font-size: 0.7em;
     flex: 0 1 auto;
     color: var(--color-primary-light);
   }

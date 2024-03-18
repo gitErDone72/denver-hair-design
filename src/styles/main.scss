@@ -18,11 +18,11 @@
 
 // 4. Layout-related sections
 @import
-  'layout/wrapper',
+  'layout/app-wrapper',
   'layout/grid',
   'layout/page-container',
   'layout/page';
-  
+
   // 5. Components
   @import
   'components/header',

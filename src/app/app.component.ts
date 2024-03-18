@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { ChildrenOutletContexts, NavigationEnd, OutletContext, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { slideInAnimation } from './shared/animations';
@@ -11,6 +11,7 @@ import { slideInAnimation } from './shared/animations';
   ]
 })
 export class AppComponent implements OnInit {
+  @HostBinding('class.app-wrapper') appWrapper = true;
   isHomePage: boolean = true;
   constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
 

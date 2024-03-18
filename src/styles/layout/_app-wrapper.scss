@@ -1,18 +1,17 @@
-.wrapper {
+.app-wrapper {
   height: 100vh;
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  @include backgroundGradient(
+  @include backgroundGradientWithImage(
+    var(--color-home-gradient-1),
+    var(--color-home-gradient-2),
     "/assets/img/pages/home_1.jpg",
     cover,
     center,
-    saturation,
+    multiply,
     0.6
   );
-  &:not(:has(.page.home)) {
-  }
-  transition: background-image 0.5s ease-in-out;
 }

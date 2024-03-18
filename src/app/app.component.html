@@ -1,4 +1,3 @@
-<div class="wrapper">
   <header class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
     <svg class="header__logo">
       <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
@@ -7,6 +6,5 @@
   <div class="page-container" [@routeAnimations]="getRouteAnimationData()">
     <router-outlet></router-outlet>
   </div>
-  <dhd-main-nav [expanded]="isHomePage"></dhd-main-nav>
+  <dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [expanded]="isHomePage"></dhd-main-nav>
   <dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>
-</div>

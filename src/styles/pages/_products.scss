@@ -1,4 +1,5 @@
 .products {
+  @include backgroundWithImage("/assets/img/pages/products_1.jpg");
   &__item {
     background-color: red;
   }
