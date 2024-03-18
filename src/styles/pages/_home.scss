@@ -1,14 +1,13 @@
 .home {
-  height: calc(100vh - var(--footer-height) - var(--main-nav-height));
-  @include flexCenter();
-  justify-content: flex-start;
-  padding: 0;
-
+  justify-content: center;
+  height: calc(100vh - var(--footer-height) - var(--main-nav-height) - var(--header-height) - 1rem);  padding: 0;
+  min-height: var(--main-nav-height);
   &__icon {
+    flex: 1 0 auto;
     fill: var(--color-white);
-    height: 60%;
     max-height: 30rem;
     margin: 0 auto;
+    padding: 0 0 1rem;
   }
 }
 

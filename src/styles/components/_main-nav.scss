@@ -9,7 +9,13 @@ $navItemsLength: length($list: $navItems);
   right: 50%;
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
-  transition: all 250ms;
+  transition: all 500ms;
+
+  &_home {
+    .main-nav__link {
+      background-color: var(--color-primary);
+    }
+  }
 
   &_collapsed {
     height: var(--hit-zone);
@@ -42,7 +48,7 @@ $navItemsLength: length($list: $navItems);
 
     &_active {
       z-index: 101;
-      background-color: var(--color-primary-accent);
+      background-color: var(--color-primary);
     }
 
     @include on-event(true) {

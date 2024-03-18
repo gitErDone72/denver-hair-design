@@ -1,7 +1,9 @@
 .page {
   display: flex;
   flex-direction: column;
-  padding: 3rem var(--spacing-main) var(--footer-height);
+  overflow: auto;
+  height: var(--page-container-height);
+  // padding: 3rem var(--spacing-main) var(--footer-height);
   // background: var(--color-primary-dark);
   &_type {
     &_thumbs-only {
@@ -9,8 +11,8 @@
     }
   }
 
-  @include respond(phone){
-    max-width: 70rem;
-    margin: 0 auto;
-  }
+  // @include respond(phone){
+  //   max-width: 70rem;
+  //   margin: 0 auto;
+  // }
 }

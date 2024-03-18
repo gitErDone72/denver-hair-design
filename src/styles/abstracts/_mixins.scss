@@ -57,7 +57,19 @@
   justify-content: center;
 }
 
-@mixin backgroundGradient(
+@mixin backgroundWithImage($backgroundImage: false, $backgroundSize: cover, $backgroundPosition: center, $backgroundBlendMode: multiply) {
+  @if $backgroundImage {
+    background-image: url($backgroundImage);
+    background-size: $backgroundSize;
+    background-position: $backgroundPosition;
+    background-blend-mode: $backgroundBlendMode;
+    height: var(--page-container-height);
+  }
+}
+
+@mixin backgroundGradientWithImage(
+  $colorOne: var(--color-home-gradient-1),
+  $colorTwo: var(--color-home-gradient-2),
   $backgroundImage: false,
   $backgroundSize: cover,
   $backgroundPosition: center,
@@ -67,8 +79,8 @@
   @if $backgroundImage {
     background-image: linear-gradient(
         to bottom,
-        transparent,
-        rgba(134, 133, 131, $gradientOpacity) 1px
+        $colorOne,
+        $colorTwo 1px
       ),
       url($backgroundImage);
     background-size: $backgroundSize;

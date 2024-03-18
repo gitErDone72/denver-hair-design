@@ -10,7 +10,7 @@
 
   //
 
-  --color-primary: rgb(235, 47, 100);
+  --color-primary: rgb(202, 82, 247);
   --color-primary-light: rgb(var(--rgb-primary-light));
   --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary-accent: rgb(var(--rgb-primary-accent));
@@ -29,7 +29,8 @@
 
   --color-overlay-dark: rgb(0 0 0 / 33%);
 
-
+  --color-home-gradient-1: rgba(200, 205, 104, 0.39);
+  --color-home-gradient-2: rgba(91, 98, 50, 0.51);
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
@@ -44,7 +45,11 @@
   --hit-zone: 4.5rem;
 
   --main-nav-height: calc((var(--hit-zone) * 5) + 20px);
+  --page-container-height: calc(100vh - var(--footer-height) - var(--header-height) - var(--hit-zone));
+
 
   --spacing-main: .5rem;
+
+
 
 }
