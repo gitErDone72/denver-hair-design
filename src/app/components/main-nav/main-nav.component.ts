@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { DhdNavItem } from './nav-item.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { DhdNavItem } from './nav-item.model';
 export class MainNavComponent implements OnInit {
 
   @Input() expanded: boolean = true;
+  @Output() expandedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @HostBinding('class.main-nav_collapsed') get collapsed(): boolean {
     return !this.expanded;
@@ -21,12 +22,12 @@ export class MainNavComponent implements OnInit {
   ngOnInit(): void {
     this.navItems = [
       {
-        name: 'Services',
-        routerLink: '/services'
-      },
-      {
         name: 'Stylists',
         routerLink: '/stylists'
+      },
+      {
+        name: 'Services',
+        routerLink: '/services'
       },
       {
         name: 'Products',
@@ -46,6 +47,7 @@ export class MainNavComponent implements OnInit {
 
   toggleExpanded(): void {
     this.expanded = !this.expanded
+    this.expandedChange.emit(this.expanded);
   }
 
 }

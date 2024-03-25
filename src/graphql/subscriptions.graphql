@@ -47,7 +47,11 @@ subscription OnCreateStylist($filter: ModelSubscriptionStylistFilterInput) {
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename
@@ -59,7 +63,11 @@ subscription OnUpdateStylist($filter: ModelSubscriptionStylistFilterInput) {
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename
@@ -71,7 +79,11 @@ subscription OnDeleteStylist($filter: ModelSubscriptionStylistFilterInput) {
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename

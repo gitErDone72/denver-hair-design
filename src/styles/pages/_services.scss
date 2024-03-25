@@ -2,9 +2,10 @@
   @include backgroundWithImage("/assets/img/pages/services_1.jpg");
   &__item {
     display: flex;
-    align-items: flex-end;
+    // align-items: flex-end;
+    justify-content: center;
     line-height: 1;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   &__name {

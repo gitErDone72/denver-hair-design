@@ -13,6 +13,7 @@ import { slideInAnimation } from './shared/animations';
 export class AppComponent implements OnInit {
   @HostBinding('class.app-wrapper') appWrapper = true;
   isHomePage: boolean = true;
+  pageContainerDarkened: boolean = false;
   constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
 
   ngOnInit(): void {
@@ -21,10 +22,13 @@ export class AppComponent implements OnInit {
     })
   }
 
-  getRouteAnimationData() : OutletContext | null {
+  getRouteAnimationData(): OutletContext | null {
     const context: OutletContext = this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
     console.log('context: ', context);
     return context;
   }
 
+  darkenPageContainer($event: boolean) {
+    this.pageContainerDarkened = $event;
+  }
 }

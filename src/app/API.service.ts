@@ -98,13 +98,21 @@ export type CreateStylistInput = {
   id?: string | null;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
 };
 
 export type ModelStylistConditionInput = {
   firstName?: ModelStringInput | null;
   lastName?: ModelStringInput | null;
+  headShot?: ModelStringInput | null;
   socialMedia?: ModelStringInput | null;
+  socialMediaLink?: ModelStringInput | null;
+  bookingMethod?: ModelStringInput | null;
+  bookingLink?: ModelStringInput | null;
   and?: Array<ModelStylistConditionInput | null> | null;
   or?: Array<ModelStylistConditionInput | null> | null;
   not?: ModelStylistConditionInput | null;
@@ -115,7 +123,11 @@ export type Stylist = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -124,7 +136,11 @@ export type UpdateStylistInput = {
   id: string;
   firstName?: string | null;
   lastName?: string | null;
+  headShot?: string | null;
   socialMedia?: string | null;
+  socialMediaLink?: string | null;
+  bookingMethod?: string | null;
+  bookingLink?: string | null;
 };
 
 export type DeleteStylistInput = {
@@ -167,7 +183,11 @@ export type ModelStylistFilterInput = {
   id?: ModelIDInput | null;
   firstName?: ModelStringInput | null;
   lastName?: ModelStringInput | null;
+  headShot?: ModelStringInput | null;
   socialMedia?: ModelStringInput | null;
+  socialMediaLink?: ModelStringInput | null;
+  bookingMethod?: ModelStringInput | null;
+  bookingLink?: ModelStringInput | null;
   and?: Array<ModelStylistFilterInput | null> | null;
   or?: Array<ModelStylistFilterInput | null> | null;
   not?: ModelStylistFilterInput | null;
@@ -222,7 +242,11 @@ export type ModelSubscriptionStylistFilterInput = {
   id?: ModelSubscriptionIDInput | null;
   firstName?: ModelSubscriptionStringInput | null;
   lastName?: ModelSubscriptionStringInput | null;
+  headShot?: ModelSubscriptionStringInput | null;
   socialMedia?: ModelSubscriptionStringInput | null;
+  socialMediaLink?: ModelSubscriptionStringInput | null;
+  bookingMethod?: ModelSubscriptionStringInput | null;
+  bookingLink?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionStylistFilterInput | null> | null;
   or?: Array<ModelSubscriptionStylistFilterInput | null> | null;
 };
@@ -262,7 +286,11 @@ export type CreateStylistMutation = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -272,7 +300,11 @@ export type UpdateStylistMutation = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -282,7 +314,11 @@ export type DeleteStylistMutation = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -316,7 +352,11 @@ export type GetStylistQuery = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -328,7 +368,11 @@ export type ListStylistsQuery = {
     id: string;
     firstName: string;
     lastName: string;
+    headShot: string;
     socialMedia: string;
+    socialMediaLink: string;
+    bookingMethod: string;
+    bookingLink: string;
     createdAt: string;
     updatedAt: string;
   } | null>;
@@ -370,7 +414,11 @@ export type OnCreateStylistSubscription = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -380,7 +428,11 @@ export type OnUpdateStylistSubscription = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -390,7 +442,11 @@ export type OnDeleteStylistSubscription = {
   id: string;
   firstName: string;
   lastName: string;
+  headShot: string;
   socialMedia: string;
+  socialMediaLink: string;
+  bookingMethod: string;
+  bookingLink: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -487,7 +543,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -513,7 +573,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -539,7 +603,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -617,7 +685,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -643,7 +715,11 @@ export class APIService {
             id
             firstName
             lastName
+            headShot
             socialMedia
+            socialMediaLink
+            bookingMethod
+            bookingLink
             createdAt
             updatedAt
           }
@@ -757,7 +833,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -784,7 +864,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }
@@ -811,7 +895,11 @@ export class APIService {
           id
           firstName
           lastName
+          headShot
           socialMedia
+          socialMediaLink
+          bookingMethod
+          bookingLink
           createdAt
           updatedAt
         }

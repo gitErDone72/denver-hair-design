@@ -37,7 +37,11 @@ query GetStylist($id: ID!) {
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename
@@ -54,7 +58,11 @@ query ListStylists(
       id
       firstName
       lastName
+      headShot
       socialMedia
+      socialMediaLink
+      bookingMethod
+      bookingLink
       createdAt
       updatedAt
       __typename

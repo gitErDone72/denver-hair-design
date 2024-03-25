@@ -2,7 +2,7 @@
   color: var(--color-white);
   flex: 0 0 var(--footer-height);
   display: flex;
-  background-color: rgba(var(--rgb-primary-dark), 0.7);
+  background-color: var(--color-overlay-dark);
   align-items: center;
   z-index: 51;
   padding: 0 0.5rem;
@@ -32,7 +32,8 @@
 
   &__text {
     margin-left: -6px;
-    margin-bottom: -4px;
+    font-family: 'futura-pt';
+    line-height: 1;
   }
 
   &__text a {
@@ -66,7 +67,7 @@
     height: var(--hit-zone);
     fill: var(--color-white);
     font-size: 9px;
-    padding: 1em;
+    padding: 1.5em;
   }
 
   @include respond(phone) {

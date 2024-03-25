@@ -1,5 +1,7 @@
-$navItems: 'Services', 'Stylists', 'Products', 'Gallery', 'Chair Rental';
-$navItemsLength: length($list: $navItems);
+$navItems: "Services", "Stylists", "Products", "Gallery", "Chair Rental";
+$navItemsLength: length(
+  $list: $navItems,
+);
 
 .main-nav {
   position: absolute;
@@ -10,7 +12,7 @@ $navItemsLength: length($list: $navItems);
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
   transition: all 500ms;
-
+  z-index: 4000;
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
@@ -33,10 +35,15 @@ $navItemsLength: length($list: $navItems);
     position: absolute;
     left: 0;
     right: 0;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
     @include flexCenter();
     height: var(--hit-zone);
-    font-size: 2.1rem;
+    font-size: 1.9rem;
     background-color: var(--color-primary-dark);
+    border-bottom: 2px solid hsla(0, 0%, 100%, 1);
     transition: top 250ms;
 
     @for $i from 0 through $navItemsLength {
@@ -70,5 +77,6 @@ $navItemsLength: length($list: $navItems);
   &_collapsed &__link {
     top: 0;
     transition: top 500ms;
+    border-bottom: 0 solid hsla(0, 0%, 100%, 0)
   }
 }

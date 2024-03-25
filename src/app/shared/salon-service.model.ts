@@ -1,5 +1,5 @@
 export enum SalonServiceType {
-    HAIR = 'haircutting, coloring & styling',
+    HAIR = 'hair services',
     WAXING = 'waxing & tinting',
     FACE = 'facials & skin care treatments',
     NAIL_TREATMENTS = 'nail treatments'
