@@ -32,21 +32,21 @@ export class ServicesComponent implements OnInit {
           startingPrice: 100
         },
         {
-          id: 4,
+          id: 5,
           type: SalonServiceType.HAIR,
-          name: 'Root touch up',
+          name: 'Extensions',
           description: `Get this season's hottest look`,
           startingPrice: 100
         },
         {
-          id: 5,
+          id: 6,
           type: SalonServiceType.HAIR,
           name: 'Balayage',
           description: `Get this season's hottest look`,
           startingPrice: 100
         },
         {
-          id: 6,
+          id: 7,
           type: SalonServiceType.HAIR,
           name: 'Highlights',
           description: `Get this season's hottest look`,
@@ -58,35 +58,23 @@ export class ServicesComponent implements OnInit {
       type: SalonServiceType.WAXING,
       salonServices: [
         {
-          id: 7,
+          id: 8,
           type: SalonServiceType.WAXING,
           name: `Eyebrow waxing`,
           description: `Get this season's hottest look`,
           startingPrice: 100
         },
         {
-          id: 8,
-          type: SalonServiceType.WAXING,
-          name: `facial waxing`,
-          description: `get this season's hottest look`,
-          startingPrice: 100
-        }
-      ]
-    },
-    {
-      type: SalonServiceType.FACE,
-      salonServices: [
-        {
           id: 9,
-          type: SalonServiceType.FACE,
-          name: `brow & eyelash tinting`,
+          type: SalonServiceType.WAXING,
+          name: `Facial waxing`,
           description: `get this season's hottest look`,
           startingPrice: 100
         },
         {
           id: 10,
           type: SalonServiceType.FACE,
-          name: `makeup`,
+          name: `Brow & lash tinting`,
           description: `get this season's hottest look`,
           startingPrice: 100
         }
@@ -98,14 +86,14 @@ export class ServicesComponent implements OnInit {
         {
           id: 11,
           type: SalonServiceType.NAIL_TREATMENTS,
-          name: `pedicures`,
+          name: `Pedicures`,
           description: `get this season's hottest look`,
           startingPrice: 100
         },
         {
           id: 12,
           type: SalonServiceType.NAIL_TREATMENTS,
-          name: `manicures`,
+          name: `Manicures`,
           description: `get this season's hottest look`,
           startingPrice: 100
         }

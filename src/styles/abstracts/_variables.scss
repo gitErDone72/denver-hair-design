@@ -5,12 +5,12 @@
   //
 
   --rgb-primary-dark: 50, 37, 41;
-  --rgb-primary-light: 204, 81, 200;
+  --rgb-primary-light: 204 179 214;
   --rgb-primary-accent: 235, 47, 100;
 
   //
 
-  --color-primary: rgb(202, 82, 247);
+  --color-primary: rgb(107 66 123);
   --color-primary-light: rgb(var(--rgb-primary-light));
   --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary-accent: rgb(var(--rgb-primary-accent));
@@ -27,7 +27,7 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: rgb(51, 63, 62);
 
-  --color-overlay-dark: rgb(0 0 0 / 33%);
+  --color-overlay-dark: rgb(0 0 0 / 60%);
 
   --color-home-gradient-1: rgba(200, 205, 104, 0.39);
   --color-home-gradient-2: rgba(91, 98, 50, 0.51);

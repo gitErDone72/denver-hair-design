@@ -53,7 +53,11 @@ mutation CreateStylist(
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename
@@ -68,7 +72,11 @@ mutation UpdateStylist(
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename
@@ -83,7 +91,11 @@ mutation DeleteStylist(
     id
     firstName
     lastName
+    headShot
     socialMedia
+    socialMediaLink
+    bookingMethod
+    bookingLink
     createdAt
     updatedAt
     __typename

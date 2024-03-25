@@ -1,87 +1,10 @@
 <div class="text-block text-block_statement">
  Maybe we want to say something about our awesome stylists?</div>
 <div class="grid grid_stylists">
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
+    <dhd-thumbnail *ngFor="let stylist of stylists" [type]="thumbnailType" [image]="stylist.headShot">
         <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square"></div>
-    </dhd-thumbnail>
-    <dhd-thumbnail [type]="thumbnailType" image="stylist">
-        <div class="stylist__name">
-            <div class="stylist__name_first">Krista</div>
-            <div class="stylist__name_last">Snider</div>
+            <div class="stylist__name_first">{{stylist.firstName}}</div>
+            <div class="stylist__name_last">{{stylist.lastName}}</div>
         </div>
         <div class="thumbnail__icon" icon="info-square"></div>
     </dhd-thumbnail>
