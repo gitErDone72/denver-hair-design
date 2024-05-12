@@ -18,6 +18,23 @@ export class StylistsComponent implements OnInit {
     // this.api.ListStylists().then((data: ListStylistsQuery) => {
     //   this.stylists = data.items as Stylist[];
     // })
+
+    this.api.CreateStylist({
+      firstName: 'Brittany',
+      lastName: 'Baldry',
+      headShot: 'stylist',
+      socialMedia: SocialMediaTypes.NONE,
+      socialMediaLink: '',
+      bookingMethod: BookingMethodTypes.NONE,
+      bookingLink: '',
+    }).then((data) => {
+      console.log('stylist created: ', data);
+      this.api.ListStylists().then((data: ListStylistsQuery) => {
+        console.log('stylists: ', data);
+      })
+    });
+
+
     this.stylists = [
       {
         id: '1',

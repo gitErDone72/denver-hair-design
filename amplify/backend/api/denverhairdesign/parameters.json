@@ -1,7 +1,0 @@
-{
-  "AppSyncApiName": "denverhairdesign",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2024-02-26T02:08:00.219Z",
-  "CreateAPIKey": 0
-}

@@ -1,17 +1,30 @@
 {
   "api": {
     "denverhairdesign": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "denverhairdesign4b7e1089"
+        }
+      ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
               "apiKeyConfig": {
-                "apiKeyExpirationDate": "2025-02-25T02:13:35.155Z",
-                "apiKeyExpirationDays": 365,
-                "description": "graphqlAPI"
+                "apiKeyExpirationDays": 30,
+                "description": "api key description"
               },
               "authenticationType": "API_KEY"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authdenverhairdesign4b7e1089"
+              }
             }
           ],
           "defaultAuthentication": {
