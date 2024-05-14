@@ -3,16 +3,9 @@
   flex-direction: column;
   overflow: auto;
   height: var(--page-container-height);
-  // padding: 3rem var(--spacing-main) var(--footer-height);
-  // background: var(--color-primary-dark);
   &_type {
     &_thumbs-only {
       padding-top: 0;
     }
   }
-
-  // @include respond(phone){
-  //   max-width: 70rem;
-  //   margin: 0 auto;
-  // }
 }

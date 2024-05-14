@@ -17,7 +17,6 @@ body {
     border: 2px solid white;
     margin: 1rem;
     padding: 2rem;
-    font-family: "p22-stickley-pro-text";
     text-align: center;
     font-size: 2.8rem;
     line-height: 1.2;
@@ -27,9 +26,6 @@ body {
 
 .list {
   margin: 0 1rem 1rem;
-  // padding: 1rem;
-  // background: var(--color-overlay-dark);
-  // backdrop-filter: blur(10px);
   &__section {
     font-family: "p22-stickley-pro-headline";
     font-size: 2.3rem;
@@ -55,8 +51,3 @@ body {
     }
   }
 }
-
-
-// dhdsquare - 6 (none do online booking)
-// personal square onlinebooking - ~6
-

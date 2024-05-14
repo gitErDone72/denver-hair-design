@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
-  selector: 'app-error-page',
+  selector: 'dhd-error-page',
   templateUrl: './error-page.component.html',
 })
 export class ErrorPageComponent implements OnInit {

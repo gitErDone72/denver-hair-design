@@ -25,32 +25,6 @@
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Kitty Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
-    @content;
-  }
-}
-
-/// From advanced-css-course-master
-
-@mixin clearfix {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-@mixin absCenter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 @mixin flexCenter {
   display: flex;
   align-items: center;
