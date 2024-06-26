@@ -3,9 +3,19 @@
   flex-direction: column;
   overflow: auto;
   height: var(--page-container-height);
+  padding: var(--page-element-margin);
+  padding-bottom: (calc(var(--page-element-margin) * 0.2));
   &_type {
     &_thumbs-only {
-      padding-top: 0;
+      // padding-top: 0;
     }
+  }
+  &.stylists {
+    padding: 0;
+  }
+  & > div {
+    max-width: 95rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

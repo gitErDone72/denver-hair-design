@@ -1,19 +1,23 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, Host, HostBinding, Input, OnInit } from '@angular/core';
 import { ChildrenOutletContexts, NavigationEnd, OutletContext, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { slideInAnimation } from './shared/animations';
+import { convertStringToCamelCase } from './shared/utilities';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  host: { class: 'app-wrapper' },
   animations: [
     slideInAnimation
   ]
 })
 export class AppComponent implements OnInit {
-  @HostBinding('class.app-wrapper') appWrapper = true;
+  @HostBinding('class.app-page-name') overlayClassByPage: string = '/';
+  routeContext: OutletContext | null = null;
   isHomePage: boolean = true;
-  pageContainerDarkened: boolean = false;
+  pageName: string = '/';
+  pageOverlayDarkened: boolean = false;
   constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
 
   ngOnInit(): void {
@@ -22,13 +26,12 @@ export class AppComponent implements OnInit {
     })
   }
 
-  getRouteAnimationData(): OutletContext | null {
-    const context: OutletContext = this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
-    console.log('context: ', context);
-    return context;
+  getAnimationPageName(): string {
+    this.routeContext = this.contexts.getContext('primary');
+    return convertStringToCamelCase((this.routeContext?.route?.snapshot?.data?.['animation']));
   }
 
   darkenPageContainer($event: boolean) {
-    this.pageContainerDarkened = $event;
+    this.pageOverlayDarkened = $event;
   }
 }

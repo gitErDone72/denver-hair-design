@@ -7,6 +7,7 @@
   z-index: 51;
   padding: 0 0.5rem;
   transition: background-color 250ms;
+  // @include transition("background-color", 250);
 
   &__contact-info {
     flex: 1 0 1px;
@@ -32,7 +33,7 @@
 
   &__text {
     margin-left: -6px;
-    font-family: 'futura-pt';
+    font-family: "futura-pt";
     line-height: 1;
   }
 
@@ -74,6 +75,6 @@
     margin: 0 auto;
   }
   &_home {
-   background-color: rgba(var(--color-primary-dark), 0.0);
+    background-color: rgba(var(--color-primary-dark), 0);
   }
 }

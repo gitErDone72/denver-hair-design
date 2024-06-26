@@ -1,5 +1,6 @@
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
-import { DhdNavItem } from './nav-item.model';
+import { DhdNavDataItem } from './nav-item.model';
+import { DhdNavRoutes } from '../../shared/routing.config';
 
 @Component({
   selector: 'dhd-main-nav',
@@ -15,39 +16,16 @@ export class MainNavComponent implements OnInit {
     return !this.expanded;
   }
 
-  navItems: DhdNavItem[] = [];
+  navItems!: DhdNavDataItem[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.navItems = [
-      {
-        name: 'Stylists',
-        routerLink: '/stylists'
-      },
-      {
-        name: 'Services',
-        routerLink: '/services'
-      },
-      {
-        name: 'Products',
-        routerLink: '/products'
-      },
-      {
-        name: 'Gallery',
-        routerLink: '/gallery'
-      },
-      {
-        name: 'Chair Rental',
-        routerLink: '/chair-rental'
-      },
-    ]
-
+    this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
   }
 
   toggleExpanded(): void {
-    this.expanded = !this.expanded
+    this.expanded = !this.expanded;
     this.expandedChange.emit(this.expanded);
   }
-
 }

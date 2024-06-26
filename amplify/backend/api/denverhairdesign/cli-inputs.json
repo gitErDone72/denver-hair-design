@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AWS_IAM"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "keyDescription": "api key description"
+      },
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authdenverhairdesign4b7e1089"
+      }
+    ],
+    "conflictResolution": {},
+    "apiName": "denverhairdesign"
+  }
+}

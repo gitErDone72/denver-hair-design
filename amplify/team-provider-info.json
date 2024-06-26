@@ -44,6 +44,30 @@
     "categories": {
       "api": {
         "denverhairdesign": {}
+      },
+      "function": {
+        "S3Trigger9a77e231": {}
+      }
+    }
+  },
+  "devenv": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-denverhairdesign-devenv-200502-authRole",
+      "UnauthRoleArn": "arn:aws:iam::408984025657:role/amplify-denverhairdesign-devenv-200502-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::408984025657:role/amplify-denverhairdesign-devenv-200502-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-denverhairdesign-devenv-200502-deployment",
+      "UnauthRoleName": "amplify-denverhairdesign-devenv-200502-unauthRole",
+      "StackName": "amplify-denverhairdesign-devenv-200502",
+      "StackId": "arn:aws:cloudformation:us-west-2:408984025657:stack/amplify-denverhairdesign-devenv-200502/609e04f0-1196-11ef-8800-02653a996097",
+      "AmplifyAppId": "d2f3wq6h30iq0o"
+    },
+    "categories": {
+      "auth": {
+        "denverhairdesign4b7e1089": {}
+      },
+      "function": {
+        "S3Trigger9a77e231": {}
       }
     }
   }

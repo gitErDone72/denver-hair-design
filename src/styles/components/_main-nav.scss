@@ -9,10 +9,12 @@ $navItemsLength: length(
   width: 14rem;
   height: var(--main-nav-height);
   right: 50%;
+  max-width: 95rem;
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
-  transition: all 500ms;
+  transition: width 500ms, height 500ms, bottom 500ms;
   z-index: 4000;
+
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
@@ -20,10 +22,14 @@ $navItemsLength: length(
   }
 
   &_collapsed {
-    height: var(--hit-zone);
+    height: var(--collapsed-container-height);
     width: 100vw;
     bottom: calc(var(--footer-height));
-    transition: all 500ms;
+    transition: width 500ms, height 500ms, bottom 500ms;
+    @include respond(webNBeyond) {
+      height: auto;
+      bottom: auto;
+    }
   }
 
   &_collapsed &_active {
@@ -32,18 +38,18 @@ $navItemsLength: length(
   }
 
   &__link {
-    position: absolute;
-    left: 0;
-    right: 0;
     font-family: "futura-pt", sans-serif;
-    font-weight: 300;
+    font-weight: 800;
     font-style: normal;
+    font-size: 1.9rem;
     text-transform: uppercase;
     @include flexCenter();
     height: var(--hit-zone);
-    font-size: 1.9rem;
     background-color: var(--color-primary-dark);
     border-bottom: 2px solid hsla(0, 0%, 100%, 1);
+    position: absolute;
+    left: 0;
+    right: 0;
     transition: top 250ms;
 
     @for $i from 0 through $navItemsLength {
@@ -72,11 +78,35 @@ $navItemsLength: length(
       background-color: transparent;
       color: inherit;
     }
+    @include respond(webNBeyond) {
+      flex: 0 1 auto;
+      position: static;
+    }
+
+    @include respond(mobile-to-web) {
+    }
   }
 
   &_collapsed &__link {
     top: 0;
+    height: var(--collapsed-container-height);
     transition: top 500ms;
-    border-bottom: 0 solid hsla(0, 0%, 100%, 0)
+    border-bottom: 0 solid hsla(0, 0%, 100%, 0);
+  }
+
+  @include respond(webNBeyond) {
+    top: var(--header-height);
+    right: 0;
+    bottom: unset;
+    left: 0;
+    width: 100vw;
+    max-width: none;
+    transform: none;
+    height: var(--main-nav-height-web);
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-primary-dark);
+    justify-content: center;
+    transition: none;
   }
 }

@@ -1,11 +1,12 @@
-  <header class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
-    <svg class="header__logo">
-      <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
-    </svg>
-  </header>
-  <div class="page-container" [@routeAnimations]="getRouteAnimationData()">
-    <div [ngClass]="{'page-container__overlay_show': pageContainerDarkened}" class="page-container__overlay"></div>
-    <router-outlet></router-outlet>
-  </div>
-  <dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [expanded]="isHomePage" (expandedChange)="darkenPageContainer($event)"></dhd-main-nav>
-  <dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>
+<header class="header" [ngClass]="{'header_home': isHomePage}" routerLink="/">
+  <svg class="header__logo">
+    <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
+  </svg>
+</header>
+<div class="page-container" [@routeAnimations]="getAnimationPageName()">
+  <dhd-page-overlay [pageName]="pageName" [pageOverlayDarkened]="pageOverlayDarkened && !isHomePage"></dhd-page-overlay>
+  <router-outlet></router-outlet>
+</div>
+<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [expanded]="isHomePage"
+  (expandedChange)="darkenPageContainer($event)"></dhd-main-nav>
+<dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>

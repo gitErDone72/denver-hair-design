@@ -1,5 +1,5 @@
 .thumbnail {
-  max-width: 28.5rem;
+  // max-width: 28.5rem;
   overflow: hidden;
 
   &__image {
@@ -41,8 +41,9 @@
     }
 
     &_last {
-      font-size: 2.6rem;
+      font: normal normal 2.1rem / 1em "p22-stickley-pro-text", serif;
       color: var(--color-primary-light);
+      padding: 0.5rem 0 0 0.3rem;
     }
   }
 }

@@ -1,16 +1,13 @@
 .services {
   @include backgroundWithImage("/assets/img/pages/services_1.jpg");
   &__item {
-    display: flex;
-    // align-items: flex-end;
-    justify-content: center;
     line-height: 1;
     margin-bottom: 1rem;
   }
 
   &__name {
-    font-weight: 500;
     flex: 0 1 auto;
+    font-weight: 500;
   }
 
   &__elipses {
