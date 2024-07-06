@@ -1,7 +1,7 @@
 .header {
   flex: 0 0 var(--header-height);
   height: var(--header-height);
-  background-color: rgba(var(--rgb-primary-dark), 0.7);
+  background-color: rgb(var(--rgb-primary-dark));
   transform: translateY(0);
   transition: transform 500ms;
   z-index: 50;

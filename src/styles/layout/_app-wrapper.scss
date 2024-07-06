@@ -8,10 +8,6 @@
   @include backgroundGradientWithImage(
     var(--color-home-gradient-1),
     var(--color-home-gradient-2),
-    "/assets/img/pages/home_1.jpg",
-    cover,
-    center,
-    multiply,
-    0.6
+    "/assets/img/pages/home_1.jpg"
   );
 }

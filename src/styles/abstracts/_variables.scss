@@ -11,7 +11,8 @@
   );
   --collapsed-container-height: calc(var(--hit-zone) * 1.3);
 
-  --page-element-margin: 2.1rem;
+  --page-element-margin: 0.5rem;
+
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 
@@ -22,9 +23,9 @@
   //
 
   // --color-primary: rgb(107 66 123);
-  --rgb-primary: 196, 143, 191;
+  --rgb-primary: 86 104 159;
   --rgb-primary-dark: 50, 37, 41;
-  --rgb-primary-light: 204 179 214;
+  --rgb-primary-light: 151 165 216;
   --rgb-primary-ultra-light: 306 31 97;
   --rgb-primary-accent: 235, 47, 100;
   //

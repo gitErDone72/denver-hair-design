@@ -1,11 +1,11 @@
-export enum SocialMediaTypes {
+export enum SocialMediaType {
   NONE = 'NONE',
   FACEBOOK = 'FACEBOOK',
   INSTAGRAM = 'INSTAGRAM',
   TWITTER = 'TWITTER',
   YOUTUBE = 'YOUTUBE',
 }
-export enum BookingMethodTypes {
+export enum BookingMethodType {
   NONE = 'NONE',
   VAGARO = 'VAGARO',
   SQUARE_DHD = 'SQUARE_DHD',
