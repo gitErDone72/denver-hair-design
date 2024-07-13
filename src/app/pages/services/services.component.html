@@ -2,14 +2,18 @@
   Pricing varies, and is determined by the stylist performing your service.
 </div>
 <div class="grid grid_services">
-  <div class="grid__section" *ngFor="let serviceType of allServices; index as i">
+  @for (serviceType of allServices; track serviceType; let i = $index) {
+  <div class="grid__section">
     <div class="grid__section-title">{{serviceType.type}}</div>
     <div class="grid__section-content">
-      <div class="services__item" *ngFor="let service of allServices[i].salonServices">
+      @for (service of allServices[i].salonServices; track service) {
+      <div class="services__item">
         <div class="services__name">{{service.name}}</div>
         <!-- <div class="services__elipses"></div>
       <div class="services__price">from {{service.startingPrice | currency}}</div> -->
       </div>
+    }
     </div>
   </div>
+}
 </div>

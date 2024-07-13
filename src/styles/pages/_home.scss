@@ -9,5 +9,8 @@
     margin: 0 auto;
     padding: 0 0 1rem;
   }
+  @include respond(webNBeyond) {
+    height: calc(var(--page-container-height) - var(--header-height) );
+  }
 }
 

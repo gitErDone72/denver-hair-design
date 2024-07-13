@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'dhd-footer',
   templateUrl: './footer.component.html',
   host: { class: 'footer' }

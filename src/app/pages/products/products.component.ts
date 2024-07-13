@@ -3,6 +3,7 @@ import { Product, ProductType } from 'src/app/shared/product.model';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
 
 @Component({
+  standalone: true,
   templateUrl: './products.component.html',
   host: { class: 'page products' }
 })

@@ -1,16 +1,22 @@
 <div class="text-block text-block_statement">
- Maybe we want to say something about our awesome stylists?</div>
+  Maybe we want to say something about our awesome stylists?</div>
 <div class="grid grid_stylists">
-    <dhd-thumbnail *ngFor="let stylist of stylists" [type]="thumbnailType" [image]="stylist.headShot">
-        <div class="stylist__name">
-            <div class="stylist__name_first">{{stylist.firstName}}</div>
-            <div class="stylist__name_last">{{stylist.lastName}}</div>
-        </div>
-        <div class="thumbnail__icon" icon="info-square">
-          <a href="https://www.instagram.com/denverhairdesign/" target="_blank">
-            <svg class="footer__icon">
-              <use xlink:href="../../../assets/img/sprite.svg#instagram-icon"></use>
-            </svg></a>
-        </div>
-    </dhd-thumbnail>
+  @for (stylist of stylists; track stylist) {
+  <dhd-thumbnail [type]="thumbnailType" [image]="stylist.headShot">
+    <div class="stylist__name">
+      <div class="stylist__name_first">{{stylist.firstName}}</div>
+      <div class="stylist__name_last">{{stylist.lastName}}</div>
+    </div>
+    <div class="thumbnail__icon-stack" icon="info-square">
+      @if (stylist.socialMedia !== "NONE") {
+      <a class="thumbnail__link" [href]="stylist.socialMediaLink" target="_blank">
+        <svg class="thumbnail__icon">
+          <use [attr.xlink:href]='"../../../assets/img/sprite.svg#" + stylist.socialMedia.toLowerCase() + "-icon"'>
+          </use>
+        </svg>
+      </a>
+      }
+    </div>
+  </dhd-thumbnail>
+  }
 </div>

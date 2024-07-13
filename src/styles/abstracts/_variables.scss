@@ -1,4 +1,12 @@
 :root {
+  @media only screen and (min-width: 60rem) { // phone
+    --page-element-margin: 4.9rem;
+  }
+  @media only screen and (min-width: 40rem){ // webNBeyond
+    --header-height: 10rem;
+    --page-container-height: calc( 100vh - var(--footer-height) - var(--header-height) - var(--main-nav-height-web));
+
+  }
   --header-height: 8.5rem;
   --footer-height: 5rem;
   --wacky-var: 40rem;
@@ -16,9 +24,7 @@
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 
-  @media only screen and (min-width: 60rem) {
-    --page-element-margin: 4.9rem;
-  }
+
 
   //
 

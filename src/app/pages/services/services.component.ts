@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SalonService, SalonServiceType } from 'src/app/shared/salon-service.model';
 
 @Component({
+  standalone: true,
   templateUrl: './services.component.html',
   host: { class: 'page services' }
 })

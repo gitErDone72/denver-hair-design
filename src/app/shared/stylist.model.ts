@@ -11,3 +11,13 @@ export enum BookingMethodType {
   SQUARE_DHD = 'SQUARE_DHD',
   SQUARE_PERSONAL = 'SQUARE_PERSONAL',
 }
+export interface Stylist {
+  id: string;
+  firstName: string;
+  lastName: string;
+  headShot: string;
+  socialMedia: SocialMediaType;
+  socialMediaLink: string;
+  bookingMethod: BookingMethodType;
+  bookingLink: string;
+}

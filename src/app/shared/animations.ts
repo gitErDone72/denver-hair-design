@@ -1,16 +1,7 @@
 import {
-  animation, trigger, animateChild, group,
+  trigger, animateChild, group,
   transition, animate, style, query
 } from '@angular/animations';
-
-export const transitionAnimation = animation([
-  style({
-    height: '{{ height }}',
-    opacity: '{{ opacity }}',
-    backgroundColor: '{{ backgroundColor }}'
-  }),
-  animate('{{ time }}')
-]);
 
 // Routable animations
 export const slideInAnimation =

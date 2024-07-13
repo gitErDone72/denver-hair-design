@@ -35,9 +35,6 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "@aws-crypto/crc32",
-              "@aws-crypto/sha256-browser",
-              "@aws-crypto/sha256-js",
               "crypto-js/sha256",
               "axios",
               "buffer",

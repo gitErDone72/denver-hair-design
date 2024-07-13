@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SiteSections as SiteSection } from 'src/app/shared/site-sections.enum';
 
 @Component({
+  standalone: true,
   selector: 'dhd-thumbnail',
   templateUrl: './thumbnail.component.html',
   host: { class: 'thumbnail' }

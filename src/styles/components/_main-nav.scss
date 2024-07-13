@@ -18,6 +18,9 @@ $navItemsLength: length(
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
+      @include respond(webNBeyond) {
+        background-color: transparent;
+      }
     }
   }
 
@@ -39,7 +42,7 @@ $navItemsLength: length(
 
   &__link {
     font-family: "League Spartan", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     font-size: 1.9rem;
     text-transform: uppercase;
@@ -58,10 +61,17 @@ $navItemsLength: length(
         top: calc(#{$i} * (var(--main-nav-height) / #{$navItemsLength}));
       }
     }
+    @include respond(webNBeyond) {
+      border-bottom: 3px solid transparent;
+    }
 
     &_active {
       z-index: 101;
       background-color: var(--color-primary);
+      @include respond(webNBeyond) {
+        background-color: transparent;
+        border-bottom: 3px solid white;
+      }
     }
 
     @include on-event(true) {
@@ -72,18 +82,25 @@ $navItemsLength: length(
 
     @include on-event {
       background-color: var(--color-primary);
+      @include respond(webNBeyond) {
+        background-color: transparent;
+        border-bottom: 3px solid white;
+      }
     }
 
     &::selection {
       background-color: transparent;
       color: inherit;
     }
-    @include respond(webNBeyond) {
-      flex: 0 1 auto;
-      position: static;
-    }
 
     @include respond(mobile-to-web) {
+    }
+
+    @include respond(webNBeyond) {
+      flex: 0 1 auto;
+      height: var(--main-nav-height-web);
+      position: static;
+      padding: 0 1.5rem;
     }
   }
 

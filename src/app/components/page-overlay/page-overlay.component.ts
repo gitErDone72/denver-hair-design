@@ -1,6 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'dhd-page-overlay',
   templateUrl: './page-overlay.component.html',
   host: { class: 'overlay' }

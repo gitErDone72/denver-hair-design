@@ -1,39 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService, ListStylistsQuery, Stylist } from 'src/app/API.service';
+import { ThumbnailComponent } from 'src/app/components/thumbnail/thumbnail.component';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
-import { BookingMethodType, SocialMediaType } from 'src/app/shared/stylist.model';
+import { BookingMethodType, SocialMediaType, Stylist } from 'src/app/shared/stylist.model';
 
 @Component({
+  standalone: true,
   templateUrl: './stylists.component.html',
-  host: { class: 'page page_type_thumbs-only stylists' }
+  host: { class: 'page page_type_thumbs-only stylists' },
+  imports: [ThumbnailComponent]
 })
 export class StylistsComponent implements OnInit {
   stylists: Stylist[] = [];
-
   thumbnailType: SiteSections = SiteSections.STYLISTS;
 
-  constructor(private api: APIService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.api.ListStylists().then((data: ListStylistsQuery) => {
-    //   this.stylists = data.items as Stylist[];
-    // })
-
-    this.api.CreateStylist({
-      firstName: 'Brittany',
-      lastName: 'Baldry',
-      headShot: 'stylist',
-      socialMedia: SocialMediaType.NONE,
-      socialMediaLink: '',
-      bookingMethod: BookingMethodType.NONE,
-      bookingLink: '',
-    }).then((data) => {
-      console.log('stylist created: ', data);
-      this.api.ListStylists().then((data: ListStylistsQuery) => {
-        console.log('stylists: ', data);
-      })
-    });
-
 
     this.stylists = [
       {
