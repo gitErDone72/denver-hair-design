@@ -11,9 +11,9 @@
   @include respond(small) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include respond(webNBeyond) {
+  @include respond(webWidthNBeyond) {
     grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
+    margin: 0 auto var(--page-element-margin);
   }
   @include respond(phone) {
     grid-template-columns: repeat(3, 1fr);
@@ -36,9 +36,10 @@
       grid-template-columns: repeat(1, 1fr);
     }
 
-    @include respond(webNBeyond) {
+    @include respond(webWidthNBeyond) {
       grid-template-columns: repeat(3, 1fr);
       margin: 0 auto;
+      width: -webkit-fill-available;
     }
   }
 }

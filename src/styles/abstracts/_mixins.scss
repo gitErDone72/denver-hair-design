@@ -99,7 +99,7 @@
     }
   }
 
-  @if $breakpoint == webNBeyond {
+  @if $breakpoint == webWidthNBeyond {
     @media only screen and (min-width: 40rem) {
       @content;
     }

@@ -18,7 +18,7 @@ $navItemsLength: length(
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
-      @include respond(webNBeyond) {
+      @include respond(webWidthNBeyond) {
         background-color: transparent;
       }
     }
@@ -29,7 +29,7 @@ $navItemsLength: length(
     width: 100vw;
     bottom: calc(var(--footer-height));
     transition: width 500ms, height 500ms, bottom 500ms;
-    @include respond(webNBeyond) {
+    @include respond(webWidthNBeyond) {
       height: auto;
       bottom: auto;
     }
@@ -49,11 +49,10 @@ $navItemsLength: length(
     @include flexCenter();
     height: var(--hit-zone);
     background-color: var(--color-primary-dark);
-    // border-bottom: 2px solid hsla(0, 0%, 100%, 1);
     position: absolute;
     left: 0;
     right: 0;
-    transition: top 250ms;
+    transition: top 250ms, border-bottom 500ms;
 
     @for $i from 0 through $navItemsLength {
       &_#{$i} {
@@ -61,30 +60,29 @@ $navItemsLength: length(
         top: calc(#{$i} * (var(--main-nav-height) / #{$navItemsLength}));
       }
     }
-    @include respond(webNBeyond) {
+    @include respond(webWidthNBeyond) {
       border-bottom: 3px solid transparent;
     }
 
     &_active {
       z-index: 101;
       background-color: var(--color-primary);
-      @include respond(webNBeyond) {
+      @include respond(webWidthNBeyond) {
         background-color: transparent;
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
       }
     }
 
     @include on-event(true) {
       color: var(--color-white);
       text-decoration-line: none;
-      transition: all 250ms;
     }
 
     @include on-event {
       background-color: var(--color-primary);
-      @include respond(webNBeyond) {
+      @include respond(webWidthNBeyond) {
         background-color: transparent;
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
       }
     }
 
@@ -96,7 +94,7 @@ $navItemsLength: length(
     @include respond(mobile-to-web) {
     }
 
-    @include respond(webNBeyond) {
+    @include respond(webWidthNBeyond) {
       flex: 0 1 auto;
       height: var(--main-nav-height-web);
       position: static;
@@ -108,10 +106,9 @@ $navItemsLength: length(
     top: 0;
     height: var(--collapsed-container-height);
     transition: top 500ms;
-    // border-bottom: 0 solid hsla(0, 0%, 100%, 0);
   }
 
-  @include respond(webNBeyond) {
+  @include respond(webWidthNBeyond) {
     top: var(--header-height);
     right: 0;
     bottom: unset;

@@ -2,7 +2,7 @@
   @media only screen and (min-width: 60rem) { // phone
     --page-element-margin: 4.9rem;
   }
-  @media only screen and (min-width: 40rem){ // webNBeyond
+  @media only screen and (min-width: 40rem){ // webWidthNBeyond
     --header-height: 10rem;
     --page-container-height: calc( 100vh - var(--footer-height) - var(--header-height) - var(--main-nav-height-web));
 

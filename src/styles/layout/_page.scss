@@ -18,7 +18,8 @@
     // margin-right: auto;
     // margin: 0 .5rem .5rem
   }
-  @include respond(webNBeyond) {
-    margin-top: var(--main-nav-height-web);
+  @include respond(webWidthNBeyond) {
+    margin: var(--main-nav-height-web) 0;
+    padding: 0 0 var(--page-element-margin);
   }
 }
