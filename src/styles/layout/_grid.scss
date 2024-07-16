@@ -1,6 +1,5 @@
 .grid {
   display: grid;
-  // grid-template-columns: repeat(6, calc((100vw / 6) - 1.1rem));
   grid-auto-columns: minmax(100px, 400px);
   grid-template-rows: auto;
   gap: var(--spacing-main);
@@ -20,12 +19,16 @@
   }
 
   &_stylists {
-    // grid-template-columns: 1fr;
     min-width: 18rem;
+    margin-bottom: 0;
   }
 
-  &_products {
-    // grid-template-columns: repeat(2, 1fr);
+  &_product-brands {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+    @include respond(webWidthNBeyond) {
+      width: -webkit-fill-available;
+    }
   }
 
   &_gallery {
@@ -38,7 +41,7 @@
 
     @include respond(webWidthNBeyond) {
       grid-template-columns: repeat(3, 1fr);
-      margin: 0 auto;
+      margin: var(--page-element-margin) auto 0;
       width: -webkit-fill-available;
     }
   }

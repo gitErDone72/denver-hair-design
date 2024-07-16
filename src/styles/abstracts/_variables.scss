@@ -1,11 +1,15 @@
 :root {
-  @media only screen and (min-width: 60rem) { // phone
+  @media only screen and (min-width: 60rem) {
+    // phone
     --page-element-margin: 4.9rem;
   }
-  @media only screen and (min-width: 40rem){ // webWidthNBeyond
+  @media only screen and (min-width: 40rem) {
+    // webWidthNBeyond
     --header-height: 10rem;
-    --page-container-height: calc( 100vh - var(--footer-height) - var(--header-height) - var(--main-nav-height-web));
-
+    --page-container-height: calc(
+      100vh - var(--footer-height) - var(--header-height) -
+        var(--main-nav-height-web)
+    );
   }
   --header-height: 8.5rem;
   --footer-height: 5rem;
@@ -24,17 +28,15 @@
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 
-
-
   //
 
+  // PRIMARY COLORS:
   // --color-primary: rgb(107 66 123);
   --rgb-primary: 86 104 159;
   --rgb-primary-dark: 50, 37, 41;
   --rgb-primary-light: 151 165 216;
   --rgb-primary-ultra-light: 306 31 97;
   --rgb-primary-accent: 235, 47, 100;
-  //
 
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
@@ -42,6 +44,14 @@
   --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary-accent: rgb(var(--rgb-primary-accent));
   // --color-primary-gradient:
+
+    //SECONDARY COLORS:
+    // --rgb-secondary: 86 104 159;
+    // --rgb-secondary-dark: 50, 37, 41;
+    // --rgb-secondary-light: 151 165 216;
+    // --rgb-secondary-ultra-light: 306 31 97;
+    // --rgb-secondary-accent: 235, 47, 100;
+    //
 
   --color-white: #ffffff;
 

@@ -9,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { environment } from 'src/environments/environment.development';
+import { ModalService } from './services/modal.service';
+import { ModalStylistComponent } from './components/modal/modal-stylist/modal-stylist.component';
+import { IModalOptions } from './components/modal/modal-options.model';
 
 @Component({
   standalone: true,
@@ -30,7 +33,7 @@ export class AppComponent implements OnInit {
   isWebWidthNBeyond: boolean = false;
   pageName: string = '/';
   pageBlurredForMobileNavigation: boolean = false;
-  constructor(private router: Router, private contexts: ChildrenOutletContexts, private _activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private contexts: ChildrenOutletContexts, private _activatedRoute: ActivatedRoute, private modalService: ModalService) { }
 
   ngOnInit(): void {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
@@ -53,5 +56,12 @@ export class AppComponent implements OnInit {
     if (this.isWebWidthNBeyond) {
       this.pageBlurredForMobileNavigation = false;
     }
+  }
+  openModalView() {
+    this.modalService.open(ModalStylistComponent, { size: 'whatever' } as IModalOptions);
+  }
+
+  closeModalView() {
+    this.modalService.close();
   }
 }
