@@ -1,6 +1,6 @@
 <div class="modal__wrapper">
-  <section class="modal" #modal>
+  <section class="modal__content" #modal>
     <ng-content></ng-content>
   </section>
-  <div class="modal__backdrop" (click)="onBackdropClick()" #backdrop></div>
+  <div class="modal__backdrop" (click)="onClose()" #overlay></div>
 </div>

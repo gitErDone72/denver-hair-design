@@ -1,51 +1,28 @@
-// import { CommonModule } from '@angular/common';
-// import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
-
-import { AfterViewInit, ViewChild, ElementRef, HostListener } from "@angular/core";
+import { AfterViewInit, ViewChild, ElementRef, HostListener, Component } from "@angular/core";
 import { Observable, fromEvent, zip } from "rxjs";
 import { ModalService } from "src/app/services/modal.service";
 import { IModalOptions } from "./modal-options.model";
+import { CommonModule } from "@angular/common";
 
-// @Component({
-//   selector: 'dhd-modal',
-//   standalone: true,
-//   imports: [CommonModule],
-//   templateUrl: './modal.component.html',
-//   host: { class: 'modal' }
-// })
-// export class ModalComponent implements OnInit {
-//   @Input() childComponent: any;
-//   @Input() data: any;
-//   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-//   @ViewChild('modalContent', { read: ViewContainerRef })
-//   modalContent!: ViewContainerRef;
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//     const componentRef: any = this.modalContent.createComponent(this.childComponent);
-//     if (this.data) {
-//       Object.assign(componentRef.instance, this.data);
-//     }
-//   }
-
-//   onBackdropClick(): void {
-//     this.closeModal.emit();
-//   }
-
-// }
-
-
-
-
+@Component({
+  selector: 'dhd-modal',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './modal.component.html',
+  host: { class: 'modal' }
+})
 export class ModalComponent implements AfterViewInit {
   @ViewChild('modal') modal!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    this.modalService.close();
+  }
   options!: IModalOptions | undefined;
   modalAnimationEnd$!: Observable<Event>;
   modalLeaveAnimation!: string;
   overlayLeaveAnimation!: string;
-  overlayAnimationEnd!: Observable<Event>;
+  overlayAnimationEnd$!: Observable<Event>;
   modalLeaveTiming!: number;
   overlayLeaveTiming!: number;
 
@@ -54,11 +31,6 @@ export class ModalComponent implements AfterViewInit {
     private element: ElementRef
   ) { }
 
-  @HostListener('document:keydown.escape')
-  onEscape() {
-    // closing modal on escape
-    this.modalService.close();
-  }
 
   onClose() {
     // closing modal when clicking on the overlay
@@ -97,7 +69,7 @@ export class ModalComponent implements AfterViewInit {
     this.overlayLeaveAnimation = this.options?.animations?.overlay?.leave || '';
     // Adding an animationend event listener to know when animations ends
     this.modalAnimationEnd$ = this.animationendEvent(this.modal.nativeElement);
-    this.overlayAnimationEnd = this.animationendEvent(
+    this.overlayAnimationEnd$ = this.animationendEvent(
       this.overlay.nativeElement
     );
     // Get to know how long animations are
@@ -146,11 +118,11 @@ export class ModalComponent implements AfterViewInit {
         this.element.nativeElement.remove();
       });
     } else if (this.modalLeaveTiming < this.overlayLeaveTiming) {
-      this.overlayAnimationEnd.subscribe(() => {
+      this.overlayAnimationEnd$.subscribe(() => {
         this.element.nativeElement.remove();
       });
     } else {
-      zip(this.modalAnimationEnd$, this.overlayAnimationEnd).subscribe(() => {
+      zip(this.modalAnimationEnd$, this.overlayAnimationEnd$).subscribe(() => {
         this.element.nativeElement.remove();
       });
     }

@@ -11,7 +11,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { environment } from 'src/environments/environment.development';
 import { ModalService } from './services/modal.service';
 import { ModalStylistComponent } from './components/modal/modal-stylist/modal-stylist.component';
-import { IModalOptions } from './components/modal/modal-options.model';
+import { IModalOptions, IModalStylistOptions } from './components/modal/modal-options.model';
 
 @Component({
   standalone: true,
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
     }
   }
   openModalView() {
-    this.modalService.open(ModalStylistComponent, { size: 'whatever' } as IModalOptions);
+    this.modalService.open(ModalStylistComponent, { data: 'Just a string for now...' } as IModalStylistOptions);
   }
 
   closeModalView() {

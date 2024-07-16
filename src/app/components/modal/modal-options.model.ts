@@ -18,3 +18,7 @@ export interface IModalOptions {
     maxHeight?: string;
   };
 }
+
+export interface IModalStylistOptions extends IModalOptions {
+  data: string;
+}
