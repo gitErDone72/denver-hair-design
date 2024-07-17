@@ -11,5 +11,6 @@
   "explorer.compactFolders": false,
   "css.format.enable": false,
   "less.format.enable": false,
-  "scss.format.enable": false
+  "scss.format.enable": false,
+  "eslint.enable": false
 }
