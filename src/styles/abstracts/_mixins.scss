@@ -55,7 +55,7 @@
   $gradientOpacity: 0.6
 ) {
   @if $backgroundImage {
-    background-image: linear-gradient(to bottom, $colorOne, $colorTwo 1px),
+    background-image: linear-gradient(to bottom, $colorOne, $colorTwo),
       url($backgroundImage);
     background-size: $backgroundSize;
     background-position: $backgroundPosition;

@@ -45,13 +45,13 @@
   --color-primary-accent: rgb(var(--rgb-primary-accent));
   // --color-primary-gradient:
 
-    //SECONDARY COLORS:
-    // --rgb-secondary: 86 104 159;
-    // --rgb-secondary-dark: 50, 37, 41;
-    // --rgb-secondary-light: 151 165 216;
-    // --rgb-secondary-ultra-light: 306 31 97;
-    // --rgb-secondary-accent: 235, 47, 100;
-    //
+  //SECONDARY COLORS:
+  --rgb-secondary: 106 38 38;
+  --rgb-secondary-dark: 50, 37, 41;
+  --rgb-secondary-light: 151 165 216;
+  --rgb-secondary-ultra-light: 306 31 97;
+  --rgb-secondary-accent: 235, 47, 100;
+  //
 
   --color-white: #ffffff;
 
@@ -66,10 +66,15 @@
 
   --color-primary-text: white;
 
+  --color-secondary: rgb(var(--rgb-secondary));
+
   --color-overlay-dark: rgb(0 0 0 / 60%);
 
   --color-home-gradient-1: rgba(200, 205, 104, 0.39);
   --color-home-gradient-2: rgba(91, 98, 50, 0.51);
+
+  --color-page-gradient-1: rgba(230, 117, 17, 0.33);
+  --color-page-gradient-2: rgba(9, 28, 20, 0.62);
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);

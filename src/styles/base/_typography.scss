@@ -22,7 +22,6 @@ body {
 
 .text-block {
   &_statement {
-    margin-bottom: calc(var(--page-element-margin) * 0.5);
     border: 2px solid white;
     padding: 2rem;
     text-align: center;
@@ -30,6 +29,7 @@ body {
     line-height: 1.1em;
     backdrop-filter: blur(10px);
     margin: var(--page-element-margin);
+    margin-bottom: calc(var(--page-element-margin) * 0.5);
     @include respond(small) {
     }
     @include respond(phone) {
@@ -38,6 +38,16 @@ body {
     @include respond(webWidthNBeyond) {
       font-size: 4.6rem;
     }
+  }
+  &_note {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: var(--page-element-margin) auto;
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    padding: 4rem;
+    text-align: center;
+    // width: -webkit-fill-available;
   }
 }
 

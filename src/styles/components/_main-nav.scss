@@ -12,7 +12,7 @@ $navItemsLength: length(
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
   transition: width 500ms, height 500ms, bottom 500ms;
-  z-index: 75;
+  z-index: 150;
 
   &_home {
     .main-nav__link {
