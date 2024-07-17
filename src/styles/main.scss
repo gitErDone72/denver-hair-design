@@ -14,8 +14,8 @@
   "layout/page", "layout/page-overlay";
 
 // 5. Components
-@import "components/header", "components/main-nav", "components/footer",
-  "components/thumbnail";
+@import "components/footer", "components/header", "components/main-nav",
+  "components/modal", "components/modal-stylist", "components/thumbnail";
 
 // 6. Page-specific styles
 @import "pages/chair-rental", "pages/gallery", "pages/home", "pages/products",

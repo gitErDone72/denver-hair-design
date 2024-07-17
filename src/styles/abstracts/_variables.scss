@@ -1,4 +1,16 @@
 :root {
+  @media only screen and (min-width: 60rem) {
+    // phone
+    --page-element-margin: 4.9rem;
+  }
+  @media only screen and (min-width: 40rem) {
+    // webWidthNBeyond
+    --header-height: 10rem;
+    --page-container-height: calc(
+      100vh - var(--footer-height) - var(--header-height) -
+        var(--main-nav-height-web)
+    );
+  }
   --header-height: 8.5rem;
   --footer-height: 5rem;
   --wacky-var: 40rem;
@@ -11,23 +23,20 @@
   );
   --collapsed-container-height: calc(var(--hit-zone) * 1.3);
 
-  --page-element-margin: 2.1rem;
+  --page-element-margin: 0.5rem;
+
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 
-  @media only screen and (min-width: 60rem) {
-    --page-element-margin: 4.9rem;
-  }
-
   //
 
+  // PRIMARY COLORS:
   // --color-primary: rgb(107 66 123);
-  --rgb-primary: 196, 143, 191;
+  --rgb-primary: 86 104 159;
   --rgb-primary-dark: 50, 37, 41;
-  --rgb-primary-light: 204 179 214;
+  --rgb-primary-light: 151 165 216;
   --rgb-primary-ultra-light: 306 31 97;
   --rgb-primary-accent: 235, 47, 100;
-  //
 
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
@@ -35,6 +44,14 @@
   --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary-accent: rgb(var(--rgb-primary-accent));
   // --color-primary-gradient:
+
+  //SECONDARY COLORS:
+  --rgb-secondary: 106 38 38;
+  --rgb-secondary-dark: 50, 37, 41;
+  --rgb-secondary-light: 151 165 216;
+  --rgb-secondary-ultra-light: 306 31 97;
+  --rgb-secondary-accent: 235, 47, 100;
+  //
 
   --color-white: #ffffff;
 
@@ -49,10 +66,15 @@
 
   --color-primary-text: white;
 
+  --color-secondary: rgb(var(--rgb-secondary));
+
   --color-overlay-dark: rgb(0 0 0 / 60%);
 
   --color-home-gradient-1: rgba(200, 205, 104, 0.39);
   --color-home-gradient-2: rgba(91, 98, 50, 0.51);
+
+  --color-page-gradient-1: rgba(230, 117, 17, 0.33);
+  --color-page-gradient-2: rgba(9, 28, 20, 0.62);
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);

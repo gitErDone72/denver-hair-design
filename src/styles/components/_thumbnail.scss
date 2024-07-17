@@ -12,38 +12,47 @@
   &__details {
     display: flex;
     justify-content: flex-end;
+    height: calc(var(--hit-zone) * 2);
     backdrop-filter: blur(10px);
-    background-color: var(--color-overlay-dark);
+    background-color: rgb(var(--rgb-primary-dark));
+  }
+
+  &__icon-stack {
+    display: flex;
+    flex-direction: column;
+    width: var(--hit-zone);
   }
 
   &__icon {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex: 0 0 var(--hit-zone);
     width: var(--hit-zone);
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.6em;
-    color: var(--color-white);
+    height: var(--hit-zone);
+    fill: var(--color-primary-light);
+    padding: 0.5em;
+  }
+
+  &__link{
+    display: block;
+    height: var(--hit-zone);
+    width: var(--hit-zone);
   }
 }
 
 .stylist {
   &__name {
     flex: 1 0 auto;
-    padding: 1rem;
+    padding: 1rem 1rem 2.2rem;
     line-height: 1;
-    font-family: "futura-pt";
+    font-family: "League Spartan";
 
     &_first {
       color: var(--color-white);
-      font-size: 3.8rem;
+      font-size: 3rem;
     }
 
     &_last {
-      font: normal normal 2.1rem / 1em "p22-stickley-pro-text", serif;
+      font: normal normal 2.3rem / 0.5em "Neuton", serif;
       color: var(--color-primary-light);
-      padding: 0.5rem 0 0 0.3rem;
     }
   }
 }

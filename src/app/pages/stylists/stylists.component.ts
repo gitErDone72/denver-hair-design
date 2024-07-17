@@ -1,39 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService, ListStylistsQuery, Stylist } from 'src/app/API.service';
+import { ThumbnailComponent } from 'src/app/components/thumbnail/thumbnail.component';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
-import { BookingMethodTypes, SocialMediaTypes } from 'src/app/shared/stylist.model';
+import { BookingMethodType, SocialMediaType, Stylist } from 'src/app/shared/stylist.model';
 
 @Component({
+  standalone: true,
   templateUrl: './stylists.component.html',
-  host: { class: 'page page_type_thumbs-only stylists' }
+  host: { class: 'page page_type_thumbs-only stylists' },
+  imports: [ThumbnailComponent]
 })
 export class StylistsComponent implements OnInit {
   stylists: Stylist[] = [];
-
   thumbnailType: SiteSections = SiteSections.STYLISTS;
 
-  constructor(private api: APIService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.api.ListStylists().then((data: ListStylistsQuery) => {
-    //   this.stylists = data.items as Stylist[];
-    // })
-
-    this.api.CreateStylist({
-      firstName: 'Brittany',
-      lastName: 'Baldry',
-      headShot: 'stylist',
-      socialMedia: SocialMediaTypes.NONE,
-      socialMediaLink: '',
-      bookingMethod: BookingMethodTypes.NONE,
-      bookingLink: '',
-    }).then((data) => {
-      console.log('stylist created: ', data);
-      this.api.ListStylists().then((data: ListStylistsQuery) => {
-        console.log('stylists: ', data);
-      })
-    });
-
 
     this.stylists = [
       {
@@ -41,9 +23,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Brittany',
         lastName: 'Baldry',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -51,9 +33,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Katie',
         lastName: 'Lehman',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -61,9 +43,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Raven',
         lastName: 'Valdez',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.INSTAGRAM,
+        socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -71,9 +53,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Ed',
         lastName: 'Allison',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -81,9 +63,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Joseph',
         lastName: 'Mendez',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.INSTAGRAM,
+        socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -91,9 +73,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Katelynn',
         lastName: 'Fisher',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -101,9 +83,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Edith',
         lastName: 'Olivas',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -111,9 +93,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Annie',
         lastName: 'Armitage',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -121,9 +103,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Naomi',
         lastName: 'Matthias',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.INSTAGRAM,
+        socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -131,9 +113,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Chandlier',
         lastName: 'Fantauzzi',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.INSTAGRAM,
+        socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -141,9 +123,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Elizabeth',
         lastName: 'Deuschle',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.INSTAGRAM,
+        socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodTypes.SQUARE_PERSONAL,
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
@@ -151,9 +133,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Lena',
         lastName: 'Medina',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.NONE,
+        bookingMethod: BookingMethodType.NONE,
         bookingLink: '',
       },
       {
@@ -161,9 +143,9 @@ export class StylistsComponent implements OnInit {
         firstName: 'Dena',
         lastName: 'Sisneros',
         headShot: 'stylist',
-        socialMedia: SocialMediaTypes.NONE,
+        socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodTypes.VAGARO,
+        bookingMethod: BookingMethodType.VAGARO,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
     ] as Stylist[];

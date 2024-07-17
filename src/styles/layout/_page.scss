@@ -3,8 +3,7 @@
   flex-direction: column;
   overflow: auto;
   height: var(--page-container-height);
-  padding: var(--page-element-margin);
-  padding-bottom: (calc(var(--page-element-margin) * 0.2));
+  // padding: var(--page-element-margin);
   &_type {
     &_thumbs-only {
       // padding-top: 0;
@@ -15,7 +14,12 @@
   }
   & > div {
     max-width: 95rem;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
+    // margin: 0 .5rem .5rem
+  }
+  @include respond(webWidthNBeyond) {
+    margin: var(--main-nav-height-web) 0;
+    padding: 0 0 var(--page-element-margin);
   }
 }

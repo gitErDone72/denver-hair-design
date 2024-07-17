@@ -5,7 +5,6 @@ $navItemsLength: length(
 
 .main-nav {
   position: absolute;
-  z-index: 3;
   width: 14rem;
   height: var(--main-nav-height);
   right: 50%;
@@ -13,11 +12,14 @@ $navItemsLength: length(
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
   transition: width 500ms, height 500ms, bottom 500ms;
-  z-index: 4000;
+  z-index: 150;
 
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
+      @include respond(webWidthNBeyond) {
+        background-color: transparent;
+      }
     }
   }
 
@@ -26,7 +28,7 @@ $navItemsLength: length(
     width: 100vw;
     bottom: calc(var(--footer-height));
     transition: width 500ms, height 500ms, bottom 500ms;
-    @include respond(webNBeyond) {
+    @include respond(webWidthNBeyond) {
       height: auto;
       bottom: auto;
     }
@@ -38,52 +40,64 @@ $navItemsLength: length(
   }
 
   &__link {
-    font-family: "futura-pt", sans-serif;
-    font-weight: 800;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
     font-style: normal;
     font-size: 1.9rem;
     text-transform: uppercase;
     @include flexCenter();
     height: var(--hit-zone);
     background-color: var(--color-primary-dark);
-    border-bottom: 2px solid hsla(0, 0%, 100%, 1);
     position: absolute;
     left: 0;
     right: 0;
-    transition: top 250ms;
+    transition: top 250ms, border-bottom 500ms;
 
     @for $i from 0 through $navItemsLength {
       &_#{$i} {
-        z-index: calc(100 - #{$i});
+        z-index: calc(75 - #{$i});
         top: calc(#{$i} * (var(--main-nav-height) / #{$navItemsLength}));
       }
     }
+    @include respond(webWidthNBeyond) {
+      border-bottom: 3px solid transparent;
+    }
 
     &_active {
-      z-index: 101;
+      z-index: 76;
       background-color: var(--color-primary);
+      @include respond(webWidthNBeyond) {
+        background-color: transparent;
+        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
+      }
     }
 
     @include on-event(true) {
       color: var(--color-white);
       text-decoration-line: none;
-      transition: all 250ms;
     }
 
     @include on-event {
       background-color: var(--color-primary);
+      @include respond(webWidthNBeyond) {
+        background-color: transparent;
+        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
+      }
     }
 
     &::selection {
       background-color: transparent;
       color: inherit;
     }
-    @include respond(webNBeyond) {
-      flex: 0 1 auto;
-      position: static;
-    }
 
     @include respond(mobile-to-web) {
+    }
+
+    @include respond(webWidthNBeyond) {
+      flex: 0 1 auto;
+      height: var(--main-nav-height-web);
+      position: static;
+      padding: 0 1.5rem;
     }
   }
 
@@ -91,10 +105,9 @@ $navItemsLength: length(
     top: 0;
     height: var(--collapsed-container-height);
     transition: top 500ms;
-    border-bottom: 0 solid hsla(0, 0%, 100%, 0);
   }
 
-  @include respond(webNBeyond) {
+  @include respond(webWidthNBeyond) {
     top: var(--header-height);
     right: 0;
     bottom: unset;

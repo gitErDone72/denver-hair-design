@@ -33,7 +33,7 @@
 
   &__text {
     margin-left: -6px;
-    font-family: "futura-pt";
+    font-family: "League Spartan";
     line-height: 1;
   }
 
@@ -72,7 +72,8 @@
   }
 
   @include respond(phone) {
-    margin: 0 auto;
+    // margin: 0 auto;
+    justify-content: center;
   }
   &_home {
     background-color: rgba(var(--color-primary-dark), 0);

@@ -1,5 +1,13 @@
 .services {
-  @include backgroundWithImage("/assets/img/pages/services_1.jpg");
+  @include backgroundGradientWithImage(
+    var(--color-page-gradient-1),
+    var(--color-page-gradient-2),
+    "/assets/img/pages/services_1.jpg",
+    cover,
+    center,
+    normal
+  );
+
   &__item {
     line-height: 1;
     margin-bottom: 1rem;

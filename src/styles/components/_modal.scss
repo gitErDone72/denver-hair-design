@@ -1,0 +1,21 @@
+.modal {
+  &__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    padding: 2rem;
+    z-index: 121;
+  }
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary-dark);
+    opacity: 0.85;
+    z-index: 120;
+  }
+}

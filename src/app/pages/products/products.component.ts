@@ -1,75 +1,78 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, ProductType } from 'src/app/shared/product.model';
+import { ThumbnailComponent } from 'src/app/components/thumbnail/thumbnail.component';
+import { IProductBrand, ProductType } from 'src/app/shared/product.model';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
 
 @Component({
+  standalone: true,
   templateUrl: './products.component.html',
-  host: { class: 'page products' }
+  host: { class: 'page products' },
+  imports: [ThumbnailComponent]
 })
 export class ProductsComponent implements OnInit {
   thumbnailType: SiteSections = SiteSections.PRODUCTS;
 
-  allProducts: { brand: string, products: Product[] }[] = [
+  productBrands: IProductBrand[] = [
     {
-      brand: 'Saints & Sinners',
+      brandName: 'Oribe',
       products: [
         {
           id: 1,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.SHAMPOO,
-          name: 'Saints & Sinners Shampoo 1',
+          name: 'Oribe Shampoo 1',
           image: 'product'
         },
         {
           id: 2,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.CONDITIONER,
-          name: 'Saints & Sinners Conditioner 1',
+          name: 'Oribe Conditioner 1',
           image: 'product'
         },
         {
           id: 3,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.CONDITIONER,
-          name: 'Saints & Sinners Conditioner 2',
+          name: 'Oribe Conditioner 2',
           image: 'product'
         },
         {
           id: 4,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.SHAMPOO,
-          name: 'Saints & Sinners Shampoo 2',
+          name: 'Oribe Shampoo 2',
           image: 'product'
         },
         {
           id: 5,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.STYLING_PRODUCT,
-          name: 'Saints & Sinners Styling Product 1',
+          name: 'Oribe Styling Product 1',
           image: 'product'
         },
         {
           id: 6,
-          brand: 'Saints & Sinners',
+          brand: 'Oribe',
           type: ProductType.SHAMPOO,
-          name: 'Saints & Sinners Shampoo 3',
+          name: 'Oribe Shampoo 3',
           image: 'product'
         }
       ]
     },
     {
-      brand: 'Redken',
+      brandName: 'Kevin Murphy',
       products: [
         {
           id: 7,
-          brand: 'Redken',
+          brand: 'Kevin Murphy',
           type: ProductType.SHAMPOO,
-          name: `Redken Shampoo`,
+          name: `Kevin Murphy Shampoo`,
           image: 'product'
         },
         {
           id: 8,
-          brand: 'Redken',
+          brand: 'Kevin Murphy',
           type: ProductType.CONDITIONER,
           name: `Redken Conditioner`,
           image: 'product'
@@ -77,39 +80,58 @@ export class ProductsComponent implements OnInit {
       ]
     },
     {
-      brand: 'Colura',
+      brandName: 'IGK',
       products: [
         {
           id: 9,
-          brand: 'Colura',
+          brand: 'IGK',
           type: ProductType.STYLIST_SUPPLY,
           name: `Coloura Color`,
           image: 'product'
         },
         {
           id: 10,
-          brand: 'Colura',
+          brand: 'IGK',
           type: ProductType.STYLIST_SUPPLY,
-          name: `Colura Color 2`,
+          name: `IGK Color 2`,
           image: 'product'
         }
       ]
     },
     {
-      brand: 'IGK',
+      brandName: 'Amika',
       products: [
         {
           id: 11,
-          brand: 'IGK',
+          brand: 'Amika',
           type: ProductType.SHAMPOO,
-          name: `IGK Shampoo`,
+          name: `Amika Shampoo`,
           image: 'product'
         },
         {
           id: 12,
-          brand: 'IGK',
+          brand: 'Amika',
           type: ProductType.SHAMPOO,
-          name: `IGK Shampoo 2`,
+          name: `Amika Shampoo 2`,
+          image: 'product'
+        }
+      ]
+    },
+    {
+      brandName: 'Voce',
+      products: [
+        {
+          id: 13,
+          brand: 'Voce',
+          type: ProductType.SHAMPOO,
+          name: `Voce Shampoo`,
+          image: 'product'
+        },
+        {
+          id: 14,
+          brand: 'Voce',
+          type: ProductType.SHAMPOO,
+          name: `Voce Shampoo 2`,
           image: 'product'
         }
       ]
