@@ -1,4 +1,6 @@
 .modal {
+  position: relative;
+  z-index: 2000;
   &__content {
     position: fixed;
     top: 50%;

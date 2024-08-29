@@ -2,17 +2,30 @@
   Maybe we want to say something about our awesome stylists?</div> -->
 <div class="grid grid_stylists">
   @for (stylist of stylists; track stylist) {
-  <dhd-thumbnail [type]="thumbnailType" [image]="stylist.headShot">
+  <dhd-thumbnail
+    [type]="thumbnailType"
+    [image]="stylist.headShot"
+    (click)="openStylistModal(stylist.id)"
+  >
     <div class="stylist__name">
-      <div class="stylist__name_first">{{stylist.firstName}}</div>
-      <div class="stylist__name_last">{{stylist.lastName}}</div>
+      <div class="stylist__name_first">{{ stylist.firstName }}</div>
+      <div class="stylist__name_last">{{ stylist.lastName }}</div>
     </div>
     <div class="thumbnail__icon-stack" icon="info-square">
       @if (stylist.socialMedia !== "NONE") {
-      <a class="thumbnail__link" [href]="stylist.socialMediaLink" target="_blank">
+      <a
+        class="thumbnail__link"
+        [href]="stylist.socialMediaLink"
+        target="_blank"
+      >
         <svg class="thumbnail__icon">
-          <use [attr.xlink:href]='"../../../assets/img/sprite.svg#" + stylist.socialMedia.toLowerCase() + "-icon"'>
-          </use>
+          <use
+            [attr.xlink:href]="
+              '../../../assets/img/sprite.svg#' +
+              stylist.socialMedia.toLowerCase() +
+              '-icon'
+            "
+          ></use>
         </svg>
       </a>
       }
