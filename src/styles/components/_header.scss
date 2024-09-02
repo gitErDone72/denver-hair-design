@@ -17,7 +17,7 @@
     height: var(--header-height);
     width: 100vw;
     fill:  var(--color-white);
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       padding: 1.5rem var(--spacing-main) var(--spacing-main);
     }
   }

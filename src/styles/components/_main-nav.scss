@@ -17,7 +17,7 @@ $navItemsLength: length(
   &_home {
     .main-nav__link {
       background-color: var(--color-primary);
-      @include respond(webWidthNBeyond) {
+      @include respond(beyondMobileWidth) {
         background-color: transparent;
       }
     }
@@ -28,7 +28,7 @@ $navItemsLength: length(
     width: 100vw;
     bottom: calc(var(--footer-height));
     transition: width 500ms, height 500ms, bottom 500ms;
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       height: auto;
       bottom: auto;
     }
@@ -59,14 +59,14 @@ $navItemsLength: length(
         top: calc(#{$i} * (var(--main-nav-height) / #{$navItemsLength}));
       }
     }
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       border-bottom: 3px solid transparent;
     }
 
     &_active {
       z-index: 76;
       background-color: var(--color-primary);
-      @include respond(webWidthNBeyond) {
+      @include respond(beyondMobileWidth) {
         background-color: transparent;
         border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
       }
@@ -79,7 +79,7 @@ $navItemsLength: length(
 
     @include on-event {
       background-color: var(--color-primary);
-      @include respond(webWidthNBeyond) {
+      @include respond(beyondMobileWidth) {
         background-color: transparent;
         border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
       }
@@ -93,7 +93,7 @@ $navItemsLength: length(
     @include respond(mobile-to-web) {
     }
 
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       flex: 0 1 auto;
       height: var(--main-nav-height-web);
       position: static;
@@ -107,7 +107,7 @@ $navItemsLength: length(
     transition: top 500ms;
   }
 
-  @include respond(webWidthNBeyond) {
+  @include respond(beyondMobileWidth) {
     top: var(--header-height);
     right: 0;
     bottom: unset;

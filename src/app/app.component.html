@@ -5,10 +5,9 @@
   </svg>
 </header>
 <div class="page-container" [@routeAnimations]="getAnimationPageName()">
-  <dhd-page-overlay [pageName]="pageName"
-    [pageBlurredForMobileNavigation]="pageBlurredForMobileNavigation && !isHomePage"></dhd-page-overlay>
+  <mobile-nav-blur [pageName]="pageName" [isMoblieNavOpen]="isMoblieNavOpen && !isHomePage"></mobile-nav-blur>
   <router-outlet></router-outlet>
 </div>
-<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [isWebWidthNBeyond]="isWebWidthNBeyond" [expanded]="isHomePage"
+<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [isBeyondMobileWidth]="isBeyondMobileWidth" [expanded]="isHomePage"
   (expandedChange)="togglePageForMobileNavigation($event)"></dhd-main-nav>
 <dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>

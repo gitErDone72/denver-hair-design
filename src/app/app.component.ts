@@ -3,7 +3,7 @@ import { ActivatedRoute, ChildrenOutletContexts, NavigationEnd, OutletContext, R
 import { filter } from 'rxjs';
 import { slideInAnimation } from './shared/animations';
 import { convertStringToCamelCase } from './shared/utilities';
-import { PageOverlayComponent } from './components/page-overlay/page-overlay.component';
+import { MobileNavBlur } from './components/mobile-nav-blur/mobile-nav-blur.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AsyncPipe, CommonModule } from '@angular/common';
@@ -18,7 +18,7 @@ import { IModalOptions, IModalStylistOptions } from './components/modal/modal-op
   selector: 'app-root',
   templateUrl: './app.component.html',
   host: { class: 'app-wrapper' },
-  imports: [RouterModule, CommonModule, PageOverlayComponent, MainNavComponent, FooterComponent, ErrorPageComponent, AsyncPipe],
+  imports: [RouterModule, CommonModule, MobileNavBlur, MainNavComponent, FooterComponent, ErrorPageComponent, AsyncPipe],
   animations: [
     slideInAnimation
   ]
@@ -30,9 +30,9 @@ export class AppComponent implements OnInit {
   @HostBinding('class.app-page-name') overlayClassByPage: string = '/';
   routeContext: OutletContext | null = null;
   isHomePage: boolean = true;
-  isWebWidthNBeyond: boolean = false;
+  isBeyondMobileWidth: boolean = false;
   pageName: string = '/';
-  pageBlurredForMobileNavigation: boolean = false;
+  isMoblieNavOpen: boolean = false;
   constructor(private router: Router, private contexts: ChildrenOutletContexts, private _activatedRoute: ActivatedRoute, private modalService: ModalService) { }
 
   ngOnInit(): void {
@@ -48,15 +48,19 @@ export class AppComponent implements OnInit {
   }
 
   togglePageForMobileNavigation($event: boolean) {
-    this.pageBlurredForMobileNavigation = $event;
+    this.isMoblieNavOpen = $event;
   }
 
+  // TODO: consider renaming this to something more relevant to navigation change
+  // what else does this govern / relate to?
   isWebWidthAndBeyond(): void {
-    this.isWebWidthNBeyond = window.innerWidth >= environment.webWidthNBeyond;
-    if (this.isWebWidthNBeyond) {
-      this.pageBlurredForMobileNavigation = false;
+    this.isBeyondMobileWidth = window.innerWidth >= environment.beyondMobileWidth;
+    if (this.isBeyondMobileWidth) {
+      this.isMoblieNavOpen = false;
     }
   }
+
+  // just testing these from button in template...
   openModalView() {
     this.modalService.open(ModalStylistComponent, { data: 'Just a string for now...' } as IModalStylistOptions);
   }

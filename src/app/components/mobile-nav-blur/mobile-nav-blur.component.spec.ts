@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PageOverlayComponent } from './page-overlay.component';
+import { MobileNavBlur } from './mobile-nav-blur.component';
 
 describe('PageOverlayComponent', () => {
-  let component: PageOverlayComponent;
-  let fixture: ComponentFixture<PageOverlayComponent>;
+  let component: MobileNavBlur;
+  let fixture: ComponentFixture<MobileNavBlur>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageOverlayComponent ]
+      declarations: [ MobileNavBlur ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageOverlayComponent);
+    fixture = TestBed.createComponent(MobileNavBlur);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

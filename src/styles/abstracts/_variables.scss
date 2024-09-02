@@ -1,15 +1,20 @@
 :root {
+  @media only screen and (min-width: 700px) {
+    --grid-gap: 1.5rem;
+  }
   @media only screen and (min-width: 60rem) {
     // phone
     --page-element-margin: 4.9rem;
+    --full-page-column-span: col-3 / col-10;
   }
   @media only screen and (min-width: 40rem) {
-    // webWidthNBeyond
+    // beyondMobileWidth
     --header-height: 10rem;
     --page-container-height: calc(
       100vh - var(--footer-height) - var(--header-height) -
         var(--main-nav-height-web)
     );
+
   }
   --header-height: 8.5rem;
   --footer-height: 5rem;
@@ -25,6 +30,9 @@
 
   --page-element-margin: 0.5rem;
 
+  --full-page-column-span: col-1 / col-12;
+
+  --grid-gap: 0.5rem;
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 

@@ -2,11 +2,12 @@
   display: grid;
   grid-auto-columns: minmax(100px, 400px);
   grid-template-rows: auto;
-  gap: var(--spacing-main);
+  gap: var(--grid-gap);
   grid-template-columns: repeat(1, 1fr);
 
   &_stylists {
     min-width: 18rem;
+    grid-column: var(--full-page-column-span);
     @include respond(tab-land) {
       margin: initial;
     }
@@ -16,7 +17,7 @@
     @include respond(phone) {
       grid-template-columns: repeat(3, 1fr);
     }
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       grid-template-columns: repeat(3, 1fr);
       margin: var(--page-element-margin) auto;
     }
@@ -25,7 +26,7 @@
   &_product-brands {
     grid-template-columns: repeat(5, 1fr);
     gap: 3rem;
-    @include respond(webWidthNBeyond) {
+    @include respond(beyondMobileWidth) {
       // width: -webkit-fill-available;
     }
   }
@@ -34,20 +35,22 @@
   }
 
   &_services {
-    grid-template-columns: repeat(1, minmax(24rem, 29rem));
-    margin: var(--spacing-main) auto;
+    grid-column: var(--full-page-column-span);
+    grid-template-columns: repeat(1, minmax(24rem, auto));
+    margin: var(--spacing-main);
     min-width: 18rem;
     // @include respond(tab-land) {
-      //   margin: 12rem
-      // }
-      @include respond(small) {
-        // grid-template-columns: repeat(2, 1fr);
-      }
-      @include respond(phone) {
-        margin: var(--page-element-margin) auto;
-      }
-      @include respond(webWidthNBeyond) {
+    //   margin: 12rem
+    // }
+    @include respond(small) {
+      // grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      margin: var(--page-element-margin) auto;
       grid-template-columns: repeat(3, 1fr);
+    }
+    @include respond(beyondMobileWidth) {
+      margin: var(--spacing-main) auto;
     }
   }
 }

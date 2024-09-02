@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MainNavComponent implements OnInit {
   @Input() expanded: boolean = true;
-  @Input() isWebWidthNBeyond: boolean = false;
+  @Input() isBeyondMobileWidth: boolean = false;
   @Output() expandedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @HostBinding('class.main-nav_collapsed') get collapsed(): boolean {
@@ -28,7 +28,7 @@ export class MainNavComponent implements OnInit {
   }
 
   toggleExpanded(): void {
-    if (!this.isWebWidthNBeyond) {
+    if (!this.isBeyondMobileWidth) {
       this.expanded = !this.expanded;
       this.expandedChange.emit(this.expanded);
     }
