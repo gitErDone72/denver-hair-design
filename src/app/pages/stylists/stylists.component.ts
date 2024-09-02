@@ -1,22 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { IModalOptions } from 'src/app/components/modal/modal-options.model';
+import { ModalStylistComponent } from 'src/app/components/modal/modal-stylist/modal-stylist.component';
 import { ThumbnailComponent } from 'src/app/components/thumbnail/thumbnail.component';
+import { ModalService } from 'src/app/services/modal.service';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
-import { BookingMethodType, SocialMediaType, Stylist } from 'src/app/shared/stylist.model';
+import {
+  BookingMethodType,
+  SocialMediaType,
+  Stylist,
+} from 'src/app/shared/stylist.model';
 
 @Component({
   standalone: true,
   templateUrl: './stylists.component.html',
   host: { class: 'page page_type_thumbs-only stylists' },
-  imports: [ThumbnailComponent]
+  imports: [ThumbnailComponent],
 })
 export class StylistsComponent implements OnInit {
   stylists: Stylist[] = [];
   thumbnailType: SiteSections = SiteSections.STYLISTS;
 
-  constructor() { }
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
-
     this.stylists = [
       {
         id: '1',
@@ -149,5 +155,11 @@ export class StylistsComponent implements OnInit {
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
     ] as Stylist[];
+  }
+
+  openStylistModal(stylistId: string) {
+    this.modalService.open(ModalStylistComponent, {
+      data: stylistId,
+    } as IModalOptions);
   }
 }
