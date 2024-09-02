@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { environment } from 'src/environments/environment.development';
+import { ModalService } from './services/modal.service';
 
 @Component({
   standalone: true,
@@ -52,8 +53,8 @@ export class AppComponent implements OnInit {
     this.routeContext = this.contexts.getContext('primary');
     return this.routeContext !== null
       ? convertStringToCamelCase(
-          this.routeContext?.route?.snapshot?.data?.['animation']
-        )
+        this.routeContext?.route?.snapshot?.data?.['animation']
+      )
       : '/';
   }
 

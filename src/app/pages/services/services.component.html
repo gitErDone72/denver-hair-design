@@ -1,8 +1,8 @@
 <div class="grid grid_services">
   @for (serviceType of allServices; track serviceType; let i = $index) {
-    <div class="grid__section">
-      <div class="grid__section-title">{{serviceType.type}}</div>
-      <div class="grid__section-content">
+    <div class="text-block_section">
+      <div class="text-block_title">{{serviceType.type}}</div>
+      <div class="text-block_content">
         @for (service of allServices[i].salonServices; track service) {
           <div class="services__item">
             <div class="services__name">{{service.name}}</div>

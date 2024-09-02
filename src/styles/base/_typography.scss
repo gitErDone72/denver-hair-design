@@ -22,7 +22,7 @@ body {
 }
 
 .text-block {
-  &__title {
+  &_title {
     font-family: "League Spartan";
     font-weight: 300;
     font-style: normal;
@@ -34,7 +34,7 @@ body {
     margin: 0.6rem 0 2rem;
     border-bottom: 1px solid hsl(0deg 0% 100% / 37%);
   }
-  &__statement {
+  &_statement {
     grid-column: 1 / -1;
     border: 2px solid white;
     padding: 2rem;
@@ -53,7 +53,7 @@ body {
       font-size: 4.6rem;
     }
   }
-  &__note {
+  &_note {
     grid-column: 1 / -1;
     font-size: 1.6rem;
     font-weight: 300;
@@ -73,11 +73,7 @@ body {
       background-color: red;
     }
   }
-  &__section {
-    // grid-column: 1 / -1;
-    // padding: 2rem;
-    // margin: var(--page-element-margin);
-    // margin-bottom: calc(var(--page-element-margin) * 0.5);
+  &_section {
     display: flex;
     flex-direction: column;
     font-family: "Neuton";
@@ -97,43 +93,15 @@ body {
     @include respond(beyondMobileWidth) {
     }
   }
-  &__section-content {
-
+  &_section-content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .grid {
-  // &__section {
-  //   display: flex;
-  //   flex-direction: column;
-  //   font-family: "Neuton";
-  //   font-size: 2.3rem;
-  //   padding: 2.5rem;
-  //   background: var(--color-overlay-dark);
-  //   backdrop-filter: blur(10px);
-  //   text-align: center;
-  //   &:last-child {
-  //     margin-bottom: 0;
-  //   }
-  // }
-  // &__section-title {
-  //   font-family: "League Spartan";
-  //   font-weight: 300;
-  //   font-style: normal;
-  //   text-transform: uppercase;
-  //   text-align: center;
-  //   font-size: 2.5rem;
-  //   line-height: 1;
-  //   padding-bottom: 0.5rem;
-  //   margin: 0.6rem 0 2rem;
-  //   border-bottom: 1px solid hsl(0deg 0% 100% / 37%);
-  // }
-  // &__section-content {
-    // flex: 1 0 auto;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-  // }
   &_column {
     width: calc(100vw / 6 + 1px);
   }
