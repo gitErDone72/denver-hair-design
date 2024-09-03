@@ -72,7 +72,7 @@ $navItemsLength: length(
     position: absolute;
     left: 0;
     right: 0;
-    // transition: top 250ms, border-bottom 500ms;
+    transition: top 500ms, border-bottom 500ms;
 
     @for $i from 0 through $navItemsLength {
       &_#{$i} {
