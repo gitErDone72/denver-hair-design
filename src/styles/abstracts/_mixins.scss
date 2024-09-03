@@ -82,12 +82,12 @@
 
 @mixin respond($breakpoint) {
   @if $breakpoint == small {
-    @media only screen and (min-width: 22rem) {
+    @media only screen and (min-width: 220px) {
       @content;
     }
   }
   @if $breakpoint == phone {
-    @media only screen and (min-width: 60rem) {
+    @media only screen and (min-width: 600px) {
       @content;
     }
     //600px

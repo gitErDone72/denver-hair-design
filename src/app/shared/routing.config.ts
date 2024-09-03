@@ -58,15 +58,15 @@ export const DhdNavRoutes: DhdRoute[] = [
             showInNav: true
         }
     },
-    {
-        path: 'gallery',
-        component: GalleryComponent,
-        pathMatch: 'full',
-        data: {
-            buttonLabel: 'Gallery', routerLink: '/gallery', animation: 'galleryPage',
-            showInNav: true
-        }
-    },
+    // {
+    //     path: 'gallery',
+    //     component: GalleryComponent,
+    //     pathMatch: 'full',
+    //     data: {
+    //         buttonLabel: 'Gallery', routerLink: '/gallery', animation: 'galleryPage',
+    //         showInNav: true
+    //     }
+    // },
     {
         path: 'chair-rental',
         component: ChairRentalComponent,

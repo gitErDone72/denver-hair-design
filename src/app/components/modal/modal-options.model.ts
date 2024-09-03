@@ -1,4 +1,7 @@
+import { Stylist } from "src/app/shared/stylist.model";
+
 export interface IModalOptions {
+  data?: any;
   animations?: {
     modal?: {
       enter?: string;
@@ -20,5 +23,5 @@ export interface IModalOptions {
 }
 
 export interface IModalStylistOptions extends IModalOptions {
-  data: string;
+  stylist: Stylist;
 }

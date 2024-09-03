@@ -157,9 +157,9 @@ export class StylistsComponent implements OnInit {
     ] as Stylist[];
   }
 
-  openStylistModal(stylistId: string) {
+  openStylistModal(stylist: Stylist): void {
     this.modalService.open(ModalStylistComponent, {
-      data: stylistId,
+      data: stylist,
     } as IModalOptions);
   }
 }

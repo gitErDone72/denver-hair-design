@@ -88,7 +88,6 @@ body {
     @include respond(small) {
     }
     @include respond(phone) {
-      margin: var(--page-element-margin) auto;
     }
     @include respond(beyondMobileWidth) {
     }

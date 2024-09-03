@@ -66,8 +66,7 @@ export class AppComponent implements OnInit {
   // what else does this govern / relate to?
   isWebWidthAndBeyond(): void {
     this.isBeyondMobileWidth = window.innerWidth >= environment.beyondMobileWidth;
-    if (this.isBeyondMobileWidth) {
-      this.isMoblieNavOpen = false;
-    }
+    // this.isMoblieNavOpen = !this.isBeyondMobileWidth;
+    this.isMoblieNavOpen = false;
   }
 }

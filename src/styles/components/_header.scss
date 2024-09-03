@@ -9,7 +9,7 @@
 
   &_home {
     transform: translateY(calc(var(--header-height) * -1));
-    background-color: rgba(var(--color-primary-dark), 0.0);
+    // background-color: rgba(var(--color-primary-dark), 0.0);
   }
 
   &__logo {

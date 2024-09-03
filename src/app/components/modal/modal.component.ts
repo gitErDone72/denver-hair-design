@@ -52,17 +52,17 @@ export class ModalComponent implements AfterViewInit {
 
   addOptions() {
     // Applying desired styles
-    this.modal.nativeElement.style.minWidth =
-      this.options?.size?.minWidth || 'auto';
-    this.modal.nativeElement.style.width = this.options?.size?.width || 'auto';
-    this.modal.nativeElement.style.maxWidth =
-      this.options?.size?.maxWidth || 'auto';
-    this.modal.nativeElement.style.minHeight =
-      this.options?.size?.minHeight || 'auto';
-    this.modal.nativeElement.style.height =
-      this.options?.size?.height || 'auto';
-    this.modal.nativeElement.style.maxHeight =
-      this.options?.size?.maxHeight || 'auto';
+    // this.modal.nativeElement.style.minWidth =
+    //   this.options?.size?.minWidth || 'auto';
+    // this.modal.nativeElement.style.width = this.options?.size?.width || 'auto';
+    // this.modal.nativeElement.style.maxWidth =
+    //   this.options?.size?.maxWidth || 'auto';
+    // this.modal.nativeElement.style.minHeight =
+    //   this.options?.size?.minHeight || 'auto';
+    // this.modal.nativeElement.style.height =
+    //   this.options?.size?.height || 'auto';
+    // this.modal.nativeElement.style.maxHeight =
+    //   this.options?.size?.maxHeight || 'auto';
 
     // Storing ending animation in variables
     this.modalLeaveAnimation = this.options?.animations?.modal?.leave || '';

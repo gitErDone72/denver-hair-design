@@ -25,7 +25,7 @@ export class ModalService {
       environmentInjector: this.injector,
     });
 
-    // create the modal component and project the instance of the desired component in the ng-content
+    // create the modal component and project the instance of the desired component into ng-content
     this.newModalComponent = createComponent(ModalComponent, {
       environmentInjector: this.injector,
       projectableNodes: [[newComponent.location.nativeElement]],

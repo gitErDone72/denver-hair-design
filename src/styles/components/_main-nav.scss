@@ -1,4 +1,5 @@
-$navItems: "Services", "Stylists", "Products", "Gallery", "Chair Rental";
+// $navItems: "Services", "Stylists", "Products", "Gallery", "Chair Rental";
+$navItems: "Services", "Stylists", "Products", "Chair Rental";
 $navItemsLength: length(
   $list: $navItems,
 );
@@ -11,8 +12,25 @@ $navItemsLength: length(
   max-width: 95rem;
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
-  transition: width 500ms, height 500ms, bottom 500ms;
+  // transition: width 500ms, height 500ms, bottom 500ms;
+  transition: all 500ms;
   z-index: 150;
+
+  @include respond(beyondMobileWidth) {
+    top: var(--header-height);
+    right: 0;
+    bottom: unset;
+    left: 0;
+    width: 100vw;
+    max-width: none;
+    transform: none;
+    height: var(--main-nav-height-web);
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-primary-dark);
+    justify-content: center;
+    // transition: none;
+  }
 
   &_home {
     .main-nav__link {
@@ -21,13 +39,16 @@ $navItemsLength: length(
         background-color: transparent;
       }
     }
+    @include respond(beyondMobileWidth) {
+      top: 0;
+    }
   }
 
   &_collapsed {
     height: var(--collapsed-container-height);
     width: 100vw;
     bottom: calc(var(--footer-height));
-    transition: width 500ms, height 500ms, bottom 500ms;
+    // transition: width 500ms, height 500ms, bottom 500ms;
     @include respond(beyondMobileWidth) {
       height: auto;
       bottom: auto;
@@ -36,7 +57,7 @@ $navItemsLength: length(
 
   &_collapsed &_active {
     top: 0;
-    transition: top 250ms;
+    // transition: top 250ms;
   }
 
   &__link {
@@ -51,7 +72,7 @@ $navItemsLength: length(
     position: absolute;
     left: 0;
     right: 0;
-    transition: top 250ms, border-bottom 500ms;
+    // transition: top 250ms, border-bottom 500ms;
 
     @for $i from 0 through $navItemsLength {
       &_#{$i} {
@@ -104,22 +125,6 @@ $navItemsLength: length(
   &_collapsed &__link {
     top: 0;
     height: var(--collapsed-container-height);
-    transition: top 500ms;
-  }
-
-  @include respond(beyondMobileWidth) {
-    top: var(--header-height);
-    right: 0;
-    bottom: unset;
-    left: 0;
-    width: 100vw;
-    max-width: none;
-    transform: none;
-    height: var(--main-nav-height-web);
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-primary-dark);
-    justify-content: center;
-    transition: none;
+    // transition: top 500ms;
   }
 }
