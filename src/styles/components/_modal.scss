@@ -1,6 +1,22 @@
 .modal {
   position: relative;
   z-index: 2000;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    background-color: red;
+    height: var(--hit-zone);
+    display: flex;
+    align-items: center;
+  }
+  &__close-button {
+    width: var(--hit-zone);
+    height: var(--hit-zone);
+    background-color: green;
+  }
+
   &__content {
     position: fixed;
     top: 50%;

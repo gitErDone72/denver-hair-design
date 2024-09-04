@@ -3,10 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'dhd-modal-map',
   standalone: true,
-  imports: [],
   templateUrl: './modal-map.component.html',
-  styleUrl: './modal-map.component.scss'
+  host: { class: 'modal-map' },
 })
-export class ModalMapComponent {
-
-}
+export class ModalMapComponent {}
