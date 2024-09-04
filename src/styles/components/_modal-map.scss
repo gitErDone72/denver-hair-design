@@ -1,0 +1,13 @@
+.modal-map {
+  display: block;
+  position: relative;
+  height: 100%;
+
+  &__embed {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+}
