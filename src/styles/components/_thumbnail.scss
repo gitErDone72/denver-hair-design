@@ -24,14 +24,10 @@
   }
 
   &__icon {
-    flex: 0 0 var(--hit-zone);
-    width: var(--hit-zone);
-    height: var(--hit-zone);
-    fill: var(--color-primary-light);
-    padding: 0.5em;
+    @include iconDoIt(var(--color-primary-light), 0.5em, $fontSize: unset);
   }
 
-  &__link{
+  &__link {
     display: block;
     height: var(--hit-zone);
     width: var(--hit-zone);

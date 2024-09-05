@@ -126,3 +126,12 @@
     //1800
   }
 }
+
+@mixin iconDoIt($fill: var(--color-white), $padding: 1.2em, $fontSize: 9px) {
+  flex: 0 0 var(--hit-zone);
+  width: var(--hit-zone);
+  height: var(--hit-zone);
+  font-size: $fontSize;
+  padding: $padding;
+  fill: $fill;
+}

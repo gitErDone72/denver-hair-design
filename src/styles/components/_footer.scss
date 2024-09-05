@@ -64,12 +64,7 @@
   }
 
   &__icon {
-    flex: 0 0 var(--hit-zone);
-    width: var(--hit-zone);
-    height: var(--hit-zone);
-    fill: var(--color-white);
-    font-size: 9px;
-    padding: 1.2em;
+    @include iconDoIt();
   }
 
   @include respond(phone) {

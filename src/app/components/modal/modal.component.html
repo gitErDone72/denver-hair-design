@@ -1,9 +1,11 @@
 <div class="modal__wrapper">
   <div class="modal__header">
-    <div class="modal__close-button">x</div>
+    <svg class="modal__close-button" (click)="onClose()">
+      <use xlink:href="../../../assets/img/sprite.svg#instagram-icon"></use>
+    </svg>
   </div>
-  <section class="modal__content" #modal>
+  <section class="modal__content" #modalContent>
     <ng-content></ng-content>
   </section>
-  <div class="modal__backdrop" (click)="onClose()" #overlay></div>
 </div>
+<div class="modal__backdrop" (click)="onClose()" #overlay></div>

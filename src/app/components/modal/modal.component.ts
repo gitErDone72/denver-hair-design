@@ -1,18 +1,24 @@
-import { AfterViewInit, ViewChild, ElementRef, HostListener, Component } from "@angular/core";
-import { Observable, fromEvent, zip } from "rxjs";
-import { ModalService } from "src/app/services/modal.service";
-import { IModalOptions } from "./modal-options.model";
-import { CommonModule } from "@angular/common";
+import {
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+  Component,
+} from '@angular/core';
+import { Observable, fromEvent, zip } from 'rxjs';
+import { ModalService } from 'src/app/services/modal.service';
+import { IModalOptions } from './modal-options.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'dhd-modal',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './modal.component.html',
-  host: { class: 'modal' }
+  host: { class: 'modal' },
 })
 export class ModalComponent implements AfterViewInit {
-  @ViewChild('modal') modal!: ElementRef<HTMLDivElement>;
+  @ViewChild('modalContent') modalContent!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
   @HostListener('document:keydown.escape')
   onEscape() {
@@ -29,8 +35,7 @@ export class ModalComponent implements AfterViewInit {
   constructor(
     private modalService: ModalService,
     private element: ElementRef
-  ) { }
-
+  ) {}
 
   onClose() {
     // closing modal when clicking on the overlay
@@ -44,7 +49,7 @@ export class ModalComponent implements AfterViewInit {
   }
 
   addEnterAnimations() {
-    this.modal.nativeElement.style.animation =
+    this.modalContent.nativeElement.style.animation =
       this.options?.animations?.modal?.enter || '';
     this.overlay.nativeElement.style.animation =
       this.options?.animations?.overlay?.enter || '';
@@ -68,7 +73,9 @@ export class ModalComponent implements AfterViewInit {
     this.modalLeaveAnimation = this.options?.animations?.modal?.leave || '';
     this.overlayLeaveAnimation = this.options?.animations?.overlay?.leave || '';
     // Adding an animationend event listener to know when animations ends
-    this.modalAnimationEnd$ = this.animationendEvent(this.modal.nativeElement);
+    this.modalAnimationEnd$ = this.animationendEvent(
+      this.modalContent.nativeElement
+    );
     this.overlayAnimationEnd$ = this.animationendEvent(
       this.overlay.nativeElement
     );
@@ -88,7 +95,7 @@ export class ModalComponent implements AfterViewInit {
   }
 
   close() {
-    this.modal.nativeElement.style.animation = this.modalLeaveAnimation;
+    this.modalContent.nativeElement.style.animation = this.modalLeaveAnimation;
     this.overlay.nativeElement.style.animation = this.overlayLeaveAnimation;
 
     // Goal here is to clean up the DOM to not keep unnecessary <app-modal> element
@@ -104,7 +111,7 @@ export class ModalComponent implements AfterViewInit {
 
     // Remove element if not animated
     this.removeElementIfNoAnimation(
-      this.modal.nativeElement,
+      this.modalContent.nativeElement,
       this.modalLeaveAnimation
     );
     this.removeElementIfNoAnimation(
