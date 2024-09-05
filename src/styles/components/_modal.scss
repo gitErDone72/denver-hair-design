@@ -1,39 +1,85 @@
+// .modal {
+//   position: relative;
+//   z-index: 2000;
+//   &__wrapper {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   &__header {
+//     background-color: red;
+//     height: var(--hit-zone);
+//     display: flex;
+//     align-items: center;
+//   }
+//   &__close-button {
+//     width: var(--hit-zone);
+//     height: var(--hit-zone);
+//     background-color: green;
+//   }
+
+//   &__content {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     background-color: var(--color-white);
+//     padding: 2rem;
+//     z-index: 121;
+//     height: calc(100vh - (var(--spacing-main) * 4));
+//     width: calc(100vw - (var(--spacing-main) * 4));
+//   }
+//   &__backdrop {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: var(--color-primary-dark);
+//     opacity: 0.85;
+//     z-index: 120;
+//   }
+// }
+
 .modal {
-  position: relative;
-  z-index: 2000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
   &__wrapper {
     display: flex;
     flex-direction: column;
+    height: calc(100vh - var(--spacing-main) * 4);
+    width: calc(100vw - var(--spacing-main) * 4);
   }
   &__header {
-    background-color: red;
+    flex: 0 0 auto;
     height: var(--hit-zone);
     display: flex;
     align-items: center;
+    z-index: 125;
+    background-color: var(--color-white);
   }
   &__close-button {
     width: var(--hit-zone);
     height: var(--hit-zone);
-    background-color: green;
   }
-
   &__content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-white);
+    flex: 1 1 auto;
     padding: 2rem;
-    z-index: 121;
-    height: calc(100vh - (var(--spacing-main) * 4));
-    width: calc(100vw - (var(--spacing-main) * 4));
+    z-index: 125;
+    background-color: var(--color-white);
   }
   &__backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--color-primary-dark);
     opacity: 0.85;
     z-index: 120;
