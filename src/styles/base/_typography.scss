@@ -79,8 +79,7 @@ body {
     font-family: "Neuton";
     font-size: 2.3rem;
     padding: 2.5rem;
-    background: var(--color-overlay-dark);
-    backdrop-filter: blur(10px);
+    @include darkBlurBackground();
     text-align: center;
     &:last-child {
       margin-bottom: 0;

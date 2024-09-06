@@ -1,21 +1,22 @@
 .header {
   flex: 0 0 var(--header-height);
   height: var(--header-height);
-  background-color: rgb(var(--rgb-primary-dark));
   transform: translateY(0);
   transition: transform 500ms;
   z-index: 50;
+  text-align: center;
   cursor: pointer;
+  background-color: var(--color-primary-ultra-dark);
 
   &_home {
     transform: translateY(calc(var(--header-height) * -1));
-    // background-color: rgba(var(--color-primary-dark), 0.0);
   }
 
   &__logo {
     padding: var(--spacing-main);
     height: var(--header-height);
     width: 100vw;
+    max-width: 40rem;
     fill:  var(--color-white);
     @include respond(beyondMobileWidth) {
       padding: 1.5rem var(--spacing-main) var(--spacing-main);

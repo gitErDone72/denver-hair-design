@@ -52,7 +52,8 @@
       grid-template-columns: repeat(3, 1fr);
     }
     @include respond(beyondMobileWidth) {
-      margin: var(--spacing-main) auto;
+      // margin: var(--spacing-main) auto;
+      margin: var(--page-element-margin) 0;
     }
   }
 }

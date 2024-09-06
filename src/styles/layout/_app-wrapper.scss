@@ -5,9 +5,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  @include backgroundGradientWithImage(
-    var(--color-home-gradient-1),
-    var(--color-home-gradient-2),
+  @include backgroundWithImage(
     "/assets/img/pages/home_1.jpg"
   );
+  background-blend-mode: luminosity;
+  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-ultra-dark);
 }

@@ -6,13 +6,12 @@ $navItemsLength: length(
 
 .main-nav {
   position: absolute;
-  width: 14rem;
+  width: 18rem;
   height: var(--main-nav-height);
   right: 50%;
   max-width: 95rem;
   bottom: calc(var(--footer-height) + 1rem);
   transform: translateX(50%);
-  // transition: width 500ms, height 500ms, bottom 500ms;
   transition: all 500ms;
   z-index: 150;
 
@@ -27,9 +26,8 @@ $navItemsLength: length(
     height: var(--main-nav-height-web);
     display: flex;
     flex-direction: row;
-    background-color: var(--color-primary-dark);
     justify-content: center;
-    // transition: none;
+    background-color: var(--color-primary-ultra-dark);
   }
 
   &_home {
@@ -48,7 +46,6 @@ $navItemsLength: length(
     height: var(--collapsed-container-height);
     width: 100vw;
     bottom: calc(var(--footer-height));
-    // transition: width 500ms, height 500ms, bottom 500ms;
     @include respond(beyondMobileWidth) {
       height: auto;
       bottom: auto;
@@ -57,7 +54,6 @@ $navItemsLength: length(
 
   &_collapsed &_active {
     top: 0;
-    // transition: top 250ms;
   }
 
   &__link {
@@ -80,16 +76,28 @@ $navItemsLength: length(
         top: calc(#{$i} * (var(--main-nav-height) / #{$navItemsLength}));
       }
     }
-    @include respond(beyondMobileWidth) {
-      border-bottom: 3px solid transparent;
-    }
 
     &_active {
       z-index: 76;
       background-color: var(--color-primary);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
-        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
+        border-bottom: 3px solid var(--color-primary-light);
+      }
+    }
+
+    &_our-span {
+      display: inline-block;
+      margin: 0;
+      opacity: 0;
+      width: 0;
+      transform: scale(0);
+      transition: all 250ms;
+      .main-nav__link_active & {
+        margin: 0 0.6rem 0 0;
+        opacity: 1;
+        width: auto;
+        transform: scale(1);
       }
     }
 
@@ -119,12 +127,14 @@ $navItemsLength: length(
       height: var(--main-nav-height-web);
       position: static;
       padding: 0 1.5rem;
+      border-bottom: 3px solid transparent;
+      background-color: transparent;
+      color: var(--color-primary-light);
     }
   }
 
   &_collapsed &__link {
     top: 0;
     height: var(--collapsed-container-height);
-    // transition: top 500ms;
   }
 }

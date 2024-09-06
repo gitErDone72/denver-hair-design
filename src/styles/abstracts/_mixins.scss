@@ -128,10 +128,17 @@
 }
 
 @mixin iconDoIt($fill: var(--color-white), $padding: 1.2em, $fontSize: 9px) {
+  @include flexCenter();
   flex: 0 0 var(--hit-zone);
   width: var(--hit-zone);
   height: var(--hit-zone);
   font-size: $fontSize;
   padding: $padding;
   fill: $fill;
+}
+
+@mixin darkBlurBackground() {
+  // 0.74
+  background-color: rgba(var(--rgb-primary-ultra-dark), 0.7);
+  backdrop-filter: blur(10px);
 }

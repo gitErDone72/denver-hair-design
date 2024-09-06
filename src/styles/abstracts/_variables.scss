@@ -3,16 +3,16 @@
     --header-height: 10rem;
     --page-container-height: calc(
       100vh - var(--footer-height) - var(--header-height) -
-      var(--main-nav-height-web)
-      );
-    }
-    @media only screen and (min-width: 640px) {
-      // beyondMobileWidth
-      --spacing-main: 2rem;
-      --page-element-margin: 4.9rem;
-      --full-page-column-span: col-3 / col-10;
-      --grid-gap: 1.5rem;
-    }
+        var(--main-nav-height-web)
+    );
+  }
+  @media only screen and (min-width: 640px) {
+    // beyondMobileWidth
+    --spacing-main: 2rem;
+    --page-element-margin: 4.9rem;
+    --full-page-column-span: col-3 / col-10;
+    --grid-gap: 1.5rem;
+  }
 
   --header-height: 8.5rem;
   --footer-height: 5rem;
@@ -35,22 +35,26 @@
   --spacing-main: 0.5rem;
   --hit-zone: 4.5rem;
 
-  //
-
   // PRIMARY COLORS:
   // --color-primary: rgb(107 66 123);
   --rgb-primary: 86 104 159;
-  --rgb-primary-dark: 50, 37, 41;
+  --rgb-primary-dark: 78 91 136;
+  --rgb-primary-ultra-dark: 18, 26, 52;
   --rgb-primary-light: 151 165 216;
   --rgb-primary-ultra-light: 306 31 97;
   --rgb-primary-accent: 235, 47, 100;
+
+  --rgb-primary-purple: 102 78 136;
+  --rgb-primary-seafoam: 78 136 136;
+  --rgb-primary-slate: 78 111 136;
 
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
   --color-primary-ultra-light: rgb(var(--rgb-primary-ultra-light));
   --color-primary-dark: rgb(var(--rgb-primary-dark));
-  --color-primary-accent: rgb(var(--rgb-primary-accent));
-  // --color-primary-gradient:
+  --color-primary-dark-transp: rgb(var(--rgb-primary-dark) / 70%);
+  --color-primary-ultra-dark: rgb(var(--rgb-primary-ultra-dark));
+  --color-primary-ultra-dark-transp: rgb(var(--rgb-primary-ultra-dark) / 70%);
 
   //SECONDARY COLORS:
   --rgb-secondary: 106 38 38;
@@ -59,35 +63,15 @@
   --rgb-secondary-ultra-light: 306 31 97;
   --rgb-secondary-accent: 235, 47, 100;
   //
+  --color-secondary: rgb(var(--rgb-secondary));
 
   --color-white: #ffffff;
 
-  --color-grey-light-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
-  --color-grey-light-3: #f0eeee;
-  --color-grey-light-4: #ccc;
-
-  --color-grey-dark-1: #333;
-  --color-grey-dark-2: #777;
-  --color-grey-dark-3: rgb(51, 63, 62);
-
-  --color-primary-text: white;
-
-  --color-secondary: rgb(var(--rgb-secondary));
-
-  --color-overlay-dark: rgb(0 0 0 / 60%);
+  //
 
   --color-home-gradient-1: rgba(200, 205, 104, 0.39);
   --color-home-gradient-2: rgba(91, 98, 50, 0.51);
 
   --color-page-gradient-1: rgba(230, 117, 17, 0.33);
   --color-page-gradient-2: rgba(9, 28, 20, 0.62);
-
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
-
-  --line: 1px solid var(--color-grey-light-2);
-  --max-width: 1180px; // Container's maximum width
-
-  --base-url: "/assets/";
 }
