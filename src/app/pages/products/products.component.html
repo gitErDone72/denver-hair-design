@@ -5,8 +5,7 @@
 </div>
 <div class="grid grid_product-brands">
   @for (brand of productBrands; track brand) {
-  <dhd-thumbnail [type]="thumbnailType" [image]="brand.brandName">
-    <!-- {{brand.brandName}} -->
+  <dhd-thumbnail [type]="thumbnailType" [image]="brand.brandName" [hasDetails]="false">
   </dhd-thumbnail>
   }
 </div>

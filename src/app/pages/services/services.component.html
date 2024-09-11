@@ -1,7 +1,7 @@
 <div class="grid grid_services">
   @for (serviceType of allServices; track serviceType; let i = $index) {
     <div class="text-block_section">
-      <div class="text-block_title">{{serviceType.type}}</div>
+      <div class="text_title text-block_title">{{serviceType.type}}</div>
       <div class="text-block_content">
         @for (service of allServices[i].salonServices; track service) {
           <div class="services__item">

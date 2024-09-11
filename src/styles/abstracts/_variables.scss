@@ -1,3 +1,16 @@
+/* Color Theme Swatches in HSLA */
+$Web-Site-1-hsla: hsla(205, 30, 47, 1);
+$Web-Site-2-hsla: hsla(244, 30, 47, 1);
+$Web-Site-3-hsla: hsla(
+  224,
+  30,
+  47,
+  1
+); // primary from https://color.adobe.com/mythemes
+$Web-Site-4-hsla: hsla(187, 30, 47, 1);
+$Web-Site-5-hsla: hsla(263, 30, 47, 1);
+$Web-Site-6-hsla: hsla(224, 9, 58, 1);
+
 :root {
   @media only screen and (min-width: 400px) {
     --header-height: 10rem;
@@ -37,10 +50,10 @@
 
   // PRIMARY COLORS:
   // --color-primary: rgb(107 66 123);
-  --rgb-primary: 86 104 159;
+  --rgb-primary: 85 104 158;
   --rgb-primary-dark: 78 91 136;
   --rgb-primary-ultra-dark: 18, 26, 52;
-  --rgb-primary-light: 151 165 216;
+  --rgb-primary-light: 90 110 175;
   --rgb-primary-ultra-light: 306 31 97;
   --rgb-primary-accent: 235, 47, 100;
 
@@ -55,9 +68,14 @@
   --color-primary-dark-transp: rgb(var(--rgb-primary-dark) / 70%);
   --color-primary-ultra-dark: rgb(var(--rgb-primary-ultra-dark));
   --color-primary-ultra-dark-transp: rgb(var(--rgb-primary-ultra-dark) / 70%);
+  //
+  --color-primary-purple: rgb(var(--rgb-primary-purple));
 
   //SECONDARY COLORS:
-  --rgb-secondary: 106 38 38;
+  --rgb-secondary: 85 149 158;
+  --rgb-secondary-dark: 50 37 41;
+  // these below are not valid yet...
+  // need to base them on the above ^^^
   --rgb-secondary-dark: 50, 37, 41;
   --rgb-secondary-light: 151 165 216;
   --rgb-secondary-ultra-light: 306 31 97;

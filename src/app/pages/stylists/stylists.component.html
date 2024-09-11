@@ -5,7 +5,8 @@
   <dhd-thumbnail
     [type]="thumbnailType"
     [image]="stylist.headShot"
-    (click)="openStylistModal(stylist)"
+    [isImageClickable]="true"
+    (thumbnailClicked)="openStylistModal(stylist)"
   >
     <div class="stylist__name">
       <div class="stylist__name_first">{{ stylist.firstName }}</div>
@@ -28,6 +29,8 @@
           ></use>
         </svg>
       </a>
+      }
+      @if (stylist.phone !== "NONE") {
       }
     </div>
   </dhd-thumbnail>

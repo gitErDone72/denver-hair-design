@@ -32,7 +32,8 @@ $navItemsLength: length(
 
   &_home {
     .main-nav__link {
-      background-color: var(--color-primary);
+      // @include darkBlurBackground(0.5);
+      // background-color: var(--color-primary-purple);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
       }
@@ -77,32 +78,8 @@ $navItemsLength: length(
       }
     }
 
-    &_active {
-      z-index: 76;
-      background-color: var(--color-primary);
-      @include respond(beyondMobileWidth) {
-        background-color: transparent;
-        border-bottom: 3px solid var(--color-primary-light);
-      }
-    }
-
-    &_our-span {
-      display: inline-block;
-      margin: 0;
-      opacity: 0;
-      width: 0;
-      transform: scale(0);
-      transition: all 250ms;
-      .main-nav__link_active & {
-        margin: 0 0.6rem 0 0;
-        opacity: 1;
-        width: auto;
-        transform: scale(1);
-      }
-    }
-
     @include on-event(true) {
-      color: var(--color-white);
+      color: inherit;
       text-decoration-line: none;
     }
 
@@ -110,7 +87,7 @@ $navItemsLength: length(
       background-color: var(--color-primary);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
-        border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
+        border-bottom: 3px solid var(--color-white);
       }
     }
 
@@ -130,6 +107,16 @@ $navItemsLength: length(
       border-bottom: 3px solid transparent;
       background-color: transparent;
       color: var(--color-primary-light);
+    }
+
+    &_active {
+      z-index: 76;
+      background-color: var(--color-primary);
+      @include respond(beyondMobileWidth) {
+        color: var(--color-white);
+        background-color: transparent;
+        border-bottom: 3px solid var(--color-white);
+      }
     }
   }
 

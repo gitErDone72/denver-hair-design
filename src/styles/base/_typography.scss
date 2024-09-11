@@ -19,17 +19,19 @@ body {
 }
 // look into using the free limerick_serial (google it) - looks a lot like futura
 .text {
-}
-
-.text-block {
   &_title {
     font-family: "League Spartan";
     font-weight: 300;
     font-style: normal;
     text-transform: uppercase;
-    text-align: center;
     font-size: 2.5rem;
     line-height: 1;
+  }
+}
+
+.text-block {
+  &_title {
+    text-align: center;
     padding-bottom: 0.5rem;
     margin: 0.6rem 0 2rem;
     border-bottom: 1px solid hsl(0deg 0% 100% / 37%);

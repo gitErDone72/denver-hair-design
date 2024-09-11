@@ -25,6 +25,35 @@ export class StylistsComponent implements OnInit {
   ngOnInit(): void {
     this.stylists = [
       {
+        id: '5',
+        firstName: 'Joseph',
+        lastName: 'Mendez',
+        headShot: 'joseph-mendez',
+        socialMedia: SocialMediaType.INSTAGRAM,
+        socialMediaLink: 'https://www.instagram.com/krista_snider/',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+      },
+      {
+        id: '14',
+        firstName: 'Elysia',
+        lastName: 'Izquierdo',
+        headShot: 'elysia-izquierdo',
+        socialMedia: SocialMediaType.NONE,
+        socialMediaLink: '',
+        bookingMethod: BookingMethodType.NONE,
+        bookingLink: '',
+      },
+      {
+        id: '16',
+        firstName: 'Krista',
+        lastName: 'Snider',
+        headShot: 'krista-snider',
+        socialMedia: SocialMediaType.NONE,
+        socialMediaLink: '',
+        bookingMethod: BookingMethodType.NONE,
+      },
+      {
         id: '1',
         firstName: 'Brittany',
         lastName: 'Baldry',
@@ -65,16 +94,6 @@ export class StylistsComponent implements OnInit {
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
       {
-        id: '5',
-        firstName: 'Joseph',
-        lastName: 'Mendez',
-        headShot: 'stylist',
-        socialMedia: SocialMediaType.INSTAGRAM,
-        socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
-      },
-      {
         id: '6',
         firstName: 'Katelynn',
         lastName: 'Fisher',
@@ -108,7 +127,7 @@ export class StylistsComponent implements OnInit {
         id: '9',
         firstName: 'Naomi',
         lastName: 'Matthias',
-        headShot: 'stylist',
+        headShot: 'naomi-matthias',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
         bookingMethod: BookingMethodType.SQUARE_PERSONAL,
@@ -154,6 +173,17 @@ export class StylistsComponent implements OnInit {
         bookingMethod: BookingMethodType.VAGARO,
         bookingLink: 'https://www.vagaro.com/kristasnider',
       },
+      {
+        id: '15',
+        firstName: 'Mallory',
+        lastName: 'Jade',
+        headShot: 'stylist',
+        socialMedia: SocialMediaType.INSTAGRAM,
+        socialMediaLink: 'https://www.instagram.com/krista_snider/',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+      }
+
     ] as Stylist[];
   }
 

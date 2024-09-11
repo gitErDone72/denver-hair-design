@@ -13,27 +13,39 @@
     flex-direction: column;
     height: calc(100vh - var(--spacing-main) * 4);
     width: calc(100vw - var(--spacing-main) * 4);
+    background-color: var(--color-primary-dark-transp);
     z-index: 125;
-    background-color: var(--color-white);
     @include respond(phone) {
       max-height: calc(100vh - var(--spacing-main) * 2);
       max-width: calc(100vw - var(--spacing-main) * 2);
     }
   }
   &__header {
+    order: 2;
     flex: 0 0 auto;
     height: var(--hit-zone);
     display: flex;
     align-items: center;
+    justify-content: center;
+    @include respond(phone) {
+      order: 0;
+      justify-content: flex-start;
+    }
   }
   &__close-button {
     cursor: pointer;
     @include iconDoIt(var(--color-primary-dark));
-    padding: 2rem 0 0 2rem;
+    width: 100%;
+    flex: 0 0 auto;
+    padding: 1.3rem 1rem 0.7rem;
+    fill: var(--color-white);
+    @include respond(phone) {
+      flex: 0 0 var(--hit-zone);
+      width: var(--hit-zone);
+    }
   }
   &__content {
     flex: 1 1 auto;
-    padding: 1rem 2rem 2rem
   }
   &__backdrop {
     position: fixed;
@@ -41,8 +53,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-primary-dark);
-    opacity: 0.85;
+    @include darkBlurBackground(0.8);
     z-index: 120;
   }
 }

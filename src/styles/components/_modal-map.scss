@@ -1,12 +1,52 @@
 .modal-map {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   height: 100%;
+  .text_title {
+    flex: 0 0 auto;
+    padding: 1.2em 0 0 3rem;
+  }
   &__embed {
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
+    flex: 1 0 auto;
+  }
+  &__notes {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1;
+    font-size: 1.5rem;
+    @include respond(phone) {
+      flex: 0 0 auto;
+      flex-direction: row;
+      margin: 2rem 0;
+      margin-right: 20rem;
+      padding: 1rem 0 1rem 3rem;
+    }
+  }
+  &__notes-left {
+    flex: 0.03 0 auto;
+    padding: 3rem 2rem 0;
+    @include respond(phone) {
+      padding: 3rem 0;
+      padding-right: calc(var(--spacing-main) * 2);
+      border-right: 1px solid hsl(0deg 0% 100% / 30%);
+    }
+  }
+  &__notes-right {
+    flex: 1 1 auto;
+    padding: 2rem;
+    font-size: 1.2em;
+    @include respond(phone) {
+      padding: 3rem;
+      font-size: 1.5em;
+    }
+  }
+  &__location-info {
+    font-size: 1.6em;
+    line-height: 1.2;
+    @include respond(phone) {
+      font-size: 1.8em;
+    }
   }
 }

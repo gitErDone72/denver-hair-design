@@ -2,12 +2,11 @@
   color: var(--color-white);
   flex: 0 0 var(--footer-height);
   display: flex;
-  background-color: var(--color-primary-dark-transp);
   align-items: center;
   z-index: 51;
   padding: 0 0.5rem;
   transition: background-color 250ms;
-  // @include transition("background-color", 250);
+  @include darkBlurBackground();
 
   &__contact-info {
     flex: 1 0 1px;
@@ -25,15 +24,15 @@
   }
 
   &__button {
-    // background-color: green;
     display: flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 2rem;
     cursor: pointer;
   }
 
   &__text {
-    margin-left: -6px;
+    margin-left: 0;
+    padding-top: 0.6rem;
     font-family: "League Spartan";
     line-height: 1;
   }
@@ -65,6 +64,11 @@
 
   &__icon {
     @include iconDoIt();
+    &_map {
+      padding: 1.2em 0;
+      width: 3.6rem;
+      flex: 0 0 auto;
+    }
   }
 
   @include respond(phone) {
@@ -72,6 +76,6 @@
     justify-content: center;
   }
   &_home {
-    background-color: rgba(var(--color-primary-dark), 0);
+    @include darkBlurBackground(0.5);
   }
 }

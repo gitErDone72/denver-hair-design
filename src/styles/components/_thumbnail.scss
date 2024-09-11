@@ -7,6 +7,9 @@
       display: block;
       width: 100%;
     }
+    &_clickable {
+      cursor: pointer;
+    }
   }
 
   &__details {

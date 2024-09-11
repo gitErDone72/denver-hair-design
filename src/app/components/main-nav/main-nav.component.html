@@ -1,11 +1,6 @@
 @for (navItem of navItems; track navItem; ; let i = $index) {
-<a [class]="'main-nav__link main-nav__link_'+i" routerLinkActive="main-nav__link_active"
-  [routerLink]="navItem.routerLink" (click)="toggleExpanded()">
-  <span class="main-nav__link_our-span">
-    @if (navItem.buttonLabel !== "Chair Rental") {our}
-  </span>
-  <span style="display: inline-block;">
+<a [class]="'main-nav__link main-nav__link_'+i" [routerLink]="navItem.routerLink" routerLinkActive="main-nav__link_active"
+  (click)="toggleExpanded()">
     {{navItem.buttonLabel}}
-  </span>
 </a>
 }

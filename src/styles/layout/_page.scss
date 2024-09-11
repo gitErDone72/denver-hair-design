@@ -1,10 +1,9 @@
 .page {
   display: grid;
-  // flex-direction: column;
+  gap: var(--spacing-main);
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas:
     'col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12';
-
   overflow: auto;
   height: var(--page-container-height);
   // padding: var(--page-element-margin);

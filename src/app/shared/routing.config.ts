@@ -36,7 +36,7 @@ export const DhdNavRoutes: DhdRoute[] = [
         component: StylistsComponent,
         pathMatch: 'full',
         data: {
-            buttonLabel: 'Stylists', routerLink: '/stylists', animation: 'stylistsPage',
+            buttonLabel: 'Our Stylists', routerLink: '/stylists', animation: 'stylistsPage',
             showInNav: true
         }
     },
@@ -58,15 +58,15 @@ export const DhdNavRoutes: DhdRoute[] = [
             showInNav: true
         }
     },
-    // {
-    //     path: 'gallery',
-    //     component: GalleryComponent,
-    //     pathMatch: 'full',
-    //     data: {
-    //         buttonLabel: 'Gallery', routerLink: '/gallery', animation: 'galleryPage',
-    //         showInNav: true
-    //     }
-    // },
+    {
+        path: 'gallery',
+        component: GalleryComponent,
+        pathMatch: 'full',
+        data: {
+            buttonLabel: 'Gallery', routerLink: '/gallery', animation: 'galleryPage',
+            showInNav: false
+        }
+    },
     {
         path: 'chair-rental',
         component: ChairRentalComponent,

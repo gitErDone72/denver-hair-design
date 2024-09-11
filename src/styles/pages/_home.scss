@@ -1,6 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   height: calc(
     100vh -
@@ -16,7 +17,8 @@
     fill: var(--color-white);
     max-height: 30rem;
     margin: 0 auto;
-    padding: 0 0 1rem;
+    padding: .5rem;
+    @include darkBlurBackground(0.5);
   }
   @include respond(beyondMobileWidth) {
     justify-content: center;
