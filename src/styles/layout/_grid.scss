@@ -1,59 +1,38 @@
-.grid {
-  display: grid;
-  // grid-auto-columns: minmax(100px, 400px);
-  grid-template-rows: auto;
-  gap: var(--grid-gap);
-  grid-template-columns: repeat(1, 1fr);
-
-  &_stylists {
-    // min-width: 18rem;
+.page_subgrid {
+    display: grid;
+    // grid-auto-columns: minmax(100px, 400px);
+    grid-template-rows: subgrid;
+    grid-template-columns: subgrid;
     grid-column: var(--full-page-column-span);
-    @include respond(tab-land) {
-      margin: initial;
-    }
-    @include respond(small) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    // @include respond(phone) {
-    //   grid-template-columns: repeat(3, 1fr);
-    // }
-    @include respond(beyondMobileWidth) {
-      margin: var(--page-element-margin) 0;
-    }
-    @include respond(tab-port) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
 
-  &_product-brands {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 3rem;
-    @include respond(beyondMobileWidth) {
-      // width: -webkit-fill-available;
-    }
-  }
+  // &_stylists {
+  //   // min-width: 18rem;
+  //   @include respond(tab-land) {
+  //     margin: initial;
+  //   }
 
-  &_gallery {
-  }
+  // }
+
+  // &_product-brands {
+  //   grid-template-columns: repeat(5, 1fr);
+  //   gap: 3rem;
+  //   @include respond(beyondMobileWidth) {
+  //     // width: -webkit-fill-available;
+  //   }
+  // }
+
+  // &_gallery {
+  // }
 
   &_services {
     grid-column: var(--full-page-column-span);
-    grid-template-columns: repeat(1, minmax(24rem, auto));
+    // grid-template-columns: repeat(1, minmax(24rem, auto));
     margin: var(--spacing-main);
     min-width: 18rem;
-    // @include respond(tab-land) {
-    //   margin: 12rem
-    // }
-    @include respond(small) {
-      // grid-template-columns: repeat(2, 1fr);
-    }
+
     @include respond(phone) {
       margin: var(--page-element-margin) auto;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @include respond(beyondMobileWidth) {
-      // margin: var(--spacing-main) auto;
-      margin: var(--page-element-margin) 0;
+      grid-template-columns: subgrid;
     }
   }
 }

@@ -26,7 +26,7 @@
   }
 
   &__icon {
-    @include iconDoIt(var(--color-primary-light), 0.5em, $fontSize: unset);
+    @include iconDoIt(var(--color-primary-ultra-light), 0.5em, $fontSize: unset);
   }
 
   &__link {
@@ -50,7 +50,7 @@
 
     &_last {
       font: normal normal 2.3rem / 0.5em "Neuton", serif;
-      color: var(--color-primary-light);
+      color: var(--color-primary-ultra-light);
     }
   }
 }

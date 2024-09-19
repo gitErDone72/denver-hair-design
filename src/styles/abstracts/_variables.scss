@@ -23,7 +23,7 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
     // beyondMobileWidth
     --spacing-main: 2rem;
     --page-element-margin: 4.9rem;
-    --full-page-column-span: col-3 / col-10;
+    // --full-page-column-span: col-3 / col-10;
     --grid-gap: 1.5rem;
   }
 
@@ -42,7 +42,7 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
   --page-element-margin: 0.5rem;
 
-  --full-page-column-span: col-1 / col-12;
+  --full-page-column-span: col-1 / -1;
 
   --grid-gap: 0.5rem;
   --spacing-main: 0.5rem;
@@ -54,7 +54,7 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   --rgb-primary-dark: 78 91 136;
   --rgb-primary-ultra-dark: 18, 26, 52;
   --rgb-primary-light: 90 110 175;
-  --rgb-primary-ultra-light: 306 31 97;
+  --rgb-primary-ultra-light: 133 149 204;
   --rgb-primary-accent: 235, 47, 100;
 
   --rgb-primary-purple: 102 78 136;
