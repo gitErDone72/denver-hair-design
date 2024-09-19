@@ -29,7 +29,8 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
   --header-height: 8.5rem;
   --footer-height: 5rem;
-  --wacky-var: 40rem;
+  --page-width-max: 120rem;
+  --page-width-min: 18rem;
 
   // multiply by number of nav items (currently 4 without "gallery")
   --main-nav-height: calc((var(--hit-zone) * 4) + 20px);

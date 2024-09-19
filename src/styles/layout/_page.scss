@@ -1,36 +1,27 @@
 .page {
   display: grid;
-  gap: var(--grid-gap);
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
-  overflow: auto;
+  gap: var(--grid-gap);
   height: var(--page-container-height);
-  // padding: var(--page-element-margin);
+  overflow: auto;
+  margin: 0 var(--spacing-main);
+  padding: var(--spacing-main) 0;
+  min-width: var(--page-width-min);
+  max-width: var(--page-width-max);
 
-  // &.stylists {
-  //   padding: 0;
-  // }
-  & > div {
-    // max-width: 95rem;
-    // margin-left: auto;
-    // margin-right: auto;
-    // margin: 0 .5rem .5rem
+  @include respond(phone) {
+    background-color: red;
   }
+
   @include respond(beyondMobileWidth) {
-    margin: var(--main-nav-height-web) 0;
-    padding: 0 0 var(--page-element-margin);
+    background-color: green;
+    margin: 0 auto;
   }
   &__subgrid {
     display: grid;
-    gap: var(--grid-gap);
     grid-template-columns: subgrid;
     grid-column: var(--full-page-column-span);
-
-    margin: var(--spacing-main);
-    min-width: 18rem;
-
-    @include respond(phone) {
-      margin: var(--page-element-margin) auto;
-    }
+    gap: var(--grid-gap);
   }
 }
