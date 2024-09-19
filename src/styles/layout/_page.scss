@@ -2,16 +2,11 @@
   display: grid;
   gap: var(--grid-gap);
   grid-template-columns: repeat(12, 1fr);
-  grid-template-areas:
-    'col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12';
+  grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
   overflow: auto;
   height: var(--page-container-height);
   // padding: var(--page-element-margin);
-  &_type {
-    &_thumbs-only {
-      // padding-top: 0;
-    }
-  }
+
   // &.stylists {
   //   padding: 0;
   // }
@@ -24,5 +19,18 @@
   @include respond(beyondMobileWidth) {
     margin: var(--main-nav-height-web) 0;
     padding: 0 0 var(--page-element-margin);
+  }
+  &__subgrid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: subgrid;
+    grid-column: var(--full-page-column-span);
+
+    margin: var(--spacing-main);
+    min-width: 18rem;
+
+    @include respond(phone) {
+      margin: var(--page-element-margin) auto;
+    }
   }
 }

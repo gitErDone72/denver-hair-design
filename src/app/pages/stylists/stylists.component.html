@@ -1,6 +1,6 @@
 <!-- <div class="text-block text-block_statement">
   Maybe we want to say something about our awesome stylists?</div> -->
-<div class="page_subgrid">
+<div class="page__subgrid">
   @for (stylist of stylists; track stylist) {
   <dhd-thumbnail
     [type]="thumbnailType"
@@ -29,9 +29,7 @@
           ></use>
         </svg>
       </a>
-      }
-      @if (stylist.phone !== "NONE") {
-      }
+      } @if (stylist.phone !== "NONE") { }
     </div>
   </dhd-thumbnail>
   }

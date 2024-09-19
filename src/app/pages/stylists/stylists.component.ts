@@ -13,7 +13,7 @@ import {
 @Component({
   standalone: true,
   templateUrl: './stylists.component.html',
-  host: { class: 'page page_type_thumbs-only stylists' },
+  host: { class: 'page stylists' },
   imports: [ThumbnailComponent],
 })
 export class StylistsComponent implements OnInit {
@@ -182,8 +182,7 @@ export class StylistsComponent implements OnInit {
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
         bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         bookingLink: 'https://www.vagaro.com/kristasnider',
-      }
-
+      },
     ] as Stylist[];
   }
 

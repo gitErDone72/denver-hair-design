@@ -1,3 +1,6 @@
 .stylists {
-  padding: 0;
+  .thumbnail {
+    grid-column: span 4;
+    grid-row: auto;
+  }
 }

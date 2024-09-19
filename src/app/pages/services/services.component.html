@@ -1,15 +1,15 @@
-<div class="page_subgrid">
+<div class="page__subgrid">
   @for (serviceType of allServices; track serviceType; let i = $index) {
-    <div class="text-block_section">
-      <div class="text_title text-block_title">{{serviceType.type}}</div>
-      <div class="text-block_content">
-        @for (service of allServices[i].salonServices; track service) {
-          <div class="services__item">
-            <div class="services__name">{{service.name}}</div>
-          </div>
-        }
+  <div class="text-block_section">
+    <div class="text_title text-block_title">{{ serviceType.type }}</div>
+    <div class="text-block_content">
+      @for (service of allServices[i].salonServices; track service) {
+      <div class="services__item">
+        <div class="services__name">{{ service.name }}</div>
       </div>
+      }
     </div>
+  </div>
   }
 </div>
 <div class="text-block text-block_note">
