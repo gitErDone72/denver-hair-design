@@ -2,5 +2,12 @@
   .thumbnail {
     grid-column: span 4;
     grid-row: auto;
+    @include respond(phone) {
+      grid-column: span 2;
+    }
+    @include respond(beyondMobileWidth) {
+      grid-column: span 3;
+    }
   }
 }
+

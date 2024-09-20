@@ -32,7 +32,7 @@
     flex: 0 1 auto;
     color: var(--color-primary-light);
   }
-  @include respond(webWidthNBeyond) {
+  @include respond(beyondMobileWidth) {
     justify-content: center;
   }
 }

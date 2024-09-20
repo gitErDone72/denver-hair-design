@@ -21,10 +21,6 @@ body {
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
   background-color: var(--color-primary-dark);
-
-  @include respond(tab-port) {
-    padding: 0;
-  }
 }
 
 ::selection {

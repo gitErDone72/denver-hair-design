@@ -81,20 +81,8 @@
 // 1em = 16px
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == small {
-    @media only screen and (min-width: 220px) {
-      @content;
-    }
-  }
   @if $breakpoint == phone {
     @media only screen and (min-width: 600px) {
-      @content;
-    }
-    //600px
-  }
-
-  @if $breakpoint == mobile-to-web {
-    @media (0 <= width <= 600px) {
       @content;
     }
   }
@@ -103,27 +91,6 @@
     @media only screen and (min-width: 640px) {
       @content;
     }
-  }
-
-  @if $breakpoint == tab-port {
-    @media only screen and (min-width: 900px) {
-      @content;
-    }
-    //900px
-  }
-
-  @if $breakpoint == tab-land {
-    @media only screen and (min-width: 1200px) {
-      @content;
-    }
-    //1200px
-  }
-
-  @if $breakpoint == big-desktop {
-    @media only screen and (max-width: 1800px) {
-      @content;
-    }
-    //1800
   }
 }
 

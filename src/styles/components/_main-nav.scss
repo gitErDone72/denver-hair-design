@@ -96,9 +96,6 @@ $navItemsLength: length(
       color: inherit;
     }
 
-    @include respond(mobile-to-web) {
-    }
-
     @include respond(beyondMobileWidth) {
       flex: 0 1 auto;
       height: var(--main-nav-height-web);

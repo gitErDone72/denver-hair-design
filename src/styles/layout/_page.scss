@@ -5,10 +5,10 @@
   gap: var(--grid-gap);
   height: var(--page-container-height);
   overflow: auto;
-  margin: 0 var(--spacing-main);
+  // margin: 0 var(--spacing-main);
   padding: var(--spacing-main) 0;
-  min-width: var(--page-width-min);
-  max-width: var(--page-width-max);
+  // min-width: var(--page-width-min);
+  // max-width: var(--page-width-max);
 
   @include respond(phone) {
     background-color: red;
@@ -16,7 +16,7 @@
 
   @include respond(beyondMobileWidth) {
     background-color: green;
-    margin: 0 auto;
+    // margin: 0 auto;
   }
   &__subgrid {
     display: grid;

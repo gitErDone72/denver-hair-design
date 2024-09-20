@@ -46,8 +46,7 @@ body {
     backdrop-filter: blur(10px);
     margin: var(--page-element-margin);
     margin-bottom: calc(var(--page-element-margin) * 0.5);
-    @include respond(small) {
-    }
+
     @include respond(phone) {
       margin: var(--page-element-margin) auto;
     }
@@ -65,9 +64,7 @@ body {
     padding: 4rem;
     text-align: center;
     // width: -webkit-fill-available;
-    @include respond(small) {
-      background-color: purple;
-    }
+
     @include respond(phone) {
       background-color: yellow;
     }
@@ -86,8 +83,7 @@ body {
     &:last-child {
       margin-bottom: 0;
     }
-    @include respond(small) {
-    }
+
     @include respond(phone) {
     }
     @include respond(beyondMobileWidth) {
