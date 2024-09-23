@@ -1,3 +1,6 @@
+// modal stuff from https://medium.com/@greenFlag/how-to-easily-and-quickly-create-a-modal-in-angular-a2f82d5c11f6
+// let's upgrade this to https://www.npmjs.com/package/ngx-modal-ease as a follow on item
+
 import { ApplicationRef, ComponentRef, EnvironmentInjector, Injectable, Type, createComponent } from '@angular/core';
 import { IModalOptions } from '../components/modal/modal-options.model';
 import { ModalComponent } from '../components/modal/modal.component';
