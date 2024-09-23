@@ -20,7 +20,6 @@ export class ModalService {
   }
 
   private openWithComponent(component: Type<unknown>) {
-    // create the desired component, the content of the modal box
     const newComponent = createComponent(component, {
       environmentInjector: this.injector,
     });

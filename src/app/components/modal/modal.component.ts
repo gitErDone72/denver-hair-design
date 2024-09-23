@@ -1,3 +1,4 @@
+// from https://github.com/GreenFlag31/modal/tree/main/src/app
 import {
   AfterViewInit,
   ViewChild,
@@ -7,7 +8,7 @@ import {
 } from '@angular/core';
 import { Observable, fromEvent, zip } from 'rxjs';
 import { ModalService } from 'src/app/services/modal.service';
-import { IModalOptions } from './modal-options.model';
+import { IModalOptions, IModalStylistOptions } from './modal-options.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -24,7 +25,7 @@ export class ModalComponent implements AfterViewInit {
   onEscape() {
     this.modalService.close();
   }
-  options!: IModalOptions | undefined;
+  options!: IModalOptions | IModalStylistOptions | undefined;
   modalAnimationEnd$!: Observable<Event>;
   modalLeaveAnimation!: string;
   overlayLeaveAnimation!: string;
@@ -56,18 +57,17 @@ export class ModalComponent implements AfterViewInit {
   }
 
   addOptions() {
-    // Applying desired styles
-    // this.modal.nativeElement.style.minWidth =
-    //   this.options?.size?.minWidth || 'auto';
-    // this.modal.nativeElement.style.width = this.options?.size?.width || 'auto';
-    // this.modal.nativeElement.style.maxWidth =
-    //   this.options?.size?.maxWidth || 'auto';
-    // this.modal.nativeElement.style.minHeight =
-    //   this.options?.size?.minHeight || 'auto';
-    // this.modal.nativeElement.style.height =
-    //   this.options?.size?.height || 'auto';
-    // this.modal.nativeElement.style.maxHeight =
-    //   this.options?.size?.maxHeight || 'auto';
+    this.modalContent.nativeElement.style.minWidth =
+      this.options?.size?.minWidth || 'auto';
+    this.modalContent.nativeElement.style.width = this.options?.size?.width || 'auto';
+    this.modalContent.nativeElement.style.maxWidth =
+      this.options?.size?.maxWidth || 'auto';
+    this.modalContent.nativeElement.style.minHeight =
+      this.options?.size?.minHeight || 'auto';
+    this.modalContent.nativeElement.style.height =
+      this.options?.size?.height || 'auto';
+    this.modalContent.nativeElement.style.maxHeight =
+      this.options?.size?.maxHeight || 'auto';
 
     // Storing ending animation in variables
     this.modalLeaveAnimation = this.options?.animations?.modal?.leave || '';

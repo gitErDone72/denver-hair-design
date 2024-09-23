@@ -6,18 +6,19 @@
   height: var(--page-container-height);
   overflow: auto;
   // margin: 0 var(--spacing-main);
-  padding: var(--spacing-main) 0;
+  padding: 0;
   // min-width: var(--page-width-min);
   // max-width: var(--page-width-max);
 
   @include respond(phone) {
-    background-color: red;
   }
 
   @include respond(beyondMobileWidth) {
-    background-color: green;
-    // temporary - find better option to 70px... perhaps use minmax() or something...
-    grid-template-columns: 1fr repeat(12, 70px) 1fr;
+    padding: var(--spacing-main);
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: 2.5fr repeat(12, 1fr) 2.5fr;
     grid-template-areas: " . col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12 . ";
     // margin: 0 auto;
   }

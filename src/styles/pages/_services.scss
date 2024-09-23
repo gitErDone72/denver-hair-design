@@ -11,11 +11,14 @@
   &__item {
     line-height: 1;
     margin-bottom: 1rem;
+    grid-column: span 4;
   }
 
   &__name {
     flex: 0 1 auto;
     font-weight: 500;
+    line-height: 1;
+    margin-bottom: 1rem;
   }
 
   &__elipses {

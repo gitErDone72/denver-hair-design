@@ -92,6 +92,18 @@
       @content;
     }
   }
+
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 760px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
 }
 
 @mixin iconDoIt($fill: var(--color-white), $padding: 1.2em, $fontSize: 9px) {
