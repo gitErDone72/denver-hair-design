@@ -15,9 +15,10 @@
     width: calc(100vw - var(--spacing-main) * 4);
     background-color: var(--color-primary-dark-transp);
     z-index: 125;
+    max-width: calc(100vw - var(--spacing-main) * 2);
     @include respond(phone) {
+      width: auto;
       max-height: calc(100vh - var(--spacing-main) * 2);
-      max-width: calc(100vw - var(--spacing-main) * 2);
     }
   }
   &__header {

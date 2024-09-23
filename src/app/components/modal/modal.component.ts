@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Observable, fromEvent, zip } from 'rxjs';
 import { ModalService } from 'src/app/services/modal.service';
-import { IModalOptions, IModalStylistOptions } from './modal-options.model';
+import { IModalOptions } from './modal-options.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -25,7 +25,7 @@ export class ModalComponent implements AfterViewInit {
   onEscape() {
     this.modalService.close();
   }
-  options!: IModalOptions | IModalStylistOptions | undefined;
+  options!: IModalOptions | undefined;
   modalAnimationEnd$!: Observable<Event>;
   modalLeaveAnimation!: string;
   overlayLeaveAnimation!: string;
@@ -59,7 +59,8 @@ export class ModalComponent implements AfterViewInit {
   addOptions() {
     this.modalContent.nativeElement.style.minWidth =
       this.options?.size?.minWidth || 'auto';
-    this.modalContent.nativeElement.style.width = this.options?.size?.width || 'auto';
+    this.modalContent.nativeElement.style.width =
+      this.options?.size?.width || 'auto';
     this.modalContent.nativeElement.style.maxWidth =
       this.options?.size?.maxWidth || 'auto';
     this.modalContent.nativeElement.style.minHeight =

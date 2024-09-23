@@ -1,4 +1,4 @@
-import { Stylist } from "src/app/shared/stylist.model";
+import { Stylist } from 'src/app/shared/stylist.model';
 
 export interface IModalOptions {
   data?: any;
@@ -20,8 +20,4 @@ export interface IModalOptions {
     height?: string;
     maxHeight?: string;
   };
-}
-
-export interface IModalStylistOptions extends IModalOptions {
-  stylist: Stylist;
 }

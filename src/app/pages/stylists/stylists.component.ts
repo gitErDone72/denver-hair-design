@@ -20,7 +20,7 @@ export class StylistsComponent implements OnInit {
   stylists: Stylist[] = [];
   thumbnailType: SiteSections = SiteSections.STYLISTS;
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.stylists = [
@@ -196,7 +196,9 @@ export class StylistsComponent implements OnInit {
   openStylistModal(stylist: Stylist): void {
     this.modalService.open(ModalStylistComponent, {
       data: stylist,
-
+      size: {
+        maxWidth: '600px',
+      },
     } as IModalOptions);
   }
 }
