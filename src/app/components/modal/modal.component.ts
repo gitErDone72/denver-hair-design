@@ -1,4 +1,3 @@
-// from https://github.com/GreenFlag31/modal/tree/main/src/app
 import {
   AfterViewInit,
   ViewChild,
