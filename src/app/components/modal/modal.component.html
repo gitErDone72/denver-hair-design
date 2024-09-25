@@ -1,10 +1,10 @@
-<div class="modal__wrapper">
+<div class="modal__wrapper" #modalContent>
   <div class="modal__header">
     <svg class="modal__close-button" (click)="onClose()">
       <use xlink:href="../../../assets/img/sprite.svg#close-x"></use>
     </svg>
   </div>
-  <section class="modal__content" #modalContent>
+  <section class="modal__content">
     <ng-content></ng-content>
   </section>
 </div>

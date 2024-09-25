@@ -197,8 +197,30 @@ export class StylistsComponent implements OnInit {
     this.modalService.open(ModalStylistComponent, {
       data: stylist,
       size: {
-        maxWidth: '600px',
+        maxWidth: '480px',
+        height:
+          window.innerWidth > 600
+            ? 'auto'
+            : 'calc(100vh - var(--spacing-main) * 4)',
+        width:
+          window.innerWidth > 600
+            ? 'auto'
+            : 'calc(100vw - var(--spacing-main) * 4)',
       },
     } as IModalOptions);
   }
 }
+
+// animations: {
+//   modal: {
+//     enter: 'enter-scaling 0.3s ease-out',
+//     leave: 'fade-out 0.3s forwards',
+//   },
+//   overlay: {
+//     enter: 'fade-in 1s',
+//     leave: 'fade-out 0.3s forwards',
+//   },
+// },
+// size: {
+//   width: '40rem',
+// },
