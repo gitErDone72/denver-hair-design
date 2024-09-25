@@ -55,21 +55,17 @@ body {
     }
   }
   &_note {
-    grid-column: 1 / -1;
-    font-size: 1.6rem;
+    grid-column: 2 / -2;
+    height: fit-content;
+    font-size: 1.2em;
     font-weight: 300;
-    margin: var(--page-element-margin) auto;
-    color: var(--color-white);
-    background-color: var(--color-secondary);
+    color: var(--color-primary-ultra-light);
+    background-color: var(--color-primary-ultra-dark);
     padding: 4rem;
     text-align: center;
-    // width: -webkit-fill-available;
 
-    @include respond(phone) {
-      background-color: yellow;
-    }
-    @include respond(beyondMobileWidth) {
-      background-color: red;
+    @include respond(desktop) {
+      grid-column: 3 / -3;
     }
   }
   &_section {
@@ -78,7 +74,7 @@ body {
     font-family: "Neuton";
     font-size: 2.3rem;
     padding: 2.5rem;
-    @include darkBlurBackground();
+    @include blurBackground(0.74, var(--rgb-primary));
     text-align: center;
     &:last-child {
       margin-bottom: 0;

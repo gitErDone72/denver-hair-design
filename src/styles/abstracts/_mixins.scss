@@ -116,7 +116,7 @@
   fill: $fill;
 }
 
-@mixin darkBlurBackground($opacity: 0.74) {
-  background-color: rgba(var(--rgb-primary-ultra-dark), $opacity);
+@mixin blurBackground($opacity: 0.74, $backgroundColor: var(--rgb-primary-ultra-dark)) {
+  background-color: rgba($backgroundColor, $opacity);
   backdrop-filter: blur(10px);
 }

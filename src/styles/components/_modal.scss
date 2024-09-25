@@ -13,7 +13,7 @@
     flex-direction: column;
     height: calc(100vh - var(--spacing-main) * 4);
     width: calc(100vw - var(--spacing-main) * 4);
-    background-color: var(--color-primary-dark-transp);
+    background-color: var(--color-primary-dark);
     z-index: 125;
     max-width: calc(100vw - var(--spacing-main) * 2);
     @include respond(phone) {
@@ -54,7 +54,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    @include darkBlurBackground(0.8);
+    @include blurBackground(0.8);
     z-index: 120;
   }
 }

@@ -5,7 +5,7 @@
   align-items: center;
   z-index: 51;
   padding: 0 0.5rem;
-  @include darkBlurBackground();
+  @include blurBackground();
 
   &__contact-info {
     flex: 1 0 1px;
@@ -75,6 +75,6 @@
     justify-content: center;
   }
   &_home {
-    @include darkBlurBackground(0.5);
+    @include blurBackground(0.5);
   }
 }

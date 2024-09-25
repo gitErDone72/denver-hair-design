@@ -16,7 +16,7 @@
     display: flex;
     justify-content: flex-end;
     height: calc(var(--hit-zone) * 2);
-    @include darkBlurBackground();
+    @include blurBackground();
   }
 
   &__icon-stack {
