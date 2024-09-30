@@ -16,6 +16,8 @@
     background-color: var(--color-primary-dark);
     z-index: 125;
     max-width: calc(100vw - var(--spacing-main) * 2);
+    border-radius: var(--border-radius);
+    overflow: hidden;
     @include respond(phone) {
       width: auto;
       max-height: calc(100vh - var(--spacing-main) * 2);
@@ -54,7 +56,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    @include blurBackground(0.8);
+    @include blurBackground(0.9, var(--rgb-primary-ultra-dark));
     z-index: 120;
   }
 }

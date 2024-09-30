@@ -12,6 +12,7 @@ $Web-Site-5-hsla: hsla(263, 30, 47, 1);
 $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
 :root {
+  --app-background-image: url('/assets/img/pages/home_1.jpg');
   @media only screen and (min-width: 400px) {
     --header-height: 10rem;
     --page-container-height: calc(
@@ -26,6 +27,10 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
     // --full-page-column-span: col-3 / col-10;
     --grid-gap: 1.5rem;
   }
+
+  // --border-radius: 0.9rem;
+  --border-radius: 0;
+  --text-shadow: 1px 3px 3px black;
 
   --header-height: 8.5rem;
   --footer-height: 5rem;
@@ -58,9 +63,14 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   --rgb-primary-ultra-light: 133, 149, 204;
   --rgb-primary-accent: 235, 47, 100;
 
-  --rgb-primary-purple: 102 78 136;
-  --rgb-primary-seafoam: 78 136 136;
-  --rgb-primary-slate: 78 111 136;
+  --rgb-primary-purple: 102, 78, 136;
+  --rgb-primary-seafoam: 78, 136, 136;
+  --rgb-primary-slate: 78, 111, 136;
+  --rgb-primary-dark-slate: 48, 74, 110;
+  // these below are not valid yet...
+  // they were created by my friend, copilot
+  --rgb-primary-amber: 136, 136, 78;
+  --rgb-primary-rose: 136, 78, 78;
 
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
@@ -69,10 +79,16 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   --color-primary-ultra-dark: rgb(var(--rgb-primary-ultra-dark));
   //
   --color-primary-purple: rgb(var(--rgb-primary-purple));
+  --color-primary-seafoam: rgb(var(--rgb-primary-seafoam));
+  --color-primary-slate: rgb(var(--rgb-primary-slate));
+  --color-primary-dark-slate: rgb(var(--rgb-primary-dark-slate));
 
   //SECONDARY COLORS:
-  --rgb-secondary: 85 149 158;
-  --rgb-secondary-dark: 50 37 41;
+  // --rgb-secondary: 85, 149, 158;
+  // --rgb-secondary: 255, 173, 0;
+  --rgb-secondary: 174, 140, 77;
+  --rgb-secondary-dark: 50, 37, 41;
+  --rgb-secondary-ultra-dark: 52, 44, 18;
   // these below are not valid yet...
   // need to base them on the above ^^^
   --rgb-secondary-dark: 50, 37, 41;
@@ -81,6 +97,7 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   --rgb-secondary-accent: 235, 47, 100;
   //
   --color-secondary: rgb(var(--rgb-secondary));
+  --color-secondary-ultra-dark: rgb(var(--rgb-secondary-ultra-dark));
 
   --color-white: #ffffff;
 

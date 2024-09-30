@@ -25,6 +25,17 @@
   }
 }
 
+@mixin dhdGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
+  gap: var(--grid-gap);
+  @include respond(desktop) {
+    grid-template-columns: 2.5fr repeat(12, 1fr) 2.5fr;
+    grid-template-areas: " . col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12 . ";
+  }
+}
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -38,7 +49,7 @@
   $backgroundPosition: center
 ) {
   @if $backgroundImage {
-    background-image: url($backgroundImage);
+    background-image: $backgroundImage;
     background-size: $backgroundSize;
     background-position: $backgroundPosition;
     background-blend-mode: $backgroundBlendMode;
@@ -56,7 +67,7 @@
 ) {
   @if $backgroundImage {
     background-image: linear-gradient(to bottom, $colorOne, $colorTwo),
-      url($backgroundImage);
+      $backgroundImage;
     background-size: $backgroundSize;
     background-position: $backgroundPosition;
     background-blend-mode: $backgroundBlendMode;
@@ -99,6 +110,12 @@
     }
   }
 
+  @if $breakpoint == tabletLandscape {
+    @media only screen and (min-width: 900px) {
+      @content;
+    }
+  }
+
   @if $breakpoint == desktop {
     @media only screen and (min-width: 1300px) {
       @content;
@@ -116,7 +133,7 @@
   fill: $fill;
 }
 
-@mixin blurBackground($opacity: 0.74, $backgroundColor: var(--rgb-primary-ultra-dark)) {
+@mixin blurBackground($opacity: 0.9, $backgroundColor: var(--rgb-primary-dark), $blurskee: 10px) {
   background-color: rgba($backgroundColor, $opacity);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur($blurskee);
 }

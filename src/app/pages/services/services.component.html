@@ -1,15 +1,16 @@
 <div class="page__subgrid">
+  <div class="services__grid-image"></div>
   @for (serviceType of allServices; track serviceType; let i = $index) {
-  <div class="text-block_section services__item">
+  <div [class]="'text-block_section services__item services__item_'+(i+1)">
     <div class="text_title text-block_title">{{ serviceType.type }}</div>
     <div class="text-block_content">
       @for (service of allServices[i].salonServices; track service) {
-      <div class="services__name">{{ service.name }}</div>
+      <span class="services__name">{{ service.name }}</span>
       }
     </div>
   </div>
   }
-</div>
-<div class="text-block text-block_note">
-  Pricing varies, and is determined by the stylist performing your service.
+  <div class="text-block text-block_note">
+    Pricing varies, and is determined by the stylist performing your service.
+  </div>
 </div>

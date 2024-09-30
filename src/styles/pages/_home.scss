@@ -18,7 +18,7 @@
     max-height: 30rem;
     margin: 0 auto;
     padding: .5rem;
-    @include blurBackground(0.5);
+    @include blurBackground(0.5, var(--rgb-primary-dark));
   }
   @include respond(beyondMobileWidth) {
     justify-content: center;

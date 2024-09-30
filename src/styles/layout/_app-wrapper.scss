@@ -6,7 +6,7 @@
   flex-direction: column;
   overflow: hidden;
   @include backgroundWithImage(
-    "/assets/img/pages/home_1.jpg"
+    var(--app-background-image)
   );
   background-blend-mode: luminosity;
   background-color: var(--color-primary-light);

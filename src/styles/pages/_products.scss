@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   padding-bottom: 0;
-  @include backgroundWithImage("/assets/img/pages/products_1.jpg");
+  @include backgroundWithImage(url("/assets/img/pages/products_1.jpg"));
 
   &__item {
     background-color: red;

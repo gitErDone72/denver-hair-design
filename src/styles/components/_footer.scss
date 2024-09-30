@@ -1,25 +1,22 @@
 .footer {
-  color: var(--color-white);
+  @include dhdGrid();
   flex: 0 0 var(--footer-height);
-  display: flex;
-  align-items: center;
   z-index: 51;
-  padding: 0 0.5rem;
-  @include blurBackground();
+  padding: 0 var(--spacing-main);
+  color: var(--color-white);
+  @include blurBackground(0.8, var(--rgb-primary-ultra-dark));
 
-  &__contact-info {
-    flex: 1 0 1px;
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-
-    @include respond(phone) {
-      margin-right: 4rem;
-    }
+  &__container {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: var(--full-page-column-span);
+    gap: var(--grid-gap);
   }
 
-  &__contact-info &__icon:first-of-type {
-    padding-left: 0;
+  &__contact{
+    grid-column: col-1 / col-4;
+    display: flex;
+    z-index: 1;
   }
 
   &__button {
@@ -41,12 +38,15 @@
     text-decoration: none;
   }
 
+  &__color-picker{
+    grid-column: col-5 / col-8;
+  }
+
   &__social-media {
-    flex: 0 0 auto;
-    align-self: stretch;
+    grid-column: col-9 / col-12;
     display: flex;
     align-items: center;
-
+    justify-content: flex-end;
     a {
       display: flex;
       align-items: center;
@@ -75,6 +75,6 @@
     justify-content: center;
   }
   &_home {
-    @include blurBackground(0.5);
+    @include blurBackground(0.5, var(--rgb-primary-dark));
   }
 }
