@@ -1,5 +1,5 @@
-@for (navItem of navItems; track navItem; ; let i = $index) {
-<a [class]="'main-nav__link main-nav__link_'+i" [routerLink]="navItem.routerLink" routerLinkActive="main-nav__link_active"
+@for (navItem of navItems; track navItem; let i = $index) {
+<a [class]="'link main-nav__link main-nav__link_'+i" [routerLink]="navItem.routerLink" routerLinkActive="main-nav__link_active"
   (click)="toggleExpanded()">
     {{navItem.buttonLabel}}
 </a>

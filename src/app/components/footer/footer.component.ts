@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-import { IModalOptions } from '../modal/modal-options.model';
 import { ModalMapComponent } from '../modal/modal-map/modal-map.component';
 
 @Component({
@@ -9,14 +8,19 @@ import { ModalMapComponent } from '../modal/modal-map/modal-map.component';
   templateUrl: './footer.component.html',
   host: { class: 'footer' },
 })
-export class FooterComponent implements OnInit {
-  constructor(private modalService: ModalService) {}
+export class FooterComponent {
+  constructor(private modalService: ModalService) { }
 
-  ngOnInit() {}
-
-  openMap() {
-    this.modalService.open(ModalMapComponent, {
-      data: 'Just a string for now...',
-    } as IModalOptions);
+  /**
+   * Opens a modal containing a map component.
+   * Utilizes the modal service to display the `ModalMapComponent`.
+   *
+   * @remarks
+   * This method is typically used to provide users with a visual map interface.
+   *
+   * @returns {void} This method does not return a value.
+   */
+  openMap(): void {
+    this.modalService.open(ModalMapComponent);
   }
 }

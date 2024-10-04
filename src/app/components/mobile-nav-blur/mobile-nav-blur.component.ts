@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -6,16 +6,10 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
   templateUrl: './mobile-nav-blur.component.html',
   host: { class: 'mobile-nav-blur' }
 })
-export class MobileNavBlur implements OnInit {
+export class MobileNavBlur {
   @Input() isMoblieNavOpen: boolean = false;
   @Input() pageName: string = '/';
   @HostBinding('class.mobile-nav-blur_show') get showMobileNavBlur(): boolean {
     return this.isMoblieNavOpen;
   }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

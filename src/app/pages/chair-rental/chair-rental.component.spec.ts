@@ -8,7 +8,7 @@ describe('ChairRentalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChairRentalComponent ]
+      imports: [ ChairRentalComponent ]
     })
     .compileComponents();
 
