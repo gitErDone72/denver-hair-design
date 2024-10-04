@@ -1,13 +1,19 @@
 .services {
+  align-content: start;
   .page__subgrid {
-    height: auto;
+    // height: auto;
     grid-template-rows: 1fr;
   }
   &__grid-image {
     grid-column: span 12;
     min-height: 12rem;
-    margin: calc(var(--spacing-main) * -1)  calc(var(--spacing-main) * -1) 0;
-    @include backgroundWithImage(url("/assets/img/pages/services_1.jpg"), luminosity);
+    margin: calc(var(--spacing-main) * -1) calc(var(--spacing-main) * -1) 0;
+    @include backgroundWithImage(
+      url("/assets/img/pages/services_2.jpg"),
+      normal,
+      cover,
+      bottom
+    );
     background-color: var(--color-secondary);
 
     @include respond(beyondMobileWidth) {
@@ -27,7 +33,7 @@
         grid-column: span 4;
       }
     }
-    @include respond(phone){
+    @include respond(phone) {
       grid-column: span 6;
     }
     @include respond(tabletLandscape) {
@@ -61,8 +67,7 @@
       margin-bottom: 2rem;
     }
   }
-
-  // @include respond(beyondMobileWidth) {
-  //   justify-content: center;
-  // }
+  @include respond(tabletLandscape) {
+    align-content: center;
+  }
 }

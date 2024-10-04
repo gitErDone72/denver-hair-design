@@ -1,11 +1,12 @@
-<div class="text-block text-block_statement">
-  <p class="paragraph">Our knowledgeable staff is here to help you choose the right products to
-    achieve and maintain your desired look.</p>
-  <p>Elevate your hair care routine with our expertly curated collection.</p>
-</div>
-<div class="grid grid_product-brands">
-  @for (brand of productBrands; track brand) {
-  <dhd-thumbnail [type]="thumbnailType" [image]="brand.brandName" [hasDetails]="false">
-  </dhd-thumbnail>
+<div class="page__subgrid">
+  <div class="text-block text-block_statement">
+    <p class="paragraph">Our knowledgeable staff is here to help you choose the right products to
+      achieve and maintain your desired look.</p>
+    <p>Elevate your hair care routine with our expertly curated collection.</p>
+  </div>
+  @for (brand of productBrands; track brand; let i = $index) {
+  <div [class]="'products__item products__item_'+(i+1)">
+    {{brand.brandName}}
+  </div>
   }
 </div>

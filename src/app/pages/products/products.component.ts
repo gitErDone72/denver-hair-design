@@ -135,6 +135,10 @@ export class ProductsComponent implements OnInit {
           image: 'product'
         }
       ]
+    },
+    {
+      brandName: 'Redken',
+      products: []
     }
   ];
 

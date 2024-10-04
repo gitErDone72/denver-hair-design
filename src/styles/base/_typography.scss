@@ -64,10 +64,10 @@ body {
     height: fit-content;
     backdrop-filter: blur(27px);
     @include blurBackground(0, transparent, 27px);
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: 300;
     color: var(--color-white);
-    text-shadow: var(--text-shadow);
+    // text-shadow: var(--text-shadow);
     padding: 2rem;
     text-align: center;
 

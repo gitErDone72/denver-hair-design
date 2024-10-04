@@ -1,11 +1,13 @@
 .products {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 0;
-  @include backgroundWithImage(url("/assets/img/pages/products_1.jpg"));
-
+  align-content: start;
+  .text-block_statement {
+    grid-column: span 12;
+  }
+  .page__subgrid {
+    grid-template-rows: 1fr;
+  }
   &__item {
+    grid-column: span 2;
     background-color: red;
   }
 }
