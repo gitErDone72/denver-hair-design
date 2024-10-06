@@ -1,12 +1,12 @@
-<header class="header" [ngClass]="{ header_home: isHomePage }" routerLink="/">
+<header class="header" [ngClass]="{ header_home: isHomePage() }" routerLink="/">
   <svg class="header__logo">
     <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
   </svg>
 </header>
 <div class="page-container" [@routeAnimations]="getAnimationPageName()">
-  <mobile-nav-blur [pageName]="pageName" [isMoblieNavOpen]="isMoblieNavOpen && !isHomePage"></mobile-nav-blur>
+  <mobile-nav-blur [pageName]="pageName" [isMobileNavOpen]="isMobileNavOpen()"></mobile-nav-blur>
   <router-outlet></router-outlet>
 </div>
-<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage}" [isBeyondMobileWidth]="isBeyondMobileWidth" [expanded]="isHomePage"
+<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage()}" [isBeyondMobileWidth]="isBeyondMobileWidth()" [isHomePage]="isHomePage()"
   (expandedChange)="togglePageForMobileNavigation($event)"></dhd-main-nav>
-<dhd-footer [ngClass]="{'footer_home': isHomePage}"></dhd-footer>
+<dhd-footer [ngClass]="{'footer_home': isHomePage()}"></dhd-footer>
