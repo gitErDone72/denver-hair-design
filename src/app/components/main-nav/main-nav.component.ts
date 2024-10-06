@@ -1,4 +1,4 @@
-import { Component, computed, effect, HostBinding, input, OnInit, output, signal } from '@angular/core';
+import { Component, effect, HostBinding, input, OnInit, output, signal } from '@angular/core';
 import { DhdNavDataItem } from './nav-item.model';
 import { DhdNavRoutes } from '../../shared/routing.config';
 import { RouterModule } from '@angular/router';
@@ -11,10 +11,9 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule]
 })
 export class MainNavComponent implements OnInit {
-
   isHomePage = input.required<boolean>();
-  isBeyondMobileWidth = input<boolean>(false);
-  expandedChange = output<boolean>();
+  isBeyondMobileWidth = input.required<boolean>();
+  onMobileNavExpanded = output<boolean>();
 
   expanded = signal<boolean>(true);
 
@@ -28,7 +27,9 @@ export class MainNavComponent implements OnInit {
     effect(() => {
       if (this.isHomePage()) {
         this.expanded.set(true);
-        this.expandedChange.emit(false);
+        this.onMobileNavExpanded.emit(false);
+      } else {
+        this.expanded.set(false);
       }
     }, { allowSignalWrites: true });
   }
@@ -37,10 +38,10 @@ export class MainNavComponent implements OnInit {
     this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
   }
 
-  toggleExpanded() {
+  navItemClick() {
     if (!this.isBeyondMobileWidth()) {
       this.expanded.update(value => !value);
-      this.expandedChange.emit(this.expanded());
+      this.onMobileNavExpanded.emit(this.expanded());
     }
   }
 }

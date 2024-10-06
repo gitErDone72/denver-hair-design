@@ -9,7 +9,6 @@ import {
 import { filter } from 'rxjs';
 import { slideInAnimation } from './shared/animations';
 import { convertStringToCamelCase } from './shared/utilities';
-import { MobileNavBlur } from './components/mobile-nav-blur/mobile-nav-blur.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AsyncPipe, CommonModule } from '@angular/common';
@@ -21,7 +20,7 @@ import { environment } from 'src/environments/environment.development';
   selector: 'app-root',
   templateUrl: './app.component.html',
   host: { class: 'app-wrapper' },
-  imports: [RouterModule, CommonModule, MobileNavBlur, MainNavComponent, FooterComponent, ErrorPageComponent, AsyncPipe],
+  imports: [RouterModule, CommonModule, MainNavComponent, FooterComponent, ErrorPageComponent, AsyncPipe],
   animations: [
     slideInAnimation
   ],
@@ -33,11 +32,10 @@ export class AppComponent implements OnInit {
   @HostBinding('class.app-page-name') overlayClassByPage: string = '/';
   isHomePage = signal<boolean>(true);
   isBeyondMobileWidth = signal<boolean>(false);
-  isMobileNavOpen = signal<boolean>(false);
+  isMobileNavOpen = signal<boolean>(true);
 
   routeContext: OutletContext | null = null;
 
-  pageName: string = '/';
   constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
 
   ngOnInit(): void {
@@ -65,10 +63,8 @@ export class AppComponent implements OnInit {
       : '/';
   }
 
-  togglePageForMobileNavigation($event: boolean) {
-    if (!this.isBeyondMobileWidth()) {
-      this.isMobileNavOpen.set($event)
-    }
+  toggleMobileNavBlur($event: boolean): void {
+     this.isMobileNavOpen.set($event);
   }
 
   private isWebWidthAndBeyond(): void {

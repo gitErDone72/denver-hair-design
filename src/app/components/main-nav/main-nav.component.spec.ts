@@ -26,22 +26,22 @@ describe('MainNavComponent', () => {
   it('should toggle expanded state and emit event when not beyond mobile width', () => {
     component.isBeyondMobileWidth = false;
     component.expanded = true;
-    spyOn(component.expandedChange, 'emit');
+    spyOn(component.onMobileNavExpanded, 'emit');
 
     component.toggleExpanded();
 
     expect(component.expanded).toBeFalse();
-    expect(component.expandedChange.emit).toHaveBeenCalledWith(false);
+    expect(component.onMobileNavExpanded.emit).toHaveBeenCalledWith(false);
   });
 
   it('should not toggle expanded state or emit event when beyond mobile width', () => {
     component.isBeyondMobileWidth = true;
     component.expanded = true;
-    spyOn(component.expandedChange, 'emit');
+    spyOn(component.onMobileNavExpanded, 'emit');
 
     component.toggleExpanded();
 
     expect(component.expanded).toBeTrue();
-    expect(component.expandedChange.emit).not.toHaveBeenCalled();
+    expect(component.onMobileNavExpanded.emit).not.toHaveBeenCalled();
   });
 });
