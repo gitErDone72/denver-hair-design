@@ -17,6 +17,13 @@ body {
   color: var(--color-white);
   font: normal normal 300 160% / 1.4 "Neuton", serif;
 }
+
+.link {
+  font-family: "League Spartan";
+  text-decoration: none;
+  color: var(--color-white);
+}
+
 // look into using the free limerick_serial (google it) - looks a lot like futura
 .text {
   &_title {
@@ -30,12 +37,6 @@ body {
       font-size: 2.5rem;
     }
   }
-}
-
-.link {
-  font-family: "League Spartan";
-  text-decoration: none;
-  color: var(--color-white);
 }
 
 .text-block {
@@ -73,7 +74,6 @@ body {
     font-size: 1.4em;
     font-weight: 300;
     color: var(--color-white);
-    // text-shadow: var(--text-shadow);
     padding: 2rem;
     text-align: center;
 
@@ -92,21 +92,35 @@ body {
     font-size: 2.3rem;
     padding: 1.7rem;
     @include blurBackground();
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
     @include respond(phone) {
       padding: 2.5rem;
     }
     @include respond(beyondMobileWidth) {
     }
   }
-  &_section-content {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &_content {
+    display: grid;
+    width: max-content;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    margin-bottom: 1rem;
+    @include respond(tabletLandscape) {
+      margin-bottom: 4rem;
+    }
+  }
+  &_list-item {
+    font-size: 2rem;
+    line-height: 1em;
+    font-family: "Neuton", serif;
+    color: var(--color-primary-ultra-light);
+    margin-right: 1em;
+    margin-bottom: 1rem;
+    @include respond(phone) {
+      font-size: 2.3rem;
+    }
+    @include respond(tabletLandscape) {
+      margin-right: 1.3em;
+      margin-bottom: 2rem;
+    }
   }
 }
