@@ -1,7 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { AfterContentInit, Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-import { Stylist } from 'src/app/shared/stylist.model';
+import { IStylist } from 'src/app/shared/stylist.model';
 
 @Component({
   selector: 'dhd-modal-stylist',
@@ -11,12 +11,12 @@ import { Stylist } from 'src/app/shared/stylist.model';
   host: { class: 'modal-stylist' },
 })
 export class ModalStylistComponent implements AfterContentInit {
-  stylist!: Stylist; // will make this of Stylist type
+  stylist!: IStylist; // will make this of Stylist type
 
   constructor(private modalService: ModalService) {}
 
   ngAfterContentInit(): void {
-    this.stylist = this.modalService.options?.data as Stylist;
+    this.stylist = this.modalService.options?.data as IStylist;
   }
 
   close(): void {

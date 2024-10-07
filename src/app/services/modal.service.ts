@@ -1,4 +1,4 @@
-// modal stuff from https://medium.com/@greenFlag/how-to-easily-and-quickly-create-a-modal-in-angular-a2f82d5c11f6
+// From https://medium.com/@greenFlag/how-to-easily-and-quickly-create-a-modal-in-angular-a2f82d5c11f6
 
 import {
   ApplicationRef,

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IModalOptions } from 'src/app/components/modal/modal-options.model';
 import { ModalStylistComponent } from 'src/app/components/modal/modal-stylist/modal-stylist.component';
@@ -6,194 +7,267 @@ import { ModalService } from 'src/app/services/modal.service';
 import { SiteSections } from 'src/app/shared/site-sections.enum';
 import {
   BookingMethodType,
+  IStylist,
   SocialMediaType,
-  Stylist,
 } from 'src/app/shared/stylist.model';
 
 @Component({
   standalone: true,
   templateUrl: './stylists.component.html',
   host: { class: 'page stylists' },
-  imports: [ThumbnailComponent],
+  imports: [ThumbnailComponent, CommonModule],
 })
 export class StylistsComponent implements OnInit {
-  stylists: Stylist[] = [];
+  stylists: IStylist[] = [];
   thumbnailType: SiteSections = SiteSections.STYLISTS;
 
-  constructor(private modalService: ModalService) {}
+  constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
     this.stylists = [
       {
         id: '1',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Joseph',
         lastName: 'Mendez',
-        headShot: 'joseph-mendez',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'joseph-mendez',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '2',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Elysia',
         lastName: 'Izquierdo',
-        headShot: 'elysia-izquierdo',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'elysia-izquierdo',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '3',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Krista',
         lastName: 'Snider',
-        headShot: 'krista-snider',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'krista-snider',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '4',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Brittany',
         lastName: 'Baldry',
-        headShot: 'brittany-baldry',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'brittany-baldry',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '5',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Annie',
         lastName: 'Armitage',
-        headShot: 'annie-armitage',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'annie-armitage',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '6',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Elizabeth',
         lastName: 'Deuschle',
-        headShot: 'elizabeth-deuschle',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'elizabeth-deuschle',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '7',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Naomi',
         lastName: 'Matthias',
-        headShot: 'naomi-matthias',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'naomi-matthias',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '8',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Katie',
         lastName: 'Lehman',
-        headShot: 'katie-lehman',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'katie-lehman',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '9',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Edith',
         lastName: 'Olivas',
-        headShot: 'edith-olivas',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'edith-olivas',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '10',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Raven',
         lastName: 'Valdez',
-        // headShot: 'raven-valdez',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '11',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Ed',
         lastName: 'Allison',
-        // headShot: 'ed-allison',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '12',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Katelynn',
         lastName: 'Fisher',
-        // headShot: 'katelynn-fisher',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '13',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Chandlier',
         lastName: 'Fantauzzi',
-        // headShot: 'chandlier-fantauzzi',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '14',
+        bookingLink: '',
+        bookingMethod: BookingMethodType.NONE,
         firstName: 'Lena',
         lastName: 'Medina',
-        // headShot: 'lena-medina',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        bookingLink: '',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '15',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.VAGARO,
         firstName: 'Dena',
         lastName: 'Sisneros',
-        // headShot: 'dena-sisneros',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.NONE,
         socialMediaLink: '',
-        bookingMethod: BookingMethodType.VAGARO,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
       {
         id: '16',
+        bookingLink: 'https://www.vagaro.com/kristasnider',
+        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
         firstName: 'Mallory',
         lastName: 'Jade',
-        // headShot: 'mallory-jade',
-        headShot: 'placeholder',
         socialMedia: SocialMediaType.INSTAGRAM,
         socialMediaLink: 'https://www.instagram.com/krista_snider/',
-        bookingMethod: BookingMethodType.SQUARE_PERSONAL,
-        bookingLink: 'https://www.vagaro.com/kristasnider',
+        thumbnailInfo: {
+          hasDetails: true,
+          image: 'placeholder',
+          isImageClickable: true,
+          type: SiteSections.STYLISTS,
+        },
       },
-    ] as Stylist[];
+    ] as IStylist[];
   }
 
-  openStylistModal(stylist: Stylist): void {
+  openStylistModal(stylist: IStylist): void {
     this.modalService.open(ModalStylistComponent, {
       data: stylist,
       size: {
@@ -210,17 +284,3 @@ export class StylistsComponent implements OnInit {
     } as IModalOptions);
   }
 }
-
-// animations: {
-//   modal: {
-//     enter: 'enter-scaling 0.3s ease-out',
-//     leave: 'fade-out 0.3s forwards',
-//   },
-//   overlay: {
-//     enter: 'fade-in 1s',
-//     leave: 'fade-out 0.3s forwards',
-//   },
-// },
-// size: {
-//   width: '40rem',
-// },

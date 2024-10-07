@@ -1,7 +1,7 @@
 import { Component, input, OnInit, output, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DhdNavRoutes } from '../../shared/routing.config';
-import { DhdNavDataItem } from './nav-item.model';
+import { IDhdNavDataItem } from './nav-item.model';
 
 @Component({
   standalone: true,
@@ -15,21 +15,22 @@ export class MainNavComponent implements OnInit {
   isMobileMode = input.required<boolean>();
   onMobileNavExpanded = output<boolean>();
 
-  toggleExpanded = signal<boolean>(false);
-
-  navItems!: DhdNavDataItem[];
+  isExpanded: boolean = false;
+  navItems!: IDhdNavDataItem[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.onMobileNavExpanded.emit(false);
+    this.onMobileNavExpanded.emit(this.isExpanded);
     this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
   }
 
   navItemClick(): void {
     if (this.isMobileMode()) {
-      this.toggleExpanded.update((expandedState) => this.isHomePage() ? false : !expandedState);
-      this.onMobileNavExpanded.emit(this.toggleExpanded());
+      this.isExpanded = this.isHomePage() ? false : !this.isExpanded;
+    } else {
+      this.isExpanded = false;
     }
+    this.onMobileNavExpanded.emit(this.isExpanded);
   }
 }

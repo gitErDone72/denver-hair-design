@@ -4,7 +4,7 @@ export enum SalonServiceType {
     FACE = 'facials & skin care treatments',
     NAIL_TREATMENTS = 'nail treatments'
 }
-export interface SalonService {
+export interface ISalonServiceItem {
     id: number,
     type: SalonServiceType,
     name: string,

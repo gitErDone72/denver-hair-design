@@ -1,6 +1,6 @@
 import { Data } from "@angular/router"
 
-export interface DhdNavDataItem extends Data {
+export interface IDhdNavDataItem extends Data {
   showInNav: boolean,
   buttonLabel?: string,
   routerLink?: string

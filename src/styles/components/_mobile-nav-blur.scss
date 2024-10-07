@@ -1,9 +1,9 @@
 .mobile-nav-blur {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 100;
   opacity: 0;
@@ -12,5 +12,6 @@
   pointer-events: none;
   &_show {
     opacity: 1;
+    pointer-events: auto;
   }
 }

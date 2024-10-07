@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SalonService, SalonServiceType } from 'src/app/shared/salon-service.model';
+import { ISalonServiceItem, SalonServiceType } from 'src/app/shared/salon-service.model';
 
 @Component({
   standalone: true,
@@ -7,7 +7,7 @@ import { SalonService, SalonServiceType } from 'src/app/shared/salon-service.mod
   host: { class: 'page services' }
 })
 export class ServicesComponent implements OnInit {
-  allServices: { type: SalonServiceType, salonServices: SalonService[] }[] = [
+  allServices: { type: SalonServiceType, salonServices: ISalonServiceItem[] }[] = [
     {
       type: SalonServiceType.HAIR,
       salonServices: [

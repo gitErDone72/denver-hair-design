@@ -1,5 +1,5 @@
 import { Route } from "@angular/router";
-import { DhdNavDataItem } from "../components/main-nav/nav-item.model";
+import { IDhdNavDataItem } from "../components/main-nav/nav-item.model";
 import { ChairRentalComponent } from "../pages/chair-rental/chair-rental.component";
 import { ErrorPageComponent } from "../pages/error-page/error-page.component";
 import { GalleryComponent } from "../pages/gallery/gallery.component";
@@ -8,11 +8,11 @@ import { ProductsComponent } from "../pages/products/products.component";
 import { ServicesComponent } from "../pages/services/services.component";
 import { StylistsComponent } from "../pages/stylists/stylists.component";
 
-export interface DhdRoute extends Route {
-    data: DhdNavDataItem
+export interface IDhdRoute extends Route {
+    data: IDhdNavDataItem
 }
 
-export const DhdNavRoutes: DhdRoute[] = [
+export const DhdNavRoutes: IDhdRoute[] = [
     {
         path: '',
         component: HomeComponent,

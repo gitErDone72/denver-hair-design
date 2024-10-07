@@ -28,7 +28,7 @@ describe('MainNavComponent', () => {
     component.addCollapsedClass = true;
     spyOn(component.onMobileNavExpanded, 'emit');
 
-    component.toggleExpanded();
+    component.isExpanded();
 
     expect(component.addCollapsedClass).toBeFalse();
     expect(component.onMobileNavExpanded.emit).toHaveBeenCalledWith(false);
@@ -39,7 +39,7 @@ describe('MainNavComponent', () => {
     component.addCollapsedClass = true;
     spyOn(component.onMobileNavExpanded, 'emit');
 
-    component.toggleExpanded();
+    component.isExpanded();
 
     expect(component.addCollapsedClass).toBeTrue();
     expect(component.onMobileNavExpanded.emit).not.toHaveBeenCalled();
