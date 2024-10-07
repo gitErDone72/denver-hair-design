@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
   isMobileNavOpen = signal<boolean>(true);
   windowWidth = signal<number>(window.innerWidth);
 
-  isBeyondMobileWidth = computed(() => this.windowWidth() >= environment.beyondMobileWidth);
+  isMobile = computed(() => this.windowWidth() < environment.beyondMobileWidth);
+  isMainNavCollapsed = computed(() => !this.isMobile() || (!this.isHomePage() && !this.isMobileNavOpen()));
 
   routeContext: OutletContext | null = null;
 
@@ -63,7 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleMobileNavExpanded($event: boolean): void {
-    if (!this.isBeyondMobileWidth()) {
+    if (this.isMobile()) {
       this.isMobileNavOpen.set($event);
     } else {
       this.isMobileNavOpen.set(false);
@@ -72,7 +73,7 @@ export class AppComponent implements OnInit {
 
   private onResize(): void {
     this.windowWidth.set(window.innerWidth);
-    if (this.isBeyondMobileWidth()) {
+    if (!this.isMobile()) {
       this.isMobileNavOpen.set(false);
     }
     this.toggleMobileNavExpanded(false);

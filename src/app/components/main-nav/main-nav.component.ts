@@ -1,7 +1,7 @@
-import { Component, computed, HostBinding, input, OnInit, output, signal } from '@angular/core';
-import { DhdNavDataItem } from './nav-item.model';
-import { DhdNavRoutes } from '../../shared/routing.config';
+import { Component, input, OnInit, output, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DhdNavRoutes } from '../../shared/routing.config';
+import { DhdNavDataItem } from './nav-item.model';
 
 @Component({
   standalone: true,
@@ -11,42 +11,24 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule]
 })
 export class MainNavComponent implements OnInit {
-  @HostBinding('class.main-nav_collapsed') get _collapsed(): boolean {
-    return this.addCollapsedClass();
-  }
-
   isHomePage = input.required<boolean>();
-  isBeyondMobileWidth = input.required<boolean>();
-
+  isMobileMode = input.required<boolean>();
   onMobileNavExpanded = output<boolean>();
 
   toggleExpanded = signal<boolean>(false);
-
-  addCollapsedClass = computed((): boolean => {
-    if (this.isBeyondMobileWidth()) {
-      return true;
-    }
-    return !this.isHomePage() && !this.toggleExpanded();
-  });
 
   navItems!: DhdNavDataItem[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.onMobileNavExpanded.emit(this.toggleExpanded());
+    this.onMobileNavExpanded.emit(false);
     this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
   }
 
   navItemClick(): void {
-    if (!this.isBeyondMobileWidth()) {
-      this.toggleExpanded.update((expandedState) => {
-        if (this.isHomePage()) {
-          return false
-        } else {
-          return !expandedState
-        }
-      });
+    if (this.isMobileMode()) {
+      this.toggleExpanded.update((expandedState) => this.isHomePage() ? false : !expandedState);
       this.onMobileNavExpanded.emit(this.toggleExpanded());
     }
   }

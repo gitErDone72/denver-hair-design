@@ -24,7 +24,7 @@ describe('MainNavComponent', () => {
   });
 
   it('should toggle expanded state and emit event when not beyond mobile width', () => {
-    component.isBeyondMobileWidth = false;
+    component.isMobileMode = false;
     component.addCollapsedClass = true;
     spyOn(component.onMobileNavExpanded, 'emit');
 
@@ -35,7 +35,7 @@ describe('MainNavComponent', () => {
   });
 
   it('should not toggle expanded state or emit event when beyond mobile width', () => {
-    component.isBeyondMobileWidth = true;
+    component.isMobileMode = true;
     component.addCollapsedClass = true;
     spyOn(component.onMobileNavExpanded, 'emit');
 
