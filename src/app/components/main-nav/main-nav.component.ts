@@ -1,4 +1,4 @@
-import { Component, effect, HostBinding, input, OnInit, output, signal } from '@angular/core';
+import { Component, computed, HostBinding, input, OnInit, output, signal } from '@angular/core';
 import { DhdNavDataItem } from './nav-item.model';
 import { DhdNavRoutes } from '../../shared/routing.config';
 import { RouterModule } from '@angular/router';
@@ -11,37 +11,43 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule]
 })
 export class MainNavComponent implements OnInit {
+  @HostBinding('class.main-nav_collapsed') get _collapsed(): boolean {
+    return this.addCollapsedClass();
+  }
+
   isHomePage = input.required<boolean>();
   isBeyondMobileWidth = input.required<boolean>();
+
   onMobileNavExpanded = output<boolean>();
 
-  expanded = signal<boolean>(true);
+  toggleExpanded = signal<boolean>(false);
 
-  @HostBinding('class.main-nav_collapsed') get collapsed(): boolean {
-    return !this.expanded();
-  }
+  addCollapsedClass = computed((): boolean => {
+    if (this.isBeyondMobileWidth()) {
+      return true;
+    }
+    return !this.isHomePage() && !this.toggleExpanded();
+  });
 
   navItems!: DhdNavDataItem[];
 
-  constructor() {
-    effect(() => {
-      if (this.isHomePage()) {
-        this.expanded.set(true);
-        this.onMobileNavExpanded.emit(false);
-      } else {
-        this.expanded.set(false);
-      }
-    }, { allowSignalWrites: true });
-  }
+  constructor() { }
 
   ngOnInit(): void {
+    this.onMobileNavExpanded.emit(this.toggleExpanded());
     this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
   }
 
-  navItemClick() {
+  navItemClick(): void {
     if (!this.isBeyondMobileWidth()) {
-      this.expanded.update(value => !value);
-      this.onMobileNavExpanded.emit(this.expanded());
+      this.toggleExpanded.update((expandedState) => {
+        if (this.isHomePage()) {
+          return false
+        } else {
+          return !expandedState
+        }
+      });
+      this.onMobileNavExpanded.emit(this.toggleExpanded());
     }
   }
 }

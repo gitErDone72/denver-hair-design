@@ -1,4 +1,4 @@
- <header class="header" [ngClass]="{ header_home: isHomePage() }" routerLink="/">
+<header class="header" [ngClass]="{ header_home: isHomePage() }" routerLink="/">
   <svg class="header__logo">
     <use xlink:href="../assets/img/sprite.svg#header-logo"></use>
   </svg>
@@ -7,5 +7,6 @@
   <div class="mobile-nav-blur" [ngClass]="{ 'mobile-nav-blur_show': isMobileNavOpen() && !isHomePage()}"></div>
   <router-outlet></router-outlet>
 </div>
-<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage()}" [isBeyondMobileWidth]="isBeyondMobileWidth()" [isHomePage]="isHomePage()" (onMobileNavExpanded)="toggleMobileNavBlur($event)"></dhd-main-nav>
+<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage()}" [isBeyondMobileWidth]="isBeyondMobileWidth()"
+  [isHomePage]="isHomePage()" (onMobileNavExpanded)="toggleMobileNavExpanded($event)"></dhd-main-nav>
 <dhd-footer [ngClass]="{'footer_home': isHomePage()}"></dhd-footer>

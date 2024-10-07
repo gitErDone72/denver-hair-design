@@ -1,4 +1,5 @@
-import { Component, HostBinding, HostListener, OnInit, signal } from '@angular/core';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { Component, computed, HostBinding, HostListener, OnInit, signal } from '@angular/core';
 import {
   ChildrenOutletContexts,
   NavigationEnd,
@@ -7,13 +8,11 @@ import {
   RouterModule,
 } from '@angular/router';
 import { filter } from 'rxjs';
-import { slideInAnimation } from './shared/animations';
-import { convertStringToCamelCase } from './shared/utilities';
-import { MainNavComponent } from './components/main-nav/main-nav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { environment } from 'src/environments/environment.development';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { slideInAnimation } from './shared/animations';
 
 @Component({
   standalone: true,
@@ -26,13 +25,16 @@ import { environment } from 'src/environments/environment.development';
   ],
 })
 export class AppComponent implements OnInit {
-  @HostListener('window:resize', ['$event']) onResize(_event: any): void {
-    this.isWebWidthAndBeyond();
+  @HostListener('window:resize', ['$event']) _onResize(_event: any): void {
+    this.onResize();
   }
+
   @HostBinding('class.app-page-name') overlayClassByPage: string = '/';
   isHomePage = signal<boolean>(true);
-  isBeyondMobileWidth = signal<boolean>(false);
   isMobileNavOpen = signal<boolean>(true);
+  windowWidth = signal<number>(window.innerWidth);
+
+  isBeyondMobileWidth = computed(() => this.windowWidth() >= environment.beyondMobileWidth);
 
   routeContext: OutletContext | null = null;
 
@@ -44,7 +46,6 @@ export class AppComponent implements OnInit {
       .subscribe((event: any) => {
         this.isHomePage.set(event.url === '/');
       });
-    this.isWebWidthAndBeyond();
     this.setHomePageBackgroundImage();
   }
 
@@ -57,17 +58,23 @@ export class AppComponent implements OnInit {
   getAnimationPageName(): string {
     this.routeContext = this.contexts.getContext('primary');
     return this.routeContext !== null
-      ? convertStringToCamelCase(
-        this.routeContext?.route?.snapshot?.data?.['animation']
-      )
+      ? this.routeContext?.route?.snapshot?.data?.['animation']
       : '/';
   }
 
-  toggleMobileNavBlur($event: boolean): void {
-     this.isMobileNavOpen.set($event);
+  toggleMobileNavExpanded($event: boolean): void {
+    if (!this.isBeyondMobileWidth()) {
+      this.isMobileNavOpen.set($event);
+    } else {
+      this.isMobileNavOpen.set(false);
+    }
   }
 
-  private isWebWidthAndBeyond(): void {
-    this.isBeyondMobileWidth.set(window.innerWidth >= environment.beyondMobileWidth);
+  private onResize(): void {
+    this.windowWidth.set(window.innerWidth);
+    if (this.isBeyondMobileWidth()) {
+      this.isMobileNavOpen.set(false);
+    }
+    this.toggleMobileNavExpanded(false);
   }
 }
