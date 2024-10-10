@@ -16,7 +16,6 @@
     background-color: var(--color-secondary);
 
     @include respond(beyondMobileWidth) {
-      // border: 2.5px solid var(--color-white);
       border-radius: var(--border-radius);
       margin: inherit;
     }
