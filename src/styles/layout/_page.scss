@@ -10,10 +10,7 @@
   @include respond(beyondMobileWidth) {
   }
   &__subgrid {
-    display: grid;
+    @include dhdGrid(var(--grid-gap), true);
     height: max-content;
-    grid-template-columns: subgrid;
-    grid-column: var(--full-page-column-span);
-    gap: var(--grid-gap);
   }
 }

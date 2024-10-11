@@ -29,26 +29,8 @@
     &_6 {
       grid-area: products__item_6;
     }
-    &_7 {
-      grid-area: products__item_7;
-    }
-    &_8 {
-      grid-area: products__item_8;
-    }
-    &_9 {
-      grid-area: products__item_9;
-    }
-    &_10 {
-      grid-area: products__item_10;
-    }
-    &_11 {
-      grid-area: products__item_11;
-    }
-    &_12 {
-      grid-area: products__item_12;
-    }
   }
-  @include respond(tabletLandscape) {
+  @include respond(tablet) {
     align-content: center;
   }
 }

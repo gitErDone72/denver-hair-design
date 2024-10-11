@@ -3,8 +3,8 @@
   <div [class]="'text-block_section services__item services__item_'+(i+1)">
     <div class="text_title text-block_title">{{ serviceType.type }}</div>
     <div class="text-block_content">
-      @for (service of allServices[i].salonServices; track service) {
-      <span class="text-block_list-item">{{ service.name }}</span>
+      @for (service of allServices[i].salonServices; track service; let j = $index) {
+      <span [class]="'text-block_list-item text-block_list-item_'+(j+1)">{{ service.name }}</span>
       }
     </div>
   </div>
