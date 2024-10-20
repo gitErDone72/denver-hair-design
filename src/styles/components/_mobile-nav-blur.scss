@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 100;
   opacity: 0;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(10px);
   transition: opacity 1s ease, background-color ease;
   pointer-events: none;
   &_show {

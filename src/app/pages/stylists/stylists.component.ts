@@ -272,14 +272,6 @@ export class StylistsComponent implements OnInit {
       data: stylist,
       size: {
         maxWidth: '480px',
-        height:
-          window.innerWidth > 600
-            ? 'auto'
-            : 'calc(100vh - var(--spacing-main) * 4)',
-        width:
-          window.innerWidth > 600
-            ? 'auto'
-            : 'calc(100vw - var(--spacing-main) * 4)',
       },
     } as IModalOptions);
   }

@@ -1,4 +1,8 @@
 <div class="page__subgrid">
+  <div class="text-block text-block_statement">
+    <p class="paragraph">Your Beauty, Our Priority</p>
+    <p class="paragraph">Explore the wide range of services we offer to help you look and feel your best. From haircuts to color treatments, our skilled stylists are here to provide exceptional care tailored to your needs.</p>
+  </div>
   @for (serviceType of allServices; track serviceType; let i = $index) {
   <div [class]="'text-block_section services__item services__item_'+(i+1)">
     <div class="text_title text-block_title">{{ serviceType.type }}</div>

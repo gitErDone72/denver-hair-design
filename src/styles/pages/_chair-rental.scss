@@ -1,4 +1,26 @@
 .chair-rental {
-  justify-content: center;
-  justify-content: flex-end;
+  align-content: start;
+  &__split-screen {
+    grid-template-rows: [row-start] minmax(20rem, 1fr) [row-end row-start] min-content [row-end];
+    height: var(--page-container-height);
+    @include respond(tablet) {
+      grid-column: col-start 4 / col-end 9;
+      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
+    }
+  }
+  &__hero {
+    grid-column: 1 / -1;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @include respond(tablet) {
+    // align-content: center;
+  }
+  @include respond(desktop) {
+    padding: calc(var(--spacing-main) * 2) var(--spacing-main);
+  }
 }

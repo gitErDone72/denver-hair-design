@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
 
   isMobile = computed(() => this.windowWidth() < environment.beyondMobileWidth);
   isMainNavCollapsed = computed(() => !this.isMobile() || (!this.isHomePage() && !this.isMobileNavOpen()));
+  isMobileNavBlurred = computed(() => !this.isHomePage() && this.isMobile() && this.isMobileNavOpen());
 
   routeContext: OutletContext | null = null;
 
@@ -64,11 +65,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleMobileNavExpanded($event: boolean): void {
-    if (this.isMobile()) {
-      this.isMobileNavOpen.set($event);
-    } else {
-      this.isMobileNavOpen.set(false);
-    }
+    this.isMobileNavOpen.set(this.isMobile() ? $event : false);
   }
 
   private onResize(): void {

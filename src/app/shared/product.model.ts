@@ -6,7 +6,6 @@ export enum ProductType {
 }
 export interface IProduct {
   id: number,
-  brand: string;
   type: ProductType,
   name: string,
   image: string
@@ -14,6 +13,7 @@ export interface IProduct {
 
 export interface IProductBrand {
   brandName: string,
-  products: IProduct[]
+  products: IProduct[],
+  showInListing?: boolean
 }
 // allProducts: { brand: string, products: Product[]

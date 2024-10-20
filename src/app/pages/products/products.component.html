@@ -1,12 +1,14 @@
-<div class="page__subgrid">
+<div class="page__subgrid products__listing">
   <div class="text-block text-block_statement">
+    <p class="paragraph">Discover our premium product selection.</p>
     <p class="paragraph">Our knowledgeable staff is here to help you choose the right products to
       achieve and maintain your desired look.</p>
-    <p>Elevate your hair care routine with our expertly curated collection.</p>
+    <p class="paragraph">Elevate your hair care routine with our expertly curated collection.</p>
   </div>
   @for (brand of productBrands; track brand; let i = $index) {
-  <div [class]="'products__item products__item_'+(i+1)">
+  @if (brand.showInListing){
+  <div [class]="'products__item products__item_'+(i+1)+' products__item_'+brand.brandName.replace(' ','-').toLowerCase">
     {{brand.brandName}}
-  </div>
+  </div>}
   }
 </div>

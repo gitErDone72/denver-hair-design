@@ -1,3 +1,4 @@
+@use 'sass:color';
 /**
  * Basic typography style for copy text
  */
@@ -41,35 +42,52 @@ body {
 
 .text-block {
   &_title {
-    font-weight: 500;
-    padding-bottom: 0.5rem;
-    margin: 1rem 0 0.5rem;
-    border-bottom: 1px solid var(--color-primary-ultra-light);
+    align-self: stretch;
+    text-align: center;
+    padding-bottom: 0.9rem;
+    margin: 1rem 0 0.75rem;
+    border-image-slice: 1;
+    border-bottom: var(--border-width) solid var(--color-primary-ultra-light);
+    border-image-source: linear-gradient(
+      to right,
+      transparent,
+      var(--color-primary-ultra-light) 25%,
+      var(--color-primary-ultra-light) 75%,
+      transparent
+    );
+    transition: border-image-source 0.3s;
     @include respond(phone) {
+      align-self: stretch;
+      text-align: inherit;
       margin: 2rem 0 1rem;
+      border-image-source: linear-gradient(
+        to right,
+        var(--color-primary-ultra-light) 60%,
+        transparent
+      );
     }
   }
   &_statement {
     grid-column: 1 / -1;
-    border: 2px solid white;
     padding: 2rem;
-    font-size: 2.3rem;
+    font-size: 2.7rem;
     line-height: 1.1em;
     backdrop-filter: blur(10px);
-    margin: var(--page-element-margin);
-    margin-bottom: calc(var(--page-element-margin) * 0.5);
+    // 50, 74, 139 = $color-primary
+    // background-color: color.complement($color: rgba(50, 74, 139, 0.8));;
+    // background-color: rgba(var(--rgb-secondary), 0.9);
+    background-color: rgba(var(--rgb-primary-dark), 0.9);
+    border-radius: var(--border-radius);
 
     @include respond(phone) {
-      margin: var(--page-element-margin) auto;
+      // margin: var(--page-element-margin) auto;
     }
     @include respond(beyondMobileWidth) {
-      font-size: 4.6rem;
+      font-size: 3.2rem;
     }
   }
   &_note {
     grid-column: 1 / -1;
-    height: fit-content;
-    backdrop-filter: blur(27px);
     @include blurBackground(0, transparent, 27px);
     font-size: 1.4em;
     font-weight: 300;
@@ -91,7 +109,7 @@ body {
     align-items: center;
     font-family: "Neuton";
     font-size: 2.3rem;
-    padding: 2.5rem;
+    padding: 2.5rem var(--grid-gap);
     @include blurBackground();
     @include respond(phone) {
       align-items: flex-start;
@@ -107,8 +125,8 @@ body {
     width: max-content;
     grid-template-columns: 1fr;
     grid-auto-flow: content;
-    gap: var(--grid-gap);
     margin: 1rem 0;
+    gap: var(--grid-gap);
     @include respond(tablet) {
       margin-bottom: 4rem;
     }

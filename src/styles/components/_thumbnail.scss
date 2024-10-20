@@ -1,12 +1,16 @@
 .thumbnail {
   // max-width: 28.5rem;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: var(--border-radius);
-
   &__image {
+    flex: 1 0 auto;
     img {
-      display: block;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     &_clickable {
       cursor: pointer;
@@ -14,6 +18,7 @@
   }
 
   &__details {
+    flex: 0 0 auto;
     display: flex;
     justify-content: flex-end;
     height: calc(var(--hit-zone) * 2);
@@ -27,31 +32,16 @@
   }
 
   &__icon {
-    @include iconDoIt(var(--color-primary-ultra-light), 0.5em, $fontSize: unset);
+    @include iconDoIt(
+      var(--color-primary-ultra-light),
+      0.5em,
+      $fontSize: unset
+    );
   }
 
   &__link {
     display: block;
     height: var(--hit-zone);
     width: var(--hit-zone);
-  }
-}
-
-.stylist {
-  &__name {
-    flex: 1 0 auto;
-    padding: 1rem 1rem 2.2rem;
-    line-height: 1;
-    font-family: "League Spartan";
-
-    &_first {
-      color: var(--color-white);
-      font-size: 3rem;
-    }
-
-    &_last {
-      font: normal normal 2.3rem / 0.5em "Neuton", serif;
-      color: var(--color-primary-ultra-light);
-    }
   }
 }

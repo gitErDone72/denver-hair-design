@@ -4,7 +4,7 @@
   </svg>
 </header>
 <div class="page-container" [@routeAnimations]="getAnimationPageName()">
-  <div class="mobile-nav-blur" [ngClass]="{ 'mobile-nav-blur_show': isMobileNavOpen() && !isHomePage()}"></div>
+  <div class="mobile-nav-blur" [ngClass]="{ 'mobile-nav-blur_show': isMobileNavBlurred()}"></div>
   <router-outlet></router-outlet>
 </div>
 

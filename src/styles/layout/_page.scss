@@ -2,9 +2,9 @@
   @include dhdGrid();
   height: var(--page-container-height);
   overflow: auto;
-  padding: var(--spacing-main);
 
-  @include respond(phone) {
+  @include respond(small) {
+    padding: var(--spacing-main);
   }
 
   @include respond(beyondMobileWidth) {
@@ -12,5 +12,6 @@
   &__subgrid {
     @include dhdGrid(var(--grid-gap), true);
     height: max-content;
+    @include snazzyBgNBorder();
   }
 }

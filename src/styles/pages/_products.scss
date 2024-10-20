@@ -1,34 +1,25 @@
 .products {
   align-content: start;
-  .page__subgrid {
-    grid-template-areas:
-      "products__item_1 products__item_1 products__item_1 products__item_1 products__item_2 products__item_2 products__item_2 products__item_2 products__item_3 products__item_3 products__item_3 products__item_3"
-      "text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement text-block_statement"
-      "products__item_4 products__item_4 products__item_4 products__item_4 products__item_5 products__item_5 products__item_5 products__item_5 products__item_6 products__item_6 products__item_6 products__item_6";
-    .text-block_statement {
-      grid-area: text-block_statement;
+  &__listing {
+    grid-template-rows: repeat(
+      2,
+      [row-start] minmax(min-content, 1fr) [row-end]
+    );
+    height: var(--page-container-height);
+    @include respond(tablet) {
+      grid-column: col-start 4 / col-end 9;
+      height: auto;
     }
   }
   &__item {
-    background-color: red;
-    &_1 {
-      grid-area: products__item_1;
+    grid-column: span 4;
+    @include respond(phone) {
+      grid-column: span 2;
     }
-    &_2 {
-      grid-area: products__item_2;
-    }
-    &_3 {
-      grid-area: products__item_3;
-    }
-    &_4 {
-      grid-area: products__item_4;
-    }
-    &_5 {
-      grid-area: products__item_5;
-    }
-    &_6 {
-      grid-area: products__item_6;
-    }
+
+    @include blurBackground(0, transparent, 27px);
+    background-color: green;
+
   }
   @include respond(tablet) {
     align-content: center;

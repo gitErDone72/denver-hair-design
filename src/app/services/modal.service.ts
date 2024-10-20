@@ -25,7 +25,7 @@ export class ModalService {
 
   open<C>(component: Type<C>, options?: IModalOptions): void {
     this.options = options as IModalOptions | undefined;
-    if (this.options)
+    if (this.options) {
       this.options.animations = {
         modal: {
           enter: 'fade-in 0.3s ease-out',
@@ -36,6 +36,20 @@ export class ModalService {
           leave: 'fade-out 1s forwards',
         },
       };
+      this.options.size = {
+        ...options?.size,
+        height:
+          window.innerWidth > 600
+            ? 'auto'
+            : 'calc(100vh - var(--spacing-main) * 2)',
+        width:
+          window.innerWidth > 600
+            ? 'auto'
+            : 'calc(100vw - var(--spacing-main) * 2)',
+      }
+    }
+
+
     const dynamicModalContent = createComponent(component, {
       environmentInjector: this.injector,
     });

@@ -32,11 +32,9 @@
   @if $isSubgrid {
     grid-template-columns: subgrid;
   } @else {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
     @include respond(desktop) {
-      grid-template-columns: 2.5fr repeat(12, 1fr) 2.5fr;
-      grid-template-areas: " . col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12 . ";
+      grid-template-columns: 2.5fr repeat(12, [col-start] 1fr [col-end]) 2.5fr;
     }
   }
 }
@@ -97,6 +95,17 @@
 // 1em = 16px
 
 @mixin respond($breakpoint) {
+  @if $breakpoint == extraSmall {
+    @media only screen and (min-width: 275px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small {
+    @media only screen and (min-width: 400px) {
+      @content;
+    }
+  }
   @if $breakpoint == phone {
     @media only screen and (min-width: 600px) {
       @content;
@@ -116,7 +125,7 @@
   }
 
   @if $breakpoint == desktop {
-    @media only screen and (min-width: 1300px) {
+    @media only screen and (min-width: 1200px) {
       @content;
     }
   }
@@ -132,7 +141,31 @@
   fill: $fill;
 }
 
-@mixin blurBackground($opacity: 0.9, $backgroundColor: var(--rgb-primary-dark), $blurskee: 10px) {
+@mixin blurBackground(
+  $opacity: 0.9,
+  $backgroundColor: var(--rgb-primary-dark),
+  $blurAmount: 10px
+) {
   background-color: rgba($backgroundColor, $opacity);
-  backdrop-filter: blur($blurskee);
+  backdrop-filter: blur($blurAmount);
+}
+
+@mixin snazzyBgNBorder() {
+  padding: var(--spacing-main);
+  // margin: calc(var(--spacing-main) * -1);
+  background-color: rgba(182, 38, 177, 0.42);
+  background-blend-mode: overlay;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 16, 16, 0.86),
+    rgba(0, 255, 251, 0.69)
+  );
+  @include respond(desktop) {
+    // padding: calc(var(--spacing-main) * 2);
+    margin: calc(var(--spacing-main) * -1) calc(var(--spacing-main) * -1 * 2);
+    // --border-radius is set to 0 at the moment
+    // and I don't want to change it in the variables file
+    // border-radius: var(--border-radius);
+    border-radius: 6px;
+  }
 }

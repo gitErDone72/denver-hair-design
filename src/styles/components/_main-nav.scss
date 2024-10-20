@@ -88,7 +88,7 @@ $navItemsLength: length(
       background-color: var(--color-primary);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
-        border-bottom: 3px solid var(--color-white);
+        border-bottom: var(--border-width) solid var(--color-white);
       }
     }
 
@@ -102,7 +102,7 @@ $navItemsLength: length(
       height: var(--main-nav-height-web);
       position: static;
       padding: 0 1.5rem;
-      border-bottom: 3px solid transparent;
+      border-bottom: var(--border-width) solid transparent;
       background-color: transparent;
       color: var(--color-primary-ultra-light);
     }
@@ -113,7 +113,7 @@ $navItemsLength: length(
       @include respond(beyondMobileWidth) {
         color: var(--color-white);
         background-color: transparent;
-        border-bottom: 3px solid var(--color-white);
+        border-bottom: var(--border-width) solid var(--color-white);
       }
     }
   }

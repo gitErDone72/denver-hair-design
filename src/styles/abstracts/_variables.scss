@@ -15,20 +15,23 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   --app-background-image: url('/assets/img/pages/home_1.jpg');
   @media only screen and (min-width: 400px) {
     --header-height: 10rem;
+    --grid-gap: 1rem;
+    --spacing-main: 1rem;
     --page-container-height: calc(
       100vh - var(--footer-height) - var(--header-height) -
         var(--main-nav-height-web)
     );
   }
+
   @media only screen and (min-width: 640px) {
     // beyondMobileWidth
     --spacing-main: 2rem;
     --page-element-margin: 4.9rem;
-    // --full-page-column-span: col-3 / col-10;
     --grid-gap: 1.5rem;
   }
 
   // --border-radius: 0.9rem;
+  --border-width: 3px;
   --border-radius: 0;
   --text-shadow: 1px 3px 3px black;
 
@@ -48,10 +51,12 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
   --page-element-margin: 0.5rem;
 
-  --full-page-column-span: col-1 / -1;
+  --full-page-column-span: col-start 1 / col-end 12;
 
-  --grid-gap: 1rem;
-  --spacing-main: 1rem;
+  --grid-gap: .5rem;
+  --spacing-main: .5rem;
+
+
   --hit-zone: 4.5rem;
 
   // PRIMARY COLORS:
@@ -86,7 +91,8 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   //SECONDARY COLORS:
   // --rgb-secondary: 85, 149, 158;
   // --rgb-secondary: 255, 173, 0;
-  --rgb-secondary: 174, 140, 77;
+  // --rgb-secondary: 174, 140, 77;
+  --rgb-secondary: 50, 119, 139;
   --rgb-secondary-dark: 50, 37, 41;
   --rgb-secondary-ultra-dark: 52, 44, 18;
   // these below are not valid yet...

@@ -1,7 +1,13 @@
 .stylists {
+  @include respond(desktop) {
+    padding: calc(var(--spacing-main) * 2) var(--spacing-main);
+  }
   .thumbnail {
-    grid-column: span 6;
     grid-row: auto;
+    grid-column: span 12;
+    @include respond(extraSmall) {
+      grid-column: span 6;
+    }
     @include respond(beyondMobileWidth) {
       grid-column: span 4;
     }
@@ -11,3 +17,32 @@
   }
 }
 
+.stylist {
+  &__name {
+    flex: 1 0 auto;
+    padding: calc(var(--spacing-main) * 2);
+    line-height: 1;
+    font-family: "League Spartan";
+
+    &_first {
+      color: var(--color-white);
+      font-size: 3rem;
+    }
+
+    &_last {
+      color: var(--color-primary-ultra-light);
+      font: normal normal 2rem / 0.5em "Neuton", serif;
+      @include respond(small) {
+        font-size: 2.3rem;
+      }
+    }
+
+    @include respond(small) {
+      padding: var(--spacing-main);
+    }
+
+    @include respond(beyondMobileWidth) {
+      padding: calc(var(--spacing-main) / 2);
+    }
+  }
+}
