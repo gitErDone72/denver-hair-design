@@ -19,6 +19,10 @@ body {
   font: normal normal 300 160% / 1.4 "Neuton", serif;
 }
 
+.paragraph{
+  font-size: 0.8em;
+}
+
 .link {
   font-family: "League Spartan";
   text-decoration: none;
@@ -42,7 +46,7 @@ body {
 
 .text-block {
   &_title {
-    align-self: stretch;
+    grid-column: 1 / -1;
     text-align: center;
     padding-bottom: 0.9rem;
     margin: 1rem 0 0.75rem;
@@ -57,7 +61,6 @@ body {
     );
     transition: border-image-source 0.3s;
     @include respond(phone) {
-      align-self: stretch;
       text-align: inherit;
       margin: 2rem 0 1rem;
       border-image-source: linear-gradient(
@@ -104,15 +107,16 @@ body {
     }
   }
   &_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: subgrid;
+    // flex-direction: column;
+    // align-items: center;
     font-family: "Neuton";
     font-size: 2.3rem;
     padding: 2.5rem var(--grid-gap);
     @include blurBackground();
     @include respond(phone) {
-      align-items: flex-start;
+      // align-items: flex-start;
     }
     @include respond(tablet) {
       padding: 1.7rem;
@@ -132,12 +136,15 @@ body {
     }
   }
   &_list-item {
+    grid-column: 1 / -1;
+    text-align: center;
     font-size: 2rem;
     line-height: 1em;
     font-family: "Neuton", serif;
     color: var(--color-primary-ultra-light);
     @include respond(phone) {
       font-size: 2.3rem;
+      text-align: left;
     }
   }
 }

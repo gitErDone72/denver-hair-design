@@ -10,7 +10,7 @@
   @include respond(beyondMobileWidth) {
   }
   &__subgrid {
-    @include dhdGrid(var(--grid-gap), true);
+    @include dhdGrid(true);
     height: max-content;
     @include snazzyBgNBorder();
   }

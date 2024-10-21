@@ -1,11 +1,14 @@
 .chair-rental {
   align-content: start;
   &__split-screen {
-    grid-template-rows: [row-start] minmax(20rem, 1fr) [row-end row-start] min-content [row-end];
     height: var(--page-container-height);
+    grid-template-rows: [row-start] minmax(20rem, 1fr) [row-end row-start] min-content [row-end];
+    overflow: auto;
+    @include respond(small) {
+      height: calc(var(--page-container-height) - (var(--spacing-main) * 2))
+    }
     @include respond(tablet) {
       grid-column: col-start 4 / col-end 9;
-      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
     }
   }
   &__hero {

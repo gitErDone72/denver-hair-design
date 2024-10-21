@@ -1,20 +1,62 @@
 .services {
   align-content: start;
-    // @include respond(beyondMobileWidth) {
-    //   border-radius: var(--border-radius);
-    //   margin: inherit;
-    // }
+  &__listing {
+    grid-column: var(--full-page-column-span);
+  }
   &__item {
-    grid-column: span 12;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    grid-template-rows: min-content repeat(3, auto min-content);
     border-radius: var(--border-radius);
     &_1.services__item {
-      grid-column: span 12;
-      @include respond(tablet) {
+      grid-column: 1 / -1;
+      .text-block_content {
+        grid-column: col-start 3 / col-end 10;
+        // @include respond(small){
+        //   grid-column: col-start 4 / col-end 9;
+        // }
+        @include respond(phone) {
+          grid-column: 1 / -1;
+        }
+      }
+      .text-block_list-item {
+        // grid-column: span 6;
+        grid-column: span 3;
+        // @for $i from 1 through 6 {
+        //   &:nth-child(#{$i}) {
+        //     @if $i % 2 == 1 {
+        //       text-align: right;
+        //     } @else {
+        //       text-align: left;
+        //     }
+        //   }
+        // }
+        @include respond(small) {
+          grid-column: span 3;
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              text-align: left;
+            }
+          }
+        }
+        @include respond(phone) {
+          grid-column: span 6;
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              text-align: right;
+            }
+          }
+        }
+        // @include respond(beyondMobileWidth) {
+        //   grid-column: span 4;
+        // }
+      }
+      @include respond(tablet){
         grid-column: span 4;
       }
     }
     @include respond(phone) {
-      grid-column: span 6;
+      // grid-column: span 6;
     }
     @include respond(tablet) {
       grid-column: span 4;
@@ -22,27 +64,13 @@
     // override defaults from _typography.scss
     .text-block {
       &_content {
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(2, 1fr);
+        grid-column: 1 / -1;
+        grid-template-rows: repeat(3, min-content);
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: subgrid;
         grid-auto-flow: row;
         @include respond(phone) {
           grid-auto-flow: column;
-        }
-      }
-      &_list-item {
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            @if $i % 2 == 1 {
-              text-align: right;
-            }
-          }
-        }
-        @include respond(phone) {
-          @for $i from 1 through 5 {
-            &:nth-child(#{$i}) {
-              text-align: left;
-            }
-          }
         }
       }
     }
@@ -60,5 +88,9 @@
   }
   @include respond(tablet) {
     align-content: center;
+  }
+  @include respond(stubbyHeight) {
+    // align-content: start;
+    padding: 4rem;
   }
 }

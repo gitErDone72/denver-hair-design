@@ -25,11 +25,11 @@
   }
 }
 
-@mixin dhdGrid($gap: var(--grid-gap), $isSubgrid: false) {
+@mixin dhdGrid($isSubgrid: false, $gap: var(--grid-gap)) {
   display: grid;
   gap: $gap;
-  grid-column: var(--full-page-column-span);
   @if $isSubgrid {
+    grid-column: var(--full-page-column-span);
     grid-template-columns: subgrid;
   } @else {
     grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
@@ -95,6 +95,14 @@
 // 1em = 16px
 
 @mixin respond($breakpoint) {
+
+@if $breakpoint == stubbyHeight {
+    @media only screen and (max-height: 850px) and (min-width: 600px)
+    {
+      @content;
+    }
+  }
+
   @if $breakpoint == extraSmall {
     @media only screen and (min-width: 275px) {
       @content;

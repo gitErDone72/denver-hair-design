@@ -1,27 +1,76 @@
 .products {
   align-content: start;
   &__listing {
-    grid-template-rows: repeat(
-      2,
-      [row-start] minmax(min-content, 1fr) [row-end]
-    );
+    grid-template-rows: [row-start] min-content [row-end] repeat(
+        3,
+        [row-start] 1fr [row-end]
+      );
     height: var(--page-container-height);
+    @include respond(small) {
+      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
+    }
+    @include respond(phone) {
+      grid-template-rows:
+        [row-start] 1fr [row-end row-start] minmax(min-content, 20rem)
+        [row-end];
+      height: auto;
+    }
+
     @include respond(tablet) {
       grid-column: col-start 4 / col-end 9;
+      grid-template-rows:
+        [row-start] min-content [row-end row-start] minmax(min-content, 20rem)
+        [row-end];
+    }
+    @include respond(stubbyHeight) {
       height: auto;
     }
   }
   &__item {
-    grid-column: span 4;
+    &_1 {
+      grid-area: row-start 2 / col-start 1 / row-end 4 / col-end 5;
+      @include respond(phone) {
+        grid-area: auto;
+      }
+      background-color: blue;
+    }
+
+    &_2 {
+      grid-area: row-start 2 / col-start 6 / row-end 2 / col-end -1;
+      @include respond(phone) {
+        grid-area: auto;
+      }
+    }
+
+    &_5 {
+      grid-area: row-start 3 / col-start 6 / row-end 4 / col-end -1;
+      background-color: red;
+      @include respond(phone) {
+        grid-area: auto;
+      }
+    }
+
+    grid-column: span 12;
+    @include respond(small) {
+      grid-column: span 6;
+    }
     @include respond(phone) {
+      grid-column: span 4;
+    }
+    @include respond(tablet) {
       grid-column: span 2;
     }
 
     @include blurBackground(0, transparent, 27px);
     background-color: green;
-
   }
-  @include respond(tablet) {
+
+  @include respond(phone) {
     align-content: center;
+  }
+
+  @include respond(stubbyHeight) {
+    align-content: start;
+    padding: 4rem;
   }
 }
