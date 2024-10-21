@@ -1,4 +1,4 @@
-@use 'sass:color';
+@use "sass:color";
 /**
  * Basic typography style for copy text
  */
@@ -19,7 +19,7 @@ body {
   font: normal normal 300 160% / 1.4 "Neuton", serif;
 }
 
-.paragraph{
+.paragraph {
   font-size: 0.8em;
 }
 
@@ -109,8 +109,6 @@ body {
   &_section {
     display: grid;
     grid-template-columns: subgrid;
-    // flex-direction: column;
-    // align-items: center;
     font-family: "Neuton";
     font-size: 2.3rem;
     padding: 2.5rem var(--grid-gap);

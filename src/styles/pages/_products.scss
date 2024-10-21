@@ -17,9 +17,8 @@
     }
 
     @include respond(tablet) {
-      grid-column: col-start 4 / col-end 9;
       grid-template-rows:
-        [row-start] min-content [row-end row-start] minmax(min-content, 20rem)
+        [row-start] min-content [row-end row-start] minmax(min-content, 30rem)
         [row-end];
     }
     @include respond(stubbyHeight) {
@@ -57,9 +56,6 @@
     @include respond(phone) {
       grid-column: span 4;
     }
-    @include respond(tablet) {
-      grid-column: span 2;
-    }
 
     @include blurBackground(0, transparent, 27px);
     background-color: green;
@@ -67,10 +63,5 @@
 
   @include respond(phone) {
     align-content: center;
-  }
-
-  @include respond(stubbyHeight) {
-    align-content: start;
-    padding: 4rem;
   }
 }

@@ -14,4 +14,8 @@
     height: max-content;
     @include snazzyBgNBorder();
   }
+  @include respond(stubbyHeight) {
+    padding: var(--spacing-main);
+    align-content: start !important;
+  }
 }
