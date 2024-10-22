@@ -8,7 +8,7 @@ import { IDhdNavDataItem } from './nav-item.model';
   selector: 'dhd-main-nav',
   templateUrl: './main-nav.component.html',
   host: { class: 'main-nav' },
-  imports: [RouterModule]
+  imports: [RouterModule],
 })
 export class MainNavComponent implements OnInit {
   isHomePage = input.required<boolean>();
@@ -18,11 +18,13 @@ export class MainNavComponent implements OnInit {
   isExpanded: boolean = false;
   navItems!: IDhdNavDataItem[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.onMobileNavExpanded.emit(this.isExpanded);
-    this.navItems = DhdNavRoutes.filter(route => route.data.showInNav).map((route) => route.data);
+    this.navItems = DhdNavRoutes.filter((route) => route.data.showInNav).map(
+      (route) => route.data
+    );
   }
 
   navItemClick(): void {
