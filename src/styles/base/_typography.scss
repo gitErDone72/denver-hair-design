@@ -21,6 +21,14 @@ body {
 
 .paragraph {
   font-size: 0.8em;
+  line-height: 1.2em;
+  font-weight: 200;
+  &:not(:last-child) {
+    margin-bottom: 0.7em;
+  }
+  @include respond(phone) {
+    font-size: 1em;
+  }
 }
 
 .link {
@@ -72,18 +80,19 @@ body {
   }
   &_statement {
     grid-column: 1 / -1;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding: calc(var(--spacing-main) * 2);
     font-size: 2.7rem;
     line-height: 1.1em;
-    backdrop-filter: blur(10px);
-    // 50, 74, 139 = $color-primary
-    // background-color: color.complement($color: rgba(50, 74, 139, 0.8));;
-    // background-color: rgba(var(--rgb-secondary), 0.9);
-    background-color: rgba(var(--rgb-primary-dark), 0.9);
     border-radius: var(--border-radius);
 
+    .paragraph {
+      grid-column: col-start 1 / col-end 11;
+    }
+
     @include respond(phone) {
-      // margin: var(--page-element-margin) auto;
+      padding: var(--spacing-main) 0 calc(var(--spacing-main) / 2);
     }
     @include respond(beyondMobileWidth) {
       font-size: 3.2rem;
