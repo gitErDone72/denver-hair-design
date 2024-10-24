@@ -158,12 +158,18 @@
 
 @mixin snazzyBgNBorder() {
   padding: var(--spacing-main);
-  background-color: rgb(23 36 86 / 48%);
-  background-blend-mode: luminosity;
-  background-image: linear-gradient(135deg, rgba(133, 148, 204, 0.62), rgba(18, 26, 52, 0.39));
-  backdrop-filter: blur(10px);
+  background-color: rgba(43, 163, 146, 0.38);
+  background-blend-mode: overlay;
+  background-image: linear-gradient(
+    45deg,
+    rgba(133, 148, 204, 0.29),
+    rgba(18, 26, 52, 0.7)
+  );
+  backdrop-filter: blur(25px);
   @include respond(small) {
-    border-radius: 6px;
+    border: var(--border-width) solid var(--color-primary-ultra-light);
+    border-image-source: linear-gradient(to right, red, blue);
+    border-image-slice: 1;
   }
   @include respond(desktop) {
     // padding: calc(var(--spacing-main) * 2);

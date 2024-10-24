@@ -12,7 +12,7 @@ $Web-Site-5-hsla: hsla(263, 30, 47, 1);
 $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
 :root {
-  --app-background-image: url('/assets/img/pages/home_1.jpg');
+  --app-background-image: url("/assets/img/pages/home_1.jpg");
   @media only screen and (min-width: 400px) {
     --header-height: 10rem;
     --grid-gap: 1rem;
@@ -31,9 +31,9 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   }
 
   // --border-radius: 0.9rem;
-  --border-width: 3px;
+  --border-width: 6px;
   --border-radius: 0;
-  --text-shadow: 1px 3px 3px black;
+  --text-shadow: 1px 1px 5px var(--color-primary-dark);
 
   --header-height: 8.5rem;
   --footer-height: 5rem;
@@ -53,9 +53,8 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
   --full-page-column-span: col-start 1 / col-end 12;
 
-  --grid-gap: .5rem;
-  --spacing-main: .5rem;
-
+  --grid-gap: 0.5rem;
+  --spacing-main: 0.5rem;
 
   --hit-zone: 4.5rem;
 
