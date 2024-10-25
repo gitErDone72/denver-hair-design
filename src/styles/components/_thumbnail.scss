@@ -33,7 +33,7 @@
 
   &__icon {
     @include iconDoIt(
-      var(--color-primary-ultra-light),
+      var(--color-secondary),
       0.5em,
       $fontSize: unset
     );

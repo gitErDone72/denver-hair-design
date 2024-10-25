@@ -6,7 +6,7 @@
   z-index: 50;
   text-align: center;
   cursor: pointer;
-  background-color: var(--color-primary-ultra-dark);
+  background-color: var(--color-primary-dark);
 
   &_home {
     transform: translateY(calc(var(--header-height) * -1));

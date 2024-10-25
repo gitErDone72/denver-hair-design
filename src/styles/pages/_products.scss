@@ -31,24 +31,19 @@
       @include respond(phone) {
         grid-area: auto;
       }
-      background-color: blue;
     }
-
     &_2 {
       grid-area: row-start 2 / col-start 6 / row-end 2 / col-end -1;
       @include respond(phone) {
         grid-area: auto;
       }
     }
-
     &_5 {
       grid-area: row-start 3 / col-start 6 / row-end 4 / col-end -1;
-      background-color: red;
       @include respond(phone) {
         grid-area: auto;
       }
     }
-
     grid-column: span 12;
     @include respond(small) {
       grid-column: span 6;
@@ -56,9 +51,7 @@
     @include respond(phone) {
       grid-column: span 4;
     }
-
-    @include blurBackground(0, transparent, 27px);
-    background-color: green;
+    background-color:  var(--color-secondary);
   }
 
   @include respond(phone) {

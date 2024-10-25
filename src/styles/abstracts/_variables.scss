@@ -1,19 +1,20 @@
-/* Color Theme Swatches in HSLA */
-$Web-Site-1-hsla: hsla(205, 30, 47, 1);
-$Web-Site-2-hsla: hsla(244, 30, 47, 1);
-$Web-Site-3-hsla: hsla(
-  224,
-  30,
-  47,
-  1
-); // primary from https://color.adobe.com/mythemes
-$Web-Site-4-hsla: hsla(187, 30, 47, 1);
-$Web-Site-5-hsla: hsla(263, 30, 47, 1);
-$Web-Site-6-hsla: hsla(224, 9, 58, 1);
+// /* Color Theme Swatches in HSLA */
+// $Web-Site-1-hsla: hsla(205, 30, 47, 1);
+// $Web-Site-2-hsla: hsla(244, 30, 47, 1);
+// $Web-Site-3-hsla: hsla(
+//   224,
+//   30,
+//   47,
+//   1
+// ); // primary from https://color.adobe.com/mythemes
+// $Web-Site-4-hsla: hsla(187, 30, 47, 1);
+// $Web-Site-5-hsla: hsla(263, 30, 47, 1);
+// $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
 :root {
   --app-background-image: url("/assets/img/pages/home_1.jpg");
   @media only screen and (min-width: 400px) {
+    // small
     --header-height: 10rem;
     --grid-gap: 1rem;
     --spacing-main: 1rem;
@@ -26,19 +27,14 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   @media only screen and (min-width: 640px) {
     // beyondMobileWidth
     --spacing-main: 2rem;
-    --page-element-margin: 4.9rem;
     --grid-gap: 1.5rem;
   }
 
-  // --border-radius: 0.9rem;
   --border-width: 6px;
   --border-radius: 0;
-  --text-shadow: 1px 1px 5px var(--color-primary-dark);
 
   --header-height: 8.5rem;
   --footer-height: 5rem;
-  --page-width-max: 120rem;
-  --page-width-min: 18rem;
 
   // multiply by number of nav items (currently 4 without "gallery")
   --main-nav-height: calc((var(--hit-zone) * 4) + 20px);
@@ -49,8 +45,6 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
   );
   --collapsed-container-height: calc(var(--hit-zone) * 1.3);
 
-  --page-element-margin: 0.5rem;
-
   --full-page-column-span: col-start 1 / col-end 12;
 
   --grid-gap: 0.5rem;
@@ -60,57 +54,55 @@ $Web-Site-6-hsla: hsla(224, 9, 58, 1);
 
   // PRIMARY COLORS:
   // --color-primary: rgb(107 66 123);
-  --rgb-primary: 50, 74, 139;
-  --rgb-primary-dark: 36, 54, 101;
-  --rgb-primary-ultra-dark: 18, 26, 52;
-  --rgb-primary-light: 90, 110, 175;
-  --rgb-primary-ultra-light: 133, 149, 204;
-  --rgb-primary-accent: 235, 47, 100;
+  --rgb-primary-ultra-dark: 6, 12, 31;
+  --rgb-primary-dark: 13, 25, 64;
+  --rgb-primary: 24, 44, 112;
+  --rgb-primary-light: 74, 110, 219;
+  --rgb-primary-ultra-light: 143, 171, 255;
 
-  --rgb-primary-purple: 102, 78, 136;
-  --rgb-primary-seafoam: 78, 136, 136;
-  --rgb-primary-slate: 78, 111, 136;
-  --rgb-primary-dark-slate: 48, 74, 110;
+  // --rgb-primary-purple: 102, 78, 136;
+  // --rgb-primary-seafoam: 78, 136, 136;
+  // --rgb-primary-slate: 78, 111, 136;
+  // --rgb-primary-dark-slate: 48, 74, 110;
   // these below are not valid yet...
   // they were created by my friend, copilot
-  --rgb-primary-amber: 136, 136, 78;
-  --rgb-primary-rose: 136, 78, 78;
+  // --rgb-primary-amber: 136, 136, 78;
+  // --rgb-primary-rose: 136, 78, 78;
 
+  --color-primary-ultra-dark: rgb(var(--rgb-primary-ultra-dark));
+  --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
   --color-primary-ultra-light: rgb(var(--rgb-primary-ultra-light));
-  --color-primary-dark: rgb(var(--rgb-primary-dark));
-  --color-primary-ultra-dark: rgb(var(--rgb-primary-ultra-dark));
   //
-  --color-primary-purple: rgb(var(--rgb-primary-purple));
-  --color-primary-seafoam: rgb(var(--rgb-primary-seafoam));
-  --color-primary-slate: rgb(var(--rgb-primary-slate));
-  --color-primary-dark-slate: rgb(var(--rgb-primary-dark-slate));
+  // --color-primary-purple: rgb(var(--rgb-primary-purple));
+  // --color-primary-seafoam: rgb(var(--rgb-primary-seafoam));
+  // --color-primary-slate: rgb(var(--rgb-primary-slate));
+  // --color-primary-dark-slate: rgb(var(--rgb-primary-dark-slate));
+
+  --color-white: rgb(232, 235, 228);
 
   //SECONDARY COLORS:
   // --rgb-secondary: 85, 149, 158;
   // --rgb-secondary: 255, 173, 0;
   // --rgb-secondary: 174, 140, 77;
-  --rgb-secondary: 50, 119, 139;
-  --rgb-secondary-dark: 50, 37, 41;
-  --rgb-secondary-ultra-dark: 52, 44, 18;
+  --rgb-secondary: 252, 167, 101;
+  --rgb-secondary-dark: 217, 120, 76;
+  // --rgb-secondary-ultra-dark: 52, 44, 18;
   // these below are not valid yet...
   // need to base them on the above ^^^
-  --rgb-secondary-dark: 50, 37, 41;
-  --rgb-secondary-light: 151 165 216;
-  --rgb-secondary-ultra-light: 306 31 97;
-  --rgb-secondary-accent: 235, 47, 100;
+  // --rgb-secondary-dark: 50, 37, 41;
+  // --rgb-secondary-light: 151 165 216;
+  // --rgb-secondary-ultra-light: 306 31 97;
+  // --rgb-secondary-accent: 235, 47, 100;
   //
   --color-secondary: rgb(var(--rgb-secondary));
-  --color-secondary-ultra-dark: rgb(var(--rgb-secondary-ultra-dark));
+  --color-secondary-dark: rgb(var(--rgb-secondary-dark));
+  // --color-secondary-ultra-dark: rgb(var(--rgb-secondary-ultra-dark));
 
-  --color-white: #ffffff;
 
   //
 
   --color-home-gradient-1: rgba(200, 205, 104, 0.39);
   --color-home-gradient-2: rgba(91, 98, 50, 0.51);
-
-  --color-page-gradient-1: rgba(230, 117, 17, 0.33);
-  --color-page-gradient-2: rgba(9, 28, 20, 0.62);
 }

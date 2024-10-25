@@ -27,14 +27,12 @@ $navItemsLength: length(
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--color-primary-ultra-dark);
+    background-color: var(--color-primary-dark);
   }
 
   &_home {
     .main-nav__link {
-      background-color: orange;
-      // @include blurBackground(0.5);
-      // background-color: var(--color-primary-purple);
+      background-color: var(--color-secondary);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
       }

@@ -2,7 +2,7 @@
   flex: 0 0 var(--footer-height);
   padding: 0 var(--spacing-main);
   @include dhdGrid();
-  @include blurBackground(0.8, var(--rgb-primary-ultra-dark));
+  @include blurBackground(0.8, var(--rgb-primary-dark));
 
   &__contact{
     grid-column: col-start 1 / col-end 6;
