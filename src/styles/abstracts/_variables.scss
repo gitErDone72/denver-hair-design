@@ -57,8 +57,9 @@
   --rgb-primary-ultra-dark: 6, 12, 31;
   --rgb-primary-dark: 13, 25, 64;
   --rgb-primary: 24, 44, 112;
-  --rgb-primary-light: 74, 110, 219;
+  --rgb-primary-light: 92, 116, 187;
   --rgb-primary-ultra-light: 143, 171, 255;
+  --rgb-primary-grey: 93, 104, 142;
 
   // --rgb-primary-purple: 102, 78, 136;
   // --rgb-primary-seafoam: 78, 136, 136;
@@ -73,20 +74,22 @@
   --color-primary-dark: rgb(var(--rgb-primary-dark));
   --color-primary: rgb(var(--rgb-primary));
   --color-primary-light: rgb(var(--rgb-primary-light));
-  --color-primary-ultra-light: rgb(var(--rgb-primary-ultra-light));
+  --color-primary-light: rgb(var(--rgb-primary-ultra-light));
+  --color-primary-grey: rgb(var(--rgb-primary-grey));
   //
   // --color-primary-purple: rgb(var(--rgb-primary-purple));
   // --color-primary-seafoam: rgb(var(--rgb-primary-seafoam));
   // --color-primary-slate: rgb(var(--rgb-primary-slate));
   // --color-primary-dark-slate: rgb(var(--rgb-primary-dark-slate));
 
-  --color-white: rgb(232, 235, 228);
-
   //SECONDARY COLORS:
   // --rgb-secondary: 85, 149, 158;
   // --rgb-secondary: 255, 173, 0;
   // --rgb-secondary: 174, 140, 77;
-  --rgb-secondary: 252, 167, 101;
+  // --rgb-secondary: 252, 167, 101;
+  // --rgb-secondary: 183, 96, 37;
+  // --rgb-secondary: 172, 154, 8;
+  --rgb-secondary: 113, 40, 40;
   --rgb-secondary-dark: 217, 120, 76;
   // --rgb-secondary-ultra-dark: 52, 44, 18;
   // these below are not valid yet...
@@ -100,6 +103,8 @@
   --color-secondary-dark: rgb(var(--rgb-secondary-dark));
   // --color-secondary-ultra-dark: rgb(var(--rgb-secondary-ultra-dark));
 
+  --rgb-color-white: 232, 235, 228;
+  --color-white: rgb(var(--rgb-color-white));
 
   //
 

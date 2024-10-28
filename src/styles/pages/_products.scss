@@ -16,30 +16,34 @@
       height: auto;
     }
 
-    @include respond(tablet) {
-      grid-template-rows:
-        [row-start] min-content [row-end row-start] minmax(min-content, 30rem)
-        [row-end];
-    }
     @include respond(stubbyHeight) {
       height: auto;
     }
   }
   &__item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: calc(var(--spacing-main) * 2) calc(var(--spacing-main) * 5);
+    object-fit: cover;
+    fill: rgba(var(--rgb-color-white), 0.7);
+    // background: linear-gradient(-1deg, var(--color-secondary), var(--color-secondary-dark));
+    // background: var(--color-secondary);
+
     &_1 {
-      grid-area: row-start 2 / col-start 1 / row-end 4 / col-end 5;
+      grid-area: row-start 2 / col-start 1 / row-end 4 / col-end 6;
       @include respond(phone) {
         grid-area: auto;
       }
     }
     &_2 {
-      grid-area: row-start 2 / col-start 6 / row-end 2 / col-end -1;
+      grid-area: row-start 2 / col-start 6 / row-end 2 / col-end 12;
       @include respond(phone) {
         grid-area: auto;
       }
     }
     &_5 {
-      grid-area: row-start 3 / col-start 6 / row-end 4 / col-end -1;
+      grid-area: row-start 3 / col-start 6 / row-end 4 / col-end 12;
       @include respond(phone) {
         grid-area: auto;
       }
@@ -47,11 +51,14 @@
     grid-column: span 12;
     @include respond(small) {
       grid-column: span 6;
+      padding:  var(--spacing-main) calc(var(--spacing-main) * 3);
     }
     @include respond(phone) {
       grid-column: span 4;
+      width: 90%;
+      height: 90%;
+      padding:  var(--spacing-main) var(--spacing-main);
     }
-    background-color:  var(--color-secondary);
   }
 
   @include respond(phone) {

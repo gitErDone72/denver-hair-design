@@ -1,7 +1,4 @@
 .stylists {
-  @include respond(desktop) {
-    padding: calc(var(--spacing-main) * 2) var(--spacing-main);
-  }
   .thumbnail {
     grid-row: auto;
     grid-column: span 12;
@@ -22,18 +19,18 @@
     flex: 1 0 auto;
     padding: calc(var(--spacing-main) * 2);
     line-height: 1;
-    font-family: "League Spartan";
+    font-family: "Red Hat Display";
 
     &_first {
       color: var(--color-white);
-      font-size: 3rem;
+      font-size: 1.6em;
     }
 
     &_last {
-      color: var(--color-primary-ultra-light);
-      font: normal normal 2rem / 0.5em "Neuton", serif;
+      color: var(--color-primary-grey);
+      font: normal 200 1.5em / 1em "Neuton", serif;
       @include respond(small) {
-        font-size: 2.3rem;
+        // font-size: 2.3rem;
       }
     }
 

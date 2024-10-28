@@ -1,39 +1,25 @@
 @use "sass:color";
-/**
- * Basic typography style for copy text
- */
-// Neuton weights
-// extralight  : font-weight: 200;
-// light       : font-weight: 300;
-// regular     : font-weight: 400;
-// bold        : font-weight: 700;
-// extrabold   : font-weight: 800;
-
-// "League Spartan" weights
-// 100 - 900
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
 
 body {
   color: var(--color-white);
-  font: normal normal 300 160% / 1.4 "Neuton", serif;
+  font: normal normal 300 160% / 1.4 "Red Hat Display", serif;
 }
 
 .paragraph {
   font-size: 0.8em;
-  line-height: 1.2em;
-  font-weight: 200;
+  line-height: 1.5em;
+  font-weight: 400;
   color: var(--color-white);
   &:not(:last-child) {
     margin-bottom: 0.7em;
   }
   @include respond(phone) {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
 .link {
-  font-family: "League Spartan";
+  font-family: "Red Hat Display";
   text-decoration: none;
   color: var(--color-white);
 }
@@ -41,7 +27,7 @@ body {
 // look into using the free limerick_serial (google it) - looks a lot like futura
 .text {
   &_title {
-    font-family: "League Spartan";
+    font-family: "Red Hat Text";
     font-weight: 300;
     font-style: normal;
     text-transform: uppercase;
@@ -60,12 +46,12 @@ body {
     padding-bottom: 0.9rem;
     margin: 1rem 0 0.75rem;
     border-image-slice: 1;
-    border-bottom: var(--border-width) solid var(--color-primary-ultra-light);
+    border-bottom: var(--border-width) solid var(--color-primary-grey);
     border-image-source: linear-gradient(
       to right,
       transparent,
-      var(--color-primary-ultra-light) 25%,
-      var(--color-primary-ultra-light) 75%,
+      var(--color-primary-grey) 25%,
+      var(--color-primary-grey) 75%,
       transparent
     );
     transition: border-image-source 0.3s;
@@ -74,7 +60,7 @@ body {
       margin: 2rem 0 1rem;
       border-image-source: linear-gradient(
         to right,
-        var(--color-primary-ultra-light) 60%,
+        var(--color-primary-grey) 60%,
         transparent
       );
     }
@@ -83,26 +69,47 @@ body {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
-    padding: calc(var(--spacing-main) * 2);
     font-size: 2.7rem;
     line-height: 1.1em;
-    border-radius: var(--border-radius);
+    margin: calc(var(--spacing-main) * -1.5);
+    padding: calc(var(--spacing-main) * 3.5);
+    background-color: var(--color-primary-dark);
+    background-image: url(/assets/img/svg/mandalaBG.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-blend-mode: hard-light;
+
+    @include respond(phone) {
+      padding: calc(var(--spacing-main) * 2);
+      margin: 0;
+      margin-bottom: calc(var(--spacing-main) / 2);
+    }
 
     .paragraph {
       grid-column: col-start 1 / col-end 11;
     }
 
-    @include respond(phone) {
-      padding: var(--spacing-main) 0 calc(var(--spacing-main) / 2);
-    }
     @include respond(beyondMobileWidth) {
       font-size: 3.2rem;
+    }
+    &_above {
+      margin-bottom: var(--spacing-main);
+      @include respond(small) {
+        margin-bottom: 0;
+      }
+    }
+    &_below {
+      // margin-top: var(--spacing-main);
+      @include respond(small) {
+        margin-top: 0;
+      }
     }
   }
   &_note {
     grid-column: 1 / -1;
-    @include blurBackground(0, transparent, 27px);
-    font-size: 1.4em;
+    font-size: 1.1em;
     font-weight: 300;
     color: var(--color-white);
     padding: 2rem;
@@ -122,7 +129,7 @@ body {
     font-family: "Neuton";
     font-size: 2.3rem;
     padding: 2.5rem var(--grid-gap);
-    @include blurBackground();
+    background-color: var(--color-primary-dark);
     @include respond(phone) {
       // align-items: flex-start;
     }
@@ -146,10 +153,11 @@ body {
   &_list-item {
     grid-column: 1 / -1;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1em;
     line-height: 1em;
+    font-weight: 200;
     font-family: "Neuton", serif;
-    color: var(--color-primary-ultra-light);
+    color: var(--color-primary-grey);
     @include respond(phone) {
       font-size: 2.3rem;
       text-align: left;

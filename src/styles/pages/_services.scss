@@ -7,7 +7,6 @@
     grid-column: 1 / -1;
     grid-template-columns: subgrid;
     grid-template-rows: min-content repeat(3, auto min-content);
-    border-radius: var(--border-radius);
     &_1.services__item {
       grid-column: 1 / -1;
       .text-block_content {

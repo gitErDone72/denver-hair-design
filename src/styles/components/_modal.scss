@@ -16,7 +16,6 @@
     background-color: var(--color-primary-dark);
     z-index: 125;
     max-width: calc(100vw - var(--spacing-main) * 2);
-    border-radius: var(--border-radius);
     overflow: hidden;
     @include respond(phone) {
       width: auto;

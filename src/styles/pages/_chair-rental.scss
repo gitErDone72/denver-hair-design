@@ -1,26 +1,31 @@
 .chair-rental {
   align-content: start;
   &__split-screen {
-    height: var(--page-container-height);
+    gap: 0;
     grid-template-rows: [row-start] minmax(20rem, 1fr) [row-end row-start] min-content [row-end];
-    overflow: auto;
     @include respond(small) {
-      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
+      gap: var(--grid-gap);
+      padding: calc(var(--spacing-main) * 1.5);
     }
   }
   &__hero {
     grid-column: 1 / -1;
+    max-width: 570px;
+    justify-self: center;
+    margin: calc(var(--spacing-main)* -2);
+    @include respond(small) {
+      grid-column: 2 / -2;
+      margin: 0;
+      border: var(--border-width) solid var(--color-white);
+    }
+    @include respond(beyondMobileWidth) {
+      grid-column: 4 / -4;
+    }
   }
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-  @include respond(tablet) {
-    // align-content: center;
-  }
-  @include respond(desktop) {
-    padding: calc(var(--spacing-main) * 2) var(--spacing-main);
   }
 }

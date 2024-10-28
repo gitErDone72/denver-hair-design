@@ -12,10 +12,13 @@
   &__subgrid {
     @include dhdGrid(true);
     height: max-content;
-    @include snazzyBgNBorder();
+    padding: calc(var(--spacing-main) * 1.5);
+    @include blurBackground(0.4, var(--rgb-primary-dark), 25px);
+  }
+  @include respond(desktop) {
+    padding: calc(var(--spacing-main) * 2) var(--spacing-main);
   }
   @include respond(stubbyHeight) {
-    padding: var(--spacing-main);
     align-content: start !important;
   }
 }

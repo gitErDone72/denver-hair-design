@@ -27,12 +27,12 @@ $navItemsLength: length(
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-ultra-dark);
   }
 
   &_home {
     .main-nav__link {
-      background-color: var(--color-secondary);
+      background-color: var(--color-primary);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
       }
@@ -57,10 +57,10 @@ $navItemsLength: length(
   }
 
   &__link {
-    font-family: "League Spartan", sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
     @include flexCenter();
     height: var(--hit-zone);
@@ -83,7 +83,7 @@ $navItemsLength: length(
     }
 
     @include on-event {
-      background-color: var(--color-primary);
+      background-color: var(--color-primary-ultra-dark);
       @include respond(beyondMobileWidth) {
         background-color: transparent;
         border-bottom: var(--border-width) solid var(--color-white);
@@ -102,11 +102,12 @@ $navItemsLength: length(
       padding: 0 1.5rem;
       border-bottom: var(--border-width) solid transparent;
       background-color: transparent;
-      color: var(--color-primary-ultra-light);
+      color: var(--color-primary-grey);
     }
 
-    &_active {
+    &_active.main-nav__link {
       z-index: 76;
+      // background-color: var(--color-primary-ultra-dark);
       background-color: var(--color-primary);
       @include respond(beyondMobileWidth) {
         color: var(--color-white);

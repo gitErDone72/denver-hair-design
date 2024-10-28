@@ -8,7 +8,7 @@
     grid-column: col-start 1 / col-end 6;
     display: flex;
     .footer__icon {
-      @include iconDoIt(var(--color-white), 1.2em 1.2em 1.2em 0);
+      @include iconDoIt(var(--color-primary-grey), 1.2em 1.2em 1.2em 0);
       &_map {
         padding: 1.2em 0;
         width: 3.6rem;
@@ -26,7 +26,6 @@
 
   &__text {
     margin-left: 0;
-    padding-top: 0.6rem;
     line-height: 1;
   }
 
@@ -40,7 +39,7 @@
       align-items: center;
     }
     .footer__icon {
-      @include iconDoIt(var(--color-white), 1.2em 0 1.2em 1.2em);
+      @include iconDoIt(var(--color-primary-grey), 1.2em 0 1.2em 1.2em);
     }
   }
 

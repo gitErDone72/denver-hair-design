@@ -155,11 +155,3 @@
   background-color: rgba($backgroundColor, $opacity);
   backdrop-filter: blur($blurAmount);
 }
-
-@mixin snazzyBgNBorder() {
-  padding: var(--spacing-main);
-  @include blurBackground(0.7, var(--rgb-primary-light), 25px);
-  @include respond(desktop) {
-    margin: calc(var(--spacing-main) * -1) calc(var(--spacing-main) * -1 * 2);
-  }
-}
