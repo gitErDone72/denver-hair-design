@@ -15,19 +15,20 @@
     display: flex;
     flex-direction: column;
     padding: 1;
-    font-size: 1.5rem;
+    font-size: 0.9em;
     @include respond(tablet) {
       flex: 0 0 auto;
       flex-direction: row;
-      margin: 2rem 0;
+      margin: var(--spacing-main) 0;
       padding: 1rem 0 1rem 3rem;
     }
   }
   &__notes-1 {
-    flex: 0.03 0 auto;
+    flex: 0 0 auto;
     display: flex;
     padding: 3rem 2rem 0;
     @include respond(tablet) {
+      flex: 0 0 37rem;
       padding: 3rem 0;
       padding-right: calc(var(--spacing-main) * 2);
       border-right: 1px solid hsl(0deg 0% 100% / 30%);
@@ -44,6 +45,12 @@
     @include respond(desktop) {
       flex: 0 1 45%;
     }
+  }
+  &__st-number {
+    fill: var(--color-white);
+    flex: 0 0 var(--fifty-five-width-n-height);
+    height: var(--fifty-five-width-n-height);
+    margin-right: var(--grid-gap);
   }
   &__location-info {
     font-size: 1.6em;
