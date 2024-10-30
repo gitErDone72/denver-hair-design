@@ -21,7 +21,7 @@ export class ModalService {
   constructor(
     private appRef: ApplicationRef,
     private injector: EnvironmentInjector
-  ) { }
+  ) {}
 
   open<C>(component: Type<C>, options?: IModalOptions): void {
     this.options = options as IModalOptions | undefined;
@@ -41,14 +41,13 @@ export class ModalService {
         height:
           window.innerWidth > 600
             ? 'auto'
-            : 'calc(100vh - var(--spacing-main) * 2)',
+            : 'calc(100dvh - var(--spacing-main) * 2)',
         width:
           window.innerWidth > 600
             ? 'auto'
             : 'calc(100vw - var(--spacing-main) * 2)',
-      }
+      };
     }
-
 
     const dynamicModalContent = createComponent(component, {
       environmentInjector: this.injector,

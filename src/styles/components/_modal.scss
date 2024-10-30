@@ -54,7 +54,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     @include blurBackground(0.9, var(--rgb-primary-ultra-dark));
     z-index: 120;
   }

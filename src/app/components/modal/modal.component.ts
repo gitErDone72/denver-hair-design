@@ -67,7 +67,7 @@ export class ModalComponent implements AfterViewInit {
     this.modalContent.nativeElement.style.minHeight =
       this.options?.size?.minHeight || 'auto';
     this.modalContent.nativeElement.style.height =
-      this.options?.size?.height || 'calc(100vh - var(--spacing-main) * 2)';
+      this.options?.size?.height || 'calc(100dvh - var(--spacing-main) * 2)';
     this.modalContent.nativeElement.style.maxHeight =
       this.options?.size?.maxHeight || 'auto';
 
