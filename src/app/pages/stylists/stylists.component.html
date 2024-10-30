@@ -16,7 +16,13 @@
           </use>
         </svg>
       </a>
-      } @if (stylist.phone !== "NONE") { }
+      } @if (stylist.phone) {
+      <a class="thumbnail__link" href="tel:{{ stylist.phone }}">
+        <svg class="thumbnail__icon">
+          <use xlink:href="../../../assets/img/sprite.svg#phone-icon"></use>
+        </svg>
+      </a>
+      }
     </div>
   </dhd-thumbnail>
   }

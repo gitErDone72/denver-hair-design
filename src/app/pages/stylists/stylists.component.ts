@@ -190,21 +190,6 @@ export class StylistsComponent implements OnInit {
         },
       },
       {
-        id: '12',
-        bookingLink: '',
-        bookingMethod: BookingMethodType.NONE,
-        firstName: 'Katelynn',
-        lastName: 'Fisher',
-        socialMedia: SocialMediaType.NONE,
-        socialMediaLink: '',
-        thumbnailInfo: {
-          hasDetails: true,
-          image: 'placeholder',
-          isImageClickable: true,
-          type: SiteSections.STYLISTS,
-        },
-      },
-      {
         id: '13',
         bookingLink: 'https://www.vagaro.com/kristasnider',
         bookingMethod: BookingMethodType.SQUARE_PERSONAL,

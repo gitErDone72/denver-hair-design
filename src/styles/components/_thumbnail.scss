@@ -33,7 +33,7 @@
 
   &__icon {
     @include iconDoIt(
-      var(--color-secondary),
+      var(--color-white), // this is overridden by the svg's fill attribute
       0.5em,
       $fontSize: unset
     );
@@ -45,3 +45,6 @@
     width: var(--hit-zone);
   }
 }
+
+// instagram gradient:
+// fill: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
