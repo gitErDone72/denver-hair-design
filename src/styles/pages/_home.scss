@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   height: calc(
-    100vh -
+    100dvh -
       (
         var(--footer-height) + var(--main-nav-height) + var(--header-height) +
           1rem
@@ -17,7 +17,7 @@
     fill: var(--color-white);
     max-height: 30rem;
     margin: 0 auto;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: var(--color-primary-dark);
   }
   @include respond(beyondMobileWidth) {

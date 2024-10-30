@@ -1,13 +1,11 @@
 .app-wrapper {
-  height: 100vh;
+  height: 100dvh;
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  @include backgroundWithImage(
-    var(--app-background-image)
-  );
+  @include backgroundWithImage(var(--app-background-image));
   background-blend-mode: luminosity;
   // background-color: var(--color-primary-light);
   background-color: var(--color-primary-dark);

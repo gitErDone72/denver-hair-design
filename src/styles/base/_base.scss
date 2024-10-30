@@ -17,7 +17,7 @@ html {
 
 body {
   box-sizing: border-box;
-  height: 100vh;
+  height: 100dvh;
   /* mobile viewport bug fix */
   height: -webkit-fill-available;
   background-color: var(--color-primary-dark);

@@ -11,7 +11,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - var(--spacing-main) * 4);
+    height: calc(100dvh - var(--spacing-main) * 4);
     width: calc(100vw - var(--spacing-main) * 4);
     background-color: var(--color-primary-dark);
     z-index: 125;
@@ -19,7 +19,7 @@
     overflow: hidden;
     @include respond(phone) {
       width: auto;
-      max-height: calc(100vh - var(--spacing-main) * 2);
+      max-height: calc(100dvh - var(--spacing-main) * 2);
     }
   }
   &__header {
