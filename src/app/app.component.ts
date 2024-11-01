@@ -1,5 +1,12 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { Component, computed, HostBinding, HostListener, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostBinding,
+  HostListener,
+  OnInit,
+  signal,
+} from '@angular/core';
 import {
   ChildrenOutletContexts,
   NavigationEnd,
@@ -19,10 +26,15 @@ import { slideInAnimation } from './shared/animations';
   selector: 'app-root',
   templateUrl: './app.component.html',
   host: { class: 'app-wrapper' },
-  imports: [RouterModule, CommonModule, MainNavComponent, FooterComponent, ErrorPageComponent, AsyncPipe],
-  animations: [
-    slideInAnimation
+  imports: [
+    RouterModule,
+    CommonModule,
+    MainNavComponent,
+    FooterComponent,
+    ErrorPageComponent,
+    AsyncPipe,
   ],
+  animations: [slideInAnimation],
 })
 export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event']) _onResize(_event: any): void {
@@ -35,12 +47,19 @@ export class AppComponent implements OnInit {
   windowWidth = signal<number>(window.innerWidth);
 
   isMobile = computed(() => this.windowWidth() < environment.beyondMobileWidth);
-  isMainNavCollapsed = computed(() => !this.isMobile() || (!this.isHomePage() && !this.isMobileNavOpen()));
-  isMobileNavBlurred = computed(() => !this.isHomePage() && this.isMobile() && this.isMobileNavOpen());
+  isMainNavCollapsed = computed(
+    () => !this.isMobile() || (!this.isHomePage() && !this.isMobileNavOpen())
+  );
+  isMobileNavBlurred = computed(
+    () => !this.isHomePage() && this.isMobile() && this.isMobileNavOpen()
+  );
 
   routeContext: OutletContext | null = null;
 
-  constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
+  constructor(
+    private router: Router,
+    private contexts: ChildrenOutletContexts
+  ) {}
 
   ngOnInit(): void {
     this.router.events
@@ -54,10 +73,14 @@ export class AppComponent implements OnInit {
   setHomePageBackgroundImage(): void {
     const randomNumber = Math.floor(Math.random() * 5) + 1;
     const root = document.documentElement;
-    root.style.setProperty('--app-background-image', `url('/assets/img/pages/home_${randomNumber}.jpg')`);
+    root.style.setProperty(
+      '--app-background-image',
+      `url('/assets/img/pages/home_${randomNumber}.jpg')`
+    );
   }
 
   getAnimationPageName(): string {
+    window.scrollTo(0, 1);
     this.routeContext = this.contexts.getContext('primary');
     return this.routeContext !== null
       ? this.routeContext?.route?.snapshot?.data?.['animation']
@@ -76,6 +99,3 @@ export class AppComponent implements OnInit {
     this.toggleMobileNavExpanded(false);
   }
 }
-
-
-

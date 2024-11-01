@@ -4,11 +4,20 @@
   </svg>
 </header>
 <div class="page-container" [@routeAnimations]="getAnimationPageName()">
-  <div class="mobile-nav-blur" [ngClass]="{ 'mobile-nav-blur_show': isMobileNavBlurred()}"></div>
+  <div
+    class="mobile-nav-blur"
+    [ngClass]="{ 'mobile-nav-blur_show': isMobileNavBlurred() }"
+  ></div>
   <router-outlet></router-outlet>
 </div>
 
-<dhd-main-nav [ngClass]="{'main-nav_home': isHomePage(), 'main-nav_collapsed': isMainNavCollapsed()}"
-  [isMobileMode]="isMobile()" [isHomePage]="isHomePage()"
-  (onMobileNavExpanded)="toggleMobileNavExpanded($event)"></dhd-main-nav>
-<dhd-footer [ngClass]="{'footer_home': isHomePage()}"></dhd-footer>
+<dhd-main-nav
+  [ngClass]="{
+    'main-nav_home': isHomePage(),
+    'main-nav_collapsed': isMainNavCollapsed()
+  }"
+  [isMobileMode]="isMobile()"
+  [isHomePage]="isHomePage()"
+  (onMobileNavExpanded)="toggleMobileNavExpanded($event)"
+></dhd-main-nav>
+<dhd-footer [ngClass]="{ footer_home: isHomePage() }"></dhd-footer>
