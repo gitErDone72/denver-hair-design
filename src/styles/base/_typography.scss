@@ -14,7 +14,7 @@ body {
     margin-bottom: 0.7em;
   }
   @include respond(phone) {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 
@@ -89,6 +89,11 @@ body {
 
     .paragraph {
       grid-column: col-start 1 / col-end 11;
+      text-wrap: wrap;
+      @include respond(beyondMobileWidth) {
+        text-align: center;
+        text-wrap: balance;
+      }
     }
 
     @include respond(beyondMobileWidth) {
@@ -155,7 +160,7 @@ body {
     text-align: center;
     font-size: 1em;
     line-height: 1em;
-    font-weight: 200;
+    font-weight: 300;
     font-family: "Neuton", serif;
     color: var(--color-primary-grey);
     @include respond(phone) {

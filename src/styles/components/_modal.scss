@@ -39,7 +39,7 @@
     @include iconDoIt(var(--color-primary-dark));
     width: 100%;
     flex: 0 0 auto;
-    padding: 1.3rem 1rem 0.7rem;
+    padding: 1.3rem 1rem;
     fill: var(--color-white);
     @include respond(phone) {
       flex: 0 0 var(--hit-zone);

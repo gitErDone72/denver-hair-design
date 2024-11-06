@@ -1,26 +1,27 @@
 import { IThumbnailItem } from "../components/thumbnail/thumbnail.model";
 
 export enum SocialMediaType {
-  FACEBOOK = 'FACEBOOK',
-  INSTAGRAM = 'INSTAGRAM',
-  NONE = 'NONE',
-  TWITTER = 'TWITTER',
-  YOUTUBE = 'YOUTUBE',
+  FACEBOOK = 'facebook',
+  INSTAGRAM = 'instagram',
+  NONE = 'none',
+  TWITTER = 'twitter',
+  YOUTUBE = 'youtube',
 }
 export enum BookingMethodType {
-  NONE = 'NONE',
-  PHONE = 'PHONE',
-  SQUARE_DHD = 'SQUARE_DHD',
-  SQUARE_PERSONAL = 'SQUARE_PERSONAL',
-  VAGARO = 'VAGARO',
+  NONE = 'none',
+  PHONE = 'phone',
+  SQUARE_DHD = 'squareDhd',
+  SQUARE_PERSONAL = 'squarePersonal',
+  VAGARO = 'vagaro',
 }
 export interface IStylist {
   id: string;
+  bio: string;
   bookingLink: string;
   bookingMethod: BookingMethodType;
   firstName: string;
   lastName: string;
-  phone: string;
+  bookingPhone: string;
   socialMedia: SocialMediaType;
   socialMediaLink: string;
   thumbnailInfo: IThumbnailItem;

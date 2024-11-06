@@ -40,6 +40,13 @@
     }
     .footer__icon {
       @include iconDoIt(var(--color-primary-grey), 1.2em 0 1.2em 1.2em);
+      &_facebook{
+        fill: rgb(70 103 210);
+      }
+      &_instagram{
+        // this svg gets a gradient fill from the svg code in its file
+        filter: saturate(0.5);
+      }
     }
   }
 }

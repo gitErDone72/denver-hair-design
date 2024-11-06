@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThumbnailComponent } from 'src/app/components/thumbnail/thumbnail.component';
 import { IProductBrand, ProductType } from 'src/app/shared/product.model';
-import { SiteSections } from 'src/app/shared/site-sections.enum';
 
 @Component({
   standalone: true,
@@ -10,7 +9,6 @@ import { SiteSections } from 'src/app/shared/site-sections.enum';
   imports: [ThumbnailComponent]
 })
 export class ProductsComponent implements OnInit {
-  thumbnailType: SiteSections = SiteSections.PRODUCTS;
 
   productBrands: IProductBrand[] = [
     {

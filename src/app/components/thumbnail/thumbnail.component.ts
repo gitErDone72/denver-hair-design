@@ -10,7 +10,7 @@ import { IThumbnailItem } from './thumbnail.model';
   imports: [CommonModule]
 })
 export class ThumbnailComponent implements OnInit {
-
+  isClickable = input<boolean>(true);
   thumbnailItem = input.required<IThumbnailItem>();
   thumbnailClicked = output<MouseEvent>();
   image!: string;
@@ -18,10 +18,10 @@ export class ThumbnailComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.image = `../../assets/img/thumbs/${this.thumbnailItem().type.toLowerCase()}/${this.thumbnailItem().image}.jpg`
+    this.image = `../../assets/img/thumbs/${this.thumbnailItem().type}/${this.thumbnailItem().image}.jpg`
   }
   onThumbnailClicked(event: MouseEvent): void {
-    if (this.thumbnailItem().isImageClickable) {
+    if (this.isClickable()) {
       this.thumbnailClicked.emit(event);
     }
   }

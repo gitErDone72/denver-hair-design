@@ -1,8 +1,8 @@
 export enum SiteSections {
-    CHAIR_RENTAL = 'CHAIR_RENTAL',
-    GALLERY = 'GALLERY',
-    HOME = 'HOME',
-    PRODUCTS = 'PRODUCTS',
-    SERVICES = 'SERVICES',
-    STYLISTS = 'STYLISTS'
+    CHAIR_RENTAL = 'chairRental',
+    GALLERY = 'gallery',
+    HOME = 'home',
+    PRODUCTS = 'products',
+    SERVICES = 'services',
+    STYLISTS = 'stylists',
 }

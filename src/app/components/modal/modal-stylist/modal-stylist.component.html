@@ -1,5 +1,24 @@
-<div>
-  <h2>Stylist Modal
-    <pre>{{stylist | json}}</pre>
-  </h2>
-</div>
+  <div class="modal-stylist__top">
+    <dhd-thumbnail [thumbnailItem]="stylist.thumbnailInfo" [isClickable]="false"></dhd-thumbnail>
+  </div>
+  <div class="modal-stylist__bottom">
+
+  </div>
+
+
+
+
+
+
+
+<!-- export interface IStylist {
+  id: string;
+  bookingLink: string;
+  bookingMethod: BookingMethodType;
+  firstName: string;
+  lastName: string;
+  bookingPhone: string;
+  socialMedia: SocialMediaType;
+  socialMediaLink: string;
+  thumbnailInfo: IThumbnailItem;
+} -->

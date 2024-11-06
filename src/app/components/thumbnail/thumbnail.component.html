@@ -1,4 +1,4 @@
-<div class="thumbnail__image" [ngClass]="{thumbnail__image_clickable: thumbnailItem().isImageClickable}">
+<div class="thumbnail__image" [ngClass]="{thumbnail__image_clickable: isClickable()}">
   <img [src]="image" alt="" srcset="" (click)="onThumbnailClicked($event)">
 </div>
 @if(thumbnailItem().hasDetails) {

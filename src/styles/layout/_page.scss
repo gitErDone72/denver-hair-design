@@ -1,9 +1,12 @@
 .page {
   @include dhdGrid();
   height: var(--page-container-height);
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   @include respond(small) {
+    overflow-x: auto;
+    overflow-y: auto;
     padding: var(--spacing-main);
   }
 

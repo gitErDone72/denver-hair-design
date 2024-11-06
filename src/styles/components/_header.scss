@@ -13,11 +13,16 @@
   }
 
   &__logo {
+    // padding: 0;
     padding: var(--spacing-main);
     height: var(--header-height);
     width: 100vw;
     max-width: 40rem;
     fill:  var(--color-white);
+    @include respond(small) {
+      // incase I decide to use padding: 0 up above ^^^
+      padding: var(--spacing-main);
+    }
     @include respond(beyondMobileWidth) {
       padding: 1.5rem var(--spacing-main) var(--spacing-main);
     }

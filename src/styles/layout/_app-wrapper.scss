@@ -7,6 +7,5 @@
   overflow: hidden;
   @include backgroundWithImage(var(--app-background-image));
   background-blend-mode: luminosity;
-  // background-color: var(--color-primary-light);
   background-color: var(--color-primary-dark);
 }

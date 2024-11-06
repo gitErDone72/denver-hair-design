@@ -51,13 +51,17 @@
     grid-column: span 12;
     @include respond(small) {
       grid-column: span 6;
-      padding:  var(--spacing-main) calc(var(--spacing-main) * 3);
+      padding: var(--spacing-main) calc(var(--spacing-main) * 3);
     }
     @include respond(phone) {
       grid-column: span 4;
-      width: 90%;
-      height: 90%;
-      padding:  var(--spacing-main) var(--spacing-main);
+      width: 25vw;
+      height: 25vw;
+      padding: var(--spacing-main) var(--spacing-main);
+    }
+    @include respond(desktop) {
+      width: 20vw;
+      height: 20vw;
     }
   }
 
