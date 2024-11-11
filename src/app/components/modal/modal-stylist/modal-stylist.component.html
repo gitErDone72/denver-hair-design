@@ -1,5 +1,6 @@
-<dhd-thumbnail class="modal-stylist__thumbnail" [thumbnailItem]="stylist.thumbnailInfo"
-  [isClickable]="false"></dhd-thumbnail>
+<div class="modal-stylist__thumbnail">
+  <dhd-thumbnail [thumbnailItem]="stylist.thumbnailInfo" [isClickable]="false"></dhd-thumbnail>
+</div>
 <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
   et dolore magna aliqua.</p>
 @if(stylist.bookingMethod !== bookingMethodType.NONE){
