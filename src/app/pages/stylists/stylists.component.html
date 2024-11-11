@@ -6,8 +6,8 @@
   @for (stylist of stylists; track stylist) {
   <dhd-thumbnail [thumbnailItem]="stylist.thumbnailInfo" (thumbnailClicked)="openStylistModal(stylist)">
     <div class="stylist__name"  (click)="openStylistModal(stylist)">
-      <div class="stylist__name_first">{{ stylist.firstName }}</div>
-      <div class="stylist__name_last">{{ stylist.lastName }}</div>
+      <div class="stylist__name_first">{{ stylist.nameFirst }}</div>
+      <div class="stylist__name_last">{{ stylist.nameLast }}</div>
     </div>
     <div class="thumbnail__icon-stack">
       @if (stylist.socialMedia !== socialMediaType.NONE) {

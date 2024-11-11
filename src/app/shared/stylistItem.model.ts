@@ -17,11 +17,11 @@ export enum BookingMethodType {
 export interface IStylist {
   id: string;
   bio: string;
-  bookingLink: string;
+  bookingLink?: string;
   bookingMethod: BookingMethodType;
-  firstName: string;
-  lastName: string;
-  bookingPhone: string;
+  bookingPhone?: string;
+  nameFirst: string;
+  nameLast: string;
   socialMedia: SocialMediaType;
   socialMediaLink: string;
   thumbnailInfo: IThumbnailItem;

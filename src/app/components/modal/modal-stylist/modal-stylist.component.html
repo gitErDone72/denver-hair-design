@@ -1,24 +1,32 @@
-  <div class="modal-stylist__top">
-    <dhd-thumbnail [thumbnailItem]="stylist.thumbnailInfo" [isClickable]="false"></dhd-thumbnail>
+<dhd-thumbnail class="modal-stylist__thumbnail" [thumbnailItem]="stylist.thumbnailInfo"
+  [isClickable]="false"></dhd-thumbnail>
+<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+  et dolore magna aliqua.</p>
+@if(stylist.bookingMethod !== bookingMethodType.NONE){
+<div class="modal-stylist__booking">
+  @if (stylist.bookingMethod === bookingMethodType.PHONE) {
+  <a class="thumbnail__link" [href]="'tel:{{ stylist.bookingPhone }}'">
+    <svg class="thumbnail__icon">
+      <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + stylist.bookingMethod + '-icon'">
+      </use>
+    </svg>
+  </a>
+  } @else {
+  <a class="thumbnail__link" [href]="stylist.bookingLink" target="_blank">
+    <svg class="thumbnail__icon">
+      <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + stylist.bookingMethod + '-icon'">
+      </use>
+    </svg>
+  </a>
+  }
+</div>
+}
+@if(galleryItems.length > 0){
+<div class="modal-stylist__gallery">
+  @for(galleryItem of galleryItems; track galleryItem; let i = $index){
+  <div [class]="'gallery__item gallery__item_'+i">
+    <dhd-thumbnail [thumbnailItem]="galleryItem"></dhd-thumbnail>
   </div>
-  <div class="modal-stylist__bottom">
-
-  </div>
-
-
-
-
-
-
-
-<!-- export interface IStylist {
-  id: string;
-  bookingLink: string;
-  bookingMethod: BookingMethodType;
-  firstName: string;
-  lastName: string;
-  bookingPhone: string;
-  socialMedia: SocialMediaType;
-  socialMediaLink: string;
-  thumbnailInfo: IThumbnailItem;
-} -->
+  }
+</div>
+}

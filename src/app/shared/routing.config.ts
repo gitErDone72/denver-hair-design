@@ -5,7 +5,7 @@ import { ErrorPageComponent } from "../pages/error-page/error-page.component";
 import { GalleryComponent } from "../pages/gallery/gallery.component";
 import { HomeComponent } from "../pages/home/home.component";
 import { ProductsComponent } from "../pages/products/products.component";
-import { ServicesComponent } from "../pages/services/services.component";
+import { ServicesComponent } from "../pages/salon-services/services.component";
 import { StylistsComponent } from "../pages/stylists/stylists.component";
 
 export interface IDhdRoute extends Route {

@@ -36,11 +36,11 @@
     }
 
     @include respond(small) {
-      padding: var(--spacing-main);
+      padding: var(--spacing-main) var(--spacing-main) calc(var(--spacing-main) * 2)
     }
 
     @include respond(beyondMobileWidth) {
-      padding: calc(var(--spacing-main) / 2);
+      padding: calc(var(--spacing-main) / 2) calc(var(--spacing-main) / 2) var(--spacing-main);
     }
   }
 }
