@@ -23,6 +23,6 @@ export interface IStylist {
   nameFirst: string;
   nameLast: string;
   socialMedia: SocialMediaType;
-  socialMediaLink: string;
+  socialMediaLink?: string;
   thumbnailInfo: IThumbnailItem;
 }

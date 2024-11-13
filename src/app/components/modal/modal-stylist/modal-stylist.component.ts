@@ -24,7 +24,7 @@ export class ModalStylistComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.stylist = structuredClone(this.modalService.options?.data) as IStylist;
+    this.stylist = this.modalService.options?.data as IStylist;
   }
 }
 
