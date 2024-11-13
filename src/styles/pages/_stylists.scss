@@ -11,13 +11,18 @@
     @include respond(tablet) {
       grid-column: span 3;
     }
+    &__icon_social {
+      padding-top: 0;
+      padding-bottom: calc(var(--icon-padding) * 2);
+    }
   }
 }
 
 .stylist {
   &__name {
     cursor: pointer;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    height: calc(var(--hit-zone) * 2);
     padding: calc(var(--spacing-main) * 2);
     line-height: 1;
     font-family: "Red Hat Display";
@@ -29,18 +34,20 @@
 
     &_last {
       color: var(--color-primary-grey);
-      font: normal 300 1.5em / 1em "Neuton", serif;
+      font: normal 300 1.3em / 1em "Neuton", serif;
       @include respond(small) {
         // font-size: 2.3rem;
       }
     }
 
     @include respond(small) {
-      padding: var(--spacing-main) var(--spacing-main) calc(var(--spacing-main) * 2)
+      padding: var(--spacing-main) var(--spacing-main)
+        calc(var(--spacing-main) * 2);
     }
 
     @include respond(beyondMobileWidth) {
-      padding: calc(var(--spacing-main) / 2) calc(var(--spacing-main) / 2) var(--spacing-main);
+      padding: calc(var(--spacing-main) / 2) calc(var(--spacing-main) / 2)
+        var(--spacing-main);
     }
   }
 }

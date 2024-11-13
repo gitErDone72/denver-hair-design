@@ -14,10 +14,11 @@
     max-width: 35vh;
   }
   .paragraph {
-    margin: calc(var(--spacing-main) * 8) calc(var(--spacing-main) * 4);
+    margin: calc(var(--spacing-main) * 6) calc(var(--spacing-main) * 4);
     @include respond(phone) {
       margin: calc(var(--spacing-main) * 2) 0;
     }
+    font-size: 1.1em;
   }
   &__booking-button {
     display: inline-flex;

@@ -33,8 +33,9 @@
 
   &__icon {
     @include iconDoIt(
-      var(--color-white), // this is overridden by the svg's fill attribute
-      0.7em,
+      var(--color-white),
+      // this is overridden by the svg's fill attribute
+      var(--icon-padding),
       unset
     );
     filter: saturate(0.5);
