@@ -1,29 +1,8 @@
 <dhd-thumbnail class="modal-stylist__thumbnail" [thumbnailItem]="stylist.thumbnailInfo"
   [isClickable]="false"></dhd-thumbnail>
-<p class="paragraph">{{stylist.bio}}</p>
+<p class="paragraph modal-stylist__paragraph">{{stylist.bio}}</p>
 @if(stylist.bookingMethod !== bookingMethodType.NONE){
-<div class="modal-stylist__booking-button">
-  @if (stylist.bookingMethod === bookingMethodType.PHONE) {
-  <a class="thumbnail__link"
-    [href]="'sms:+1' + stylist.bookingPhone +'?body=Hi '+ stylist.nameFirst +', I found you at denverhairdesign.com and would like to book an appointment with you.'">
-    <svg class="thumbnail__icon">
-      <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#chat-icon'">
-      </use>
-    </svg>
-  </a>
-  } @else {
-  <a class="thumbnail__link" [href]="stylist.bookingLink" target="_blank">
-    <svg class="thumbnail__icon">
-      <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + stylist.bookingMethod + '-icon'">
-      </use>
-    </svg>
-  </a>
-  }
-  <span class="modal-stylist__booking-button-text">Book with {{stylist.nameFirst}}</span>
-</div>
-@if(stylist.bookingMethod === bookingMethodType.PHONE){
-  <a  class="modal-stylist__phone" [href]="'tel:+1' + stylist.bookingPhone +''">{{stylist.bookingPhone}}</a>
- }
+<dhd-booking-button [stylist]="stylist"></dhd-booking-button>
 }
 @if(galleryItems.length > 0){
 <div class="modal-stylist__gallery">

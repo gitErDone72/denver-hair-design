@@ -13,30 +13,12 @@
   &__thumbnail {
     max-width: 35vh;
   }
-  .paragraph {
+  .paragraph,
+  &__paragraph {
     margin: calc(var(--spacing-main) * 6) calc(var(--spacing-main) * 4);
     @include respond(phone) {
       margin: calc(var(--spacing-main) * 2) 0;
     }
     font-size: 1.1em;
   }
-  &__booking-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--color-primary-dark);
-    padding-right: 2rem;
-  }
-  &__booking-button-text {
-    display: inline-block;
-    color: var(--color-white);
-  }
-  &__phone {
-    @include on-event(true) {
-      text-decoration: none;
-      color: inherit;
-    }
-    @include flexCenter;
-    height: var(--hit-zone);
-  }
-  // max-height: calc(100dvh - (var(--spacing-main)* 2) - var(--hit-zone));
 }

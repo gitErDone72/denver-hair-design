@@ -16,7 +16,7 @@ export enum BookingMethodType {
 }
 export interface IStylist {
   id: string;
-  bio: string;
+  bio?: string;
   bookingLink?: string;
   bookingMethod: BookingMethodType;
   bookingPhone?: string;

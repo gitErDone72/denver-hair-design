@@ -6,6 +6,7 @@
   // border-radius: var(--border-radius);
   &__image {
     flex: 1 0 auto;
+    position: relative;
     img {
       width: 100%;
       height: 100%;
@@ -25,12 +26,6 @@
     background-color: var(--color-primary-dark);
   }
 
-  &__icon-stack {
-    display: flex;
-    flex-direction: column;
-    width: var(--hit-zone);
-  }
-
   &__icon {
     @include iconDoIt(
       var(--color-white),
@@ -39,12 +34,28 @@
       unset
     );
     filter: saturate(0.5);
+    &_ellipsis {
+      padding: 0;
+      // fill: var(--color-primary-light);
+      @include blurBackground(1, var(--rgb-primary-ultra-dark), 3px);
+      flex: 0 0 calc(var(--hit-zone) / 2);
+      height: calc(var(--hit-zone) / 2);
+      border-radius: 0.7rem 0 0 0;
+    }
   }
 
   &__link {
     display: block;
     height: var(--hit-zone);
     width: var(--hit-zone);
+    &_ellipsis {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
   }
 }
 

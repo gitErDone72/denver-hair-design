@@ -87,7 +87,7 @@ export class StylistsComponent implements OnInit {
         id: '5',
         bio: `With years of experience, custom color and dry haircut savvy, Annie always stays up-to-date with new techniques to keep things modern.`,
         nameFirst: 'Annie',
-        nameLast: 'Armitage Mack',
+        nameLast: 'Armitage-Mack',
         bookingMethod: BookingMethodType.PHONE,
         bookingPhone: `(720) 220-7012`,
         socialMedia: SocialMediaType.NONE,
@@ -152,7 +152,6 @@ export class StylistsComponent implements OnInit {
       },
       {
         id: '10',
-        bio: 'This is a generic biography for Raven Valdez.',
         nameFirst: 'Raven',
         nameLast: 'Valdez',
         bookingLink: 'https://hair-by-rayven-v.square.site/',
@@ -166,7 +165,6 @@ export class StylistsComponent implements OnInit {
       },
       {
         id: '11',
-        bio: 'This is a generic biography for Ed Allison.',
         nameFirst: 'Ed',
         nameLast: 'Allison',
         bookingMethod: BookingMethodType.PHONE,
@@ -179,7 +177,6 @@ export class StylistsComponent implements OnInit {
       },
       {
         id: '13',
-        bio: 'This is a generic biography for Chandlier Fantauzzi.',
         nameFirst: 'Chandlier',
         nameLast: 'Fantauzzi',
         bookingLink: 'https://blondr.square.site/',
@@ -206,7 +203,6 @@ export class StylistsComponent implements OnInit {
       },
       {
         id: '15',
-        bio: 'This is a generic biography for Dena Sisneros.',
         nameFirst: 'Dena',
         nameLast: 'Sisneros',
         bookingMethod: BookingMethodType.PHONE,
@@ -219,7 +215,6 @@ export class StylistsComponent implements OnInit {
       },
       // {
       //   id: '16',
-      //   bio: 'This is a generic biography for Mallory Jade.',
       //   nameFirst: 'Mallory',
       //   nameLast: 'Jade',
       //   bookingLink: 'https://www.vagaro.com/kristasnider',

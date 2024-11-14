@@ -1,0 +1,10 @@
+<a class="booking-button__wrapper" [href]="bookingLink" target="_blank">
+  <svg class="booking-button__icon">
+    <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + bookingIcon">
+    </use>
+  </svg>
+  <span class="booking-button__text">Book with {{stylist().nameFirst}}</span>
+</a>
+@if(stylist().bookingMethod === bookingMethodType.PHONE){
+<a class="booking-button__phone-text" [href]="'tel:+1' + stylist().bookingPhone +''">{{stylist().bookingPhone}}</a>
+}

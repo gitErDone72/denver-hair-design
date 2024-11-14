@@ -1,0 +1,33 @@
+.booking-button {
+  display: inline-block;
+  &__wrapper {
+    display:flex;
+    align-items: center;
+    background-color: var(--color-primary-dark);
+    @include on-event(true) {
+      text-decoration: none;
+    }
+  }
+  &__icon {
+    flex: 0 0 var(--hit-zone);
+    width: var(--hit-zone);
+    height: var(--hit-zone);
+    fill: var(--color-white);
+    padding: 1.1rem;
+  }
+  &__text {
+    flex: 0 0 auto;
+    display: inline-block;
+    color: var(--color-white);
+    padding-right: 2rem;
+    white-space: nowrap;
+  }
+  &__phone-text {
+    @include on-event(true) {
+      text-decoration: none;
+      color: inherit;
+    }
+    @include flexCenter;
+    height: var(--hit-zone);
+  }
+}

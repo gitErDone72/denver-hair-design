@@ -11,10 +11,6 @@
     @include respond(tablet) {
       grid-column: span 3;
     }
-    &__icon_social {
-      padding-top: 0;
-      padding-bottom: calc(var(--icon-padding) * 2);
-    }
   }
 }
 

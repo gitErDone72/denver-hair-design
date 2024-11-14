@@ -6,57 +6,22 @@
     </p>
   </div>
   @for (stylist of stylists; track stylist) {
-  <dhd-thumbnail
-    [thumbnailItem]="stylist.thumbnailInfo"
-    (thumbnailClicked)="openStylistModal(stylist)"
-  >
+  <dhd-thumbnail [thumbnailItem]="stylist.thumbnailInfo" (thumbnailClicked)="openStylistModal(stylist)">
     <div class="stylist__name" (click)="openStylistModal(stylist)">
       <div class="stylist__name_first">{{ stylist.nameFirst }}</div>
       <div class="stylist__name_last">{{ stylist.nameLast }}</div>
     </div>
-    <div class="thumbnail__icon-stack">
-      <div class="thumbnail__link" (click)="openStylistModal(stylist)">
-        <svg class="thumbnail__icon">
-          <use
-            xlink:href="../../../assets/img/icons-sprite.svg#ellipsis-icon"
-          ></use>
-        </svg>
-      </div>
-      @if (stylist.socialMedia !== socialMediaType.NONE) {
-      <a
-        class="thumbnail__link"
-        [href]="stylist.socialMediaLink"
-        target="_blank"
-      >
+    @if (stylist.socialMedia !== socialMediaType.NONE) {
+      <a class="thumbnail__link" [href]="stylist.socialMediaLink" target="_blank">
         <svg class="thumbnail__icon thumbnail__icon_social">
-          <use
-            [attr.xlink:href]="
+          <use [attr.xlink:href]="
               '../../../assets/img/icons-sprite.svg#' +
               stylist.socialMedia +
               '-icon'
-            "
-          ></use>
+            "></use>
         </svg>
       </a>
-      }
-      <!-- /// Perhaps we don't present the booking method in the thumbnail, but in the modal only.
-       @if (stylist.bookingMethod !== bookingMethodType.NONE) {
-      @if (stylist.bookingMethod === bookingMethodType.PHONE) {
-      <a class="thumbnail__link" [href]="'tel:{{ stylist.bookingPhone }}'">
-        <svg class="thumbnail__icon">
-          <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + stylist.bookingMethod + '-icon'">
-          </use>
-        </svg>
-      </a>
-      } @else {
-      <a class="thumbnail__link" [href]="stylist.bookingLink" target="_blank">
-        <svg class="thumbnail__icon">
-          <use [attr.xlink:href]="'../../../assets/img/icons-sprite.svg#' + stylist.bookingMethod + '-icon'">
-          </use>
-        </svg></a>
-      }
-      } -->
-    </div>
+    }
   </dhd-thumbnail>
   }
 </div>

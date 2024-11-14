@@ -1,4 +1,13 @@
 <div class="thumbnail__image" [ngClass]="{thumbnail__image_clickable: isClickable()}">
+  @if(isClickable()){
+    <div class="thumbnail__link thumbnail__link_ellipsis" (click)="onThumbnailClicked($event)">
+      <svg class="thumbnail__icon thumbnail__icon_ellipsis">
+        <use
+          xlink:href="../../../assets/img/icons-sprite.svg#ellipsis-icon"
+        ></use>
+      </svg>
+    </div>
+  }
   <img [src]="image" alt="" srcset="" (click)="onThumbnailClicked($event)">
 </div>
 <div class="thumbnail__details">
