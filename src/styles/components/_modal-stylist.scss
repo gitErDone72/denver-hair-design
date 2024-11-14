@@ -20,5 +20,10 @@
       margin: calc(var(--spacing-main) * 2) 0;
     }
     font-size: 1.1em;
+    &_empty.paragraph {
+      @include respond(phone) {
+        margin: 0;
+      }
+    }
   }
 }
