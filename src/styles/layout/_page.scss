@@ -4,23 +4,30 @@
   overflow-x: hidden;
   overflow-y: auto;
 
-  @include respond(small) {
-    overflow-x: auto;
-    overflow-y: auto;
-    padding: var(--spacing-main);
-  }
-
-  @include respond(beyondMobileWidth) {
-  }
   &__subgrid {
     @include dhdGrid(true);
     height: max-content;
     padding: calc(var(--spacing-main) * 1.5);
     @include blurBackground(0.4, var(--rgb-primary-dark), 25px);
+    @include respond(phone) {
+      padding: calc(var(--spacing-main) * 1.5);
+      margin: calc(var(--spacing-main) * -1.5);
+    }
   }
-  @include respond(desktop) {
+  @include respond(small) {
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: calc(var(--spacing-main) * 1.5) var(--spacing-main);
+  }
+
+  @include respond(beyondMobileWidth) {
     padding: calc(var(--spacing-main) * 2) var(--spacing-main);
   }
+
+  @include respond(tablet) {
+    padding: calc(var(--spacing-main) * 3) var(--spacing-main);
+  }
+
   @include respond(stubbyHeight) {
     align-content: start !important;
   }

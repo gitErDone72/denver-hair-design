@@ -33,8 +33,17 @@
     grid-template-columns: subgrid;
   } @else {
     grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+    @include respond(beyondMobileWidth) {
+      grid-template-columns: 1vw repeat(12, [col-start] 1fr [col-end]) 1vw;
+    }
+    @include respond(tablet) {
+      grid-template-columns: 5vw repeat(12, [col-start] 1fr [col-end]) 5vw;
+    }
     @include respond(desktop) {
-      grid-template-columns: 2.5fr repeat(12, [col-start] 1fr [col-end]) 2.5fr;
+      grid-template-columns: 15vw repeat(12, [col-start] 1fr [col-end]) 15vw;
+    }
+    @include respond(bigDesktop) {
+      grid-template-columns: 20vw repeat(12, [col-start] 1fr [col-end]) 20vw;
     }
   }
 }
@@ -132,6 +141,12 @@
 
   @if $breakpoint == desktop {
     @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bigDesktop {
+    @media only screen and (min-width: 1500px) {
       @content;
     }
   }
