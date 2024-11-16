@@ -15,6 +15,11 @@
     }
     &_clickable {
       cursor: pointer;
+      .thumbnail__link_ellipsis {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
     }
   }
 
@@ -36,8 +41,7 @@
     filter: saturate(0.5);
     &_ellipsis {
       padding: 0;
-      // fill: var(--color-primary-light);
-      @include blurBackground(1, var(--rgb-primary-ultra-dark), 3px);
+      @include blurBackground(0.9, var(--rgb-primary-ultra-dark), 3px);
       flex: 0 0 calc(var(--hit-zone) / 2);
       height: calc(var(--hit-zone) / 2);
       border-radius: 0.7rem 0 0 0;
@@ -52,9 +56,8 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      display: none;
+      pointer-events: none;
     }
   }
 }
