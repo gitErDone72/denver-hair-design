@@ -26,8 +26,8 @@
     "zone.js": "~0.14.7"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.0.7",
-    "@angular/cli": "~18.0.7",
+    "@angular-devkit/build-angular": "^18.2.12",
+    "@angular/cli": "~18.2.12",
     "@angular/compiler-cli": "^18.0.6",
     "@aws-amplify/backend": "^1.7.0",
     "@aws-amplify/backend-cli": "^1.4.2",
