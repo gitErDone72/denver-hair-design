@@ -1,10 +1,9 @@
 .products {
   align-content: start;
   &__listing {
-    grid-template-rows: [row-start] min-content [row-end] repeat(
-        3,
-        [row-start] 1fr [row-end]
-      );
+    grid-template-rows:
+      [row-start] min-content [row-end row-start] minmax(min-content, 20rem)
+      [row-end];
     justify-items: center;
     align-items: center;
     height: var(--page-container-height);
@@ -12,9 +11,6 @@
       height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
     }
     @include respond(phone) {
-      grid-template-rows:
-        [row-start] 1fr [row-end row-start] minmax(min-content, 20rem)
-        [row-end];
       height: auto;
     }
 
@@ -24,55 +20,23 @@
   }
   &__item {
     display: block;
-    width: 40vw;
-    height: 14vw;
-    padding: calc(var(--spacing-main) * 2) calc(var(--spacing-main) * 5);
     object-fit: cover;
     fill: rgba(var(--rgb-color-white), 0.7);
-    // background: linear-gradient(-1deg, var(--color-secondary), var(--color-secondary-dark));
-    // background: var(--color-secondary);
-
-    &_1 {
-      height: 32vw;
-      grid-area: row-start 2 / col-start 1 / row-end 4 / col-end 6;
-      @include respond(phone) {
-        grid-area: auto;
-      }
-    }
-    &_2 {
-      grid-area: row-start 2 / col-start 6 / row-end 2 / col-end 12;
-      @include respond(phone) {
-        grid-area: auto;
-      }
-    }
-    &_5 {
-      grid-area: row-start 3 / col-start 6 / row-end 4 / col-end 12;
-      @include respond(phone) {
-        grid-area: auto;
-      }
-    }
-    grid-column: span 12;
+    grid-column: span 4;
+    width: 80%;
     @include respond(small) {
-      grid-column: span 6;
-      padding: var(--spacing-main) calc(var(--spacing-main) * 3);
-    }
-    @include respond(phone) {
-      grid-column: span 4;
-      width: 25vw;
-      height: 25vw;
-      padding: var(--spacing-main) var(--spacing-main);
+      width: 100%;
     }
     @include respond(tablet) {
-      width: 23vw;
-      height: 16vw;
-    }
-    @include respond(desktop) {
-      width: 18vw;
-      height: 13vw;
-    }
-    @include respond(bigDesktop) {
-      width: 15vw;
-      height: 13vw;
+      &_1 {
+        grid-column: col-start 3 / col-start 5;
+      }
+      &_2 {
+        grid-column: col-start 6 / col-start 8;
+      }
+      &_3 {
+        grid-column: col-start 9 / col-start 11;
+      }
     }
   }
 

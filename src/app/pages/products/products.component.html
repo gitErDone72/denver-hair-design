@@ -4,13 +4,16 @@
       achieve and maintain your desired look.</p>
     <p class="paragraph">Elevate your hair care routine with our expertly curated collection.</p>
   </div>
-  @for (brand of productBrands; track brand; let i = $index) {
-  @if (brand.showInListing){
-  <svg [class]="'products__item products__item_' + (i+1)">
-    <use
-      attr.href="../../../assets/img/svg/product-logos-sprite.svg#{{ brand.brandName.replace(' ', '-').toLowerCase() }}">
+  <svg class="products__item products__item_1">
+    <use href="../../../assets/img/svg/product-logos-sprite.svg#oribe">
     </use>
   </svg>
-  }
-  }
+  <svg class="products__item products__item_2">
+    <use href="../../../assets/img/svg/product-logos-sprite.svg#kevin-murphy">
+    </use>
+  </svg>
+  <svg class="products__item products__item_3">
+    <use href="../../../assets/img/svg/product-logos-sprite.svg#voce">
+    </use>
+  </svg>
 </div>
