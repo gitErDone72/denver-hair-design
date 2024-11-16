@@ -16,10 +16,10 @@ export class BookingButtonComponent implements OnInit {
   ngOnInit(): void {
     if(this.stylist().bookingMethod === BookingMethodType.PHONE) {
       this.bookingLink = `sms:+1${this.stylist().bookingPhone}?body=Hi ${this.stylist().nameFirst}. I found you at denverhairdesign.com and would like to book an appointment with you.`;
-      this.bookingIcon = 'chat-icon';
+      this.bookingIcon = 'icon-sms';
     } else {
       this.bookingLink = this.stylist().bookingLink;
-      this.bookingIcon = `${this.stylist().bookingMethod}-icon`;
+      this.bookingIcon = `icon-${this.stylist().bookingMethod}`;
     }
   }
 }

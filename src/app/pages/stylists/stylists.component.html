@@ -12,13 +12,9 @@
       <div class="stylist__name_last">{{ stylist.nameLast }}</div>
     </div>
     @if (stylist.socialMedia !== socialMediaType.NONE) {
-      <a class="thumbnail__link" [href]="stylist.socialMediaLink" target="_blank">
+      <a class="thumbnail__link" href="{{stylist.socialMediaLink}}" target="_blank">
         <svg class="thumbnail__icon thumbnail__icon_social">
-          <use [attr.xlink:href]="
-              '../../../assets/img/icons-sprite.svg#' +
-              stylist.socialMedia +
-              '-icon'
-            "></use>
+          <use attr.href="../../../assets/img/svg/icons-sprite.svg#icon-{{ stylist.socialMedia }}"></use>
         </svg>
       </a>
     }

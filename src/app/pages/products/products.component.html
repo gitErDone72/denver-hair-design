@@ -7,7 +7,9 @@
   @for (brand of productBrands; track brand; let i = $index) {
   @if (brand.showInListing){
   <svg [class]="'products__item products__item_' + (i+1)">
-    <use [attr.href]="'../../../assets/img/sprite.svg#' + brand.brandName.replace(' ', '-').toLowerCase()"></use>
+    <use
+      attr.href="../../../assets/img/svg/product-logos-sprite.svg#{{ brand.brandName.replace(' ', '-').toLowerCase() }}">
+    </use>
   </svg>
   }
   }
