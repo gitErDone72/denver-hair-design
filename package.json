@@ -2,7 +2,7 @@
   "name": "denver-hair-design",
   "version": "0.0.0",
   "engines": {
-    "node": "20.11.1"
+    "node": "18.18.2"
   },
   "scripts": {
     "ng": "ng",
