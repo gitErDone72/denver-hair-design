@@ -50,3 +50,8 @@ node_modules/
 
 .secret-*
 **.sample
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
