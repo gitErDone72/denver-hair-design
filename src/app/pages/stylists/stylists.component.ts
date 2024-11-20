@@ -28,7 +28,7 @@ export class StylistsComponent implements OnInit {
   constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
-    this.stylists = [
+    const allStylists = [
       {
         id: '1',
         bio: `Joseph specializes in blonde ambition and hair extensions, whether its bold and glamorous or more subtle.`,
@@ -227,6 +227,15 @@ export class StylistsComponent implements OnInit {
       //   },
       // },
     ] as IStylist[];
+    this.stylists = this.shuffleStylists(allStylists);
+  }
+
+  shuffleStylists(stylists: IStylist[]): IStylist[] {
+    for (let i = stylists.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [stylists[i], stylists[j]] = [stylists[j], stylists[i]];
+    }
+    return stylists;
   }
 
   openStylistModal(stylist: IStylist): void {
