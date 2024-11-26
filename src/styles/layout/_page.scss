@@ -2,7 +2,8 @@
   @include dhdGrid();
   height: var(--page-container-height);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   &__subgrid {
     @include dhdGrid(true);
