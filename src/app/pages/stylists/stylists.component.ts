@@ -212,7 +212,7 @@ export class StylistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.stylists = this.shuffleStylists(this.allStylists);
-    this.assignPlaceholderImages(this.stylists);
+    this.assignPlaceholderImages();
   }
 
   shuffleStylists(stylists: IStylist[]): IStylist[] {
@@ -223,8 +223,8 @@ export class StylistsComponent implements OnInit {
     return stylists;
   }
 
-  assignPlaceholderImages(stylists: IStylist[]): void {
-    stylists.filter((stylist) => !stylist.thumbnailInfo.image).forEach((stylist, index) => {
+  assignPlaceholderImages(): void {
+    this.stylists.filter((stylist) => !stylist.thumbnailInfo.image).forEach((stylist, index) => {
       stylist.thumbnailInfo.image = `placeholder-${(index % 7) + 1}`;
     });
   }

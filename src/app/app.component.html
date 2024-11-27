@@ -1,8 +1,10 @@
-<header class="header" [ngClass]="{ header_home: isHomePage() }" routerLink="/">
+<div style="background-color: red; position: absolute; z-index: 5000; color: white; width: 100%; height: 75px;">Is Home Page: {{ appStateService.stateForT().isHomePage}}</div>
+<header class="header" [ngClass]="{ header_home: appStateService.stateForT().isHomePage }" routerLink="/">
   <svg class="header__logo">
     <use href="../assets/img/svg/dhd-sprite.svg#dhd-logo-header"></use>
   </svg>
 </header>
+{{ appStateService.stateForT().isHomePage}}
 <div class="page-container" [@routeAnimations]="getAnimationPageName()">
   <div
     class="mobile-nav-blur"
@@ -13,11 +15,9 @@
 
 <dhd-main-nav
   [ngClass]="{
-    'main-nav_home': isHomePage(),
+    'main-nav_home': appStateService.stateForT().isHomePage,
     'main-nav_collapsed': isMainNavCollapsed()
   }"
-  [isMobileMode]="isMobile()"
-  [isHomePage]="isHomePage()"
   (onMobileNavExpanded)="toggleMobileNavExpanded($event)"
 ></dhd-main-nav>
-<dhd-footer [ngClass]="{ footer_home: isHomePage() }"></dhd-footer>
+<dhd-footer [ngClass]="{ footer_home: appStateService.stateForT().isHomePage }"></dhd-footer>

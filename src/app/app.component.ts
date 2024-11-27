@@ -1,25 +1,23 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   HostBinding,
-  HostListener,
   OnInit,
+  Signal,
   signal,
 } from '@angular/core';
 import {
   ChildrenOutletContexts,
-  NavigationEnd,
   OutletContext,
-  Router,
   RouterModule,
 } from '@angular/router';
-import { filter } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { slideInAnimation } from './shared/animations';
+import { AppStateService, IAppState } from './services/app.state.service';
 
 @Component({
   standalone: true,
@@ -34,40 +32,32 @@ import { slideInAnimation } from './shared/animations';
     ErrorPageComponent,
     AsyncPipe,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [slideInAnimation],
 })
 export class AppComponent implements OnInit {
-  @HostListener('window:resize', ['$event']) _onResize(_event: any): void {
-    this.onResize();
-  }
-
+  // can likely get rid of this host binding
   @HostBinding('class.app-page-name') overlayClassByPage: string = '/';
-  isHomePage = signal<boolean>(true);
+  appState!: Signal<IAppState>;
   isMobileNavOpen = signal<boolean>(true);
-  windowWidth = signal<number>(window.innerWidth);
-
-  isMobile = computed(() => this.windowWidth() < environment.beyondMobileWidth);
   isMainNavCollapsed = computed(
-    () => !this.isMobile() || (!this.isHomePage() && !this.isMobileNavOpen())
+    () => !this.appStateService.select('isMobile') || (!this.appStateService.select('isHomePage') && !this.isMobileNavOpen())
   );
   isMobileNavBlurred = computed(
-    () => !this.isHomePage() && this.isMobile() && this.isMobileNavOpen()
+    () => !this.appStateService.select('isHomePage') && this.appStateService.select('isMobile') && this.isMobileNavOpen()
   );
 
   routeContext: OutletContext | null = null;
 
   constructor(
-    private router: Router,
-    private contexts: ChildrenOutletContexts
-  ) {}
+    private contexts: ChildrenOutletContexts,
+    public appStateService: AppStateService
+  ) { }
 
   ngOnInit(): void {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        this.isHomePage.set(event.url === '/');
-      });
+    this.appState = this.appStateService.stateForT;
     this.setHomePageBackgroundImage();
+    this.appStateService.isMobile()
   }
 
   setHomePageBackgroundImage(): void {
@@ -88,14 +78,14 @@ export class AppComponent implements OnInit {
   }
 
   toggleMobileNavExpanded($event: boolean): void {
-    this.isMobileNavOpen.set(this.isMobile() ? $event : false);
+    this.isMobileNavOpen.set(this.appStateService.isMobile() ? $event : false);
   }
 
-  private onResize(): void {
-    this.windowWidth.set(window.innerWidth);
-    if (!this.isMobile()) {
-      this.isMobileNavOpen.set(false);
-    }
-    this.toggleMobileNavExpanded(false);
-  }
+  // private onResize(): void {
+
+  //   if (!this.appStateService.isMobile()) {
+  //     this.isMobileNavOpen.set(false);
+  //   }
+  //   this.toggleMobileNavExpanded(false);
+  // }
 }

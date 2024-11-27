@@ -1,7 +1,8 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, OnInit, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DhdNavRoutes } from '../../shared/routing.config';
 import { IDhdNavDataItem } from './nav-item.model';
+import { AppStateService } from 'src/app/services/app.state.service';
 
 @Component({
   standalone: true,
@@ -11,14 +12,12 @@ import { IDhdNavDataItem } from './nav-item.model';
   imports: [RouterModule],
 })
 export class MainNavComponent implements OnInit {
-  isHomePage = input.required<boolean>();
-  isMobileMode = input.required<boolean>();
   onMobileNavExpanded = output<boolean>();
 
   isExpanded: boolean = false;
   navItems!: IDhdNavDataItem[];
 
-  constructor() {}
+  constructor(private appStateService: AppStateService) {}
 
   ngOnInit(): void {
     this.onMobileNavExpanded.emit(this.isExpanded);
@@ -28,8 +27,8 @@ export class MainNavComponent implements OnInit {
   }
 
   navItemClick(): void {
-    if (this.isMobileMode()) {
-      this.isExpanded = this.isHomePage() ? false : !this.isExpanded;
+    if (this.appStateService.isMobile()) {
+      this.isExpanded = this.appStateService.isHomePage() ? false : !this.isExpanded;
     } else {
       this.isExpanded = false;
     }
