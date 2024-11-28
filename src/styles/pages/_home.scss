@@ -13,5 +13,6 @@
   }
   @include respond(beyondMobileWidth) {
     justify-content: center;
+    align-items: center;
   }
 }
