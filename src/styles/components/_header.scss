@@ -9,6 +9,8 @@
   background-color: var(--color-primary-ultra-dark);
 
   &_home {
+    flex: 0 0 0;
+    height: 0;
     transform: translateY(calc(var(--header-height) * -1));
   }
 

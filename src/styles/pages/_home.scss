@@ -1,27 +1,18 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: calc(
-    100dvh -
-      (
-        var(--footer-height) + var(--main-nav-height) + var(--header-height) +
-          1rem
-      )
-  );
   padding: 0;
-  min-height: var(--main-nav-height);
+  &__grid{
+    grid-column: 1 / -1;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(10rem, calc(100dvh - (var(--footer-height) + var(--main-nav-height))));
+    overflow: hidden;
+  }
   &__logo {
-    flex: 1 0 auto;
-    fill: var(--color-white);
-    max-height: 30rem;
-    margin: 0 auto;
-    padding: 0.5rem;
-    background-color: var(--color-primary-dark);
+    height: 80%;
   }
   @include respond(beyondMobileWidth) {
     justify-content: center;
-    height: calc(var(--page-container-height) - var(--header-height));
   }
 }
