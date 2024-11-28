@@ -3,10 +3,9 @@
   &__grid{
     grid-column: 1 / -1;
     display: grid;
-    align-items: center;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(10rem, calc(100dvh - (var(--footer-height) + var(--main-nav-height))));
+    grid-template-rows: minmax(10rem, calc(100dvh - (var(--footer-height) + var(--main-nav-height)) - var(--header-height)));
     overflow: hidden;
   }
   &__logo {
