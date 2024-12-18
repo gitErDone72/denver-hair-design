@@ -72,8 +72,7 @@ export class AppComponent implements OnInit {
 
   setHomePageBackgroundImage(): void {
     const randomNumber = Math.floor(Math.random() * 5) + 1;
-    const root = document.documentElement;
-    root.style.setProperty(
+    document.documentElement.style.setProperty(
       '--app-background-image',
       `url('/assets/img/pages/home_${randomNumber}.jpg')`
     );
