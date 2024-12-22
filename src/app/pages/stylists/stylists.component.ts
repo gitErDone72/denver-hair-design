@@ -194,17 +194,6 @@ export class StylistsComponent implements OnInit {
       thumbnailInfo: {
         type: SiteSections.STYLISTS,
       },
-    },
-    {
-      id: '15',
-      nameFirst: 'Dena',
-      nameLast: 'Sisneros',
-      bookingMethod: BookingMethodType.PHONE,
-      bookingPhone: `(720) 232-7773`,
-      socialMedia: SocialMediaType.NONE,
-      thumbnailInfo: {
-        type: SiteSections.STYLISTS,
-      },
     }
   ] as IStylist[];
 
