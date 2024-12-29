@@ -161,17 +161,6 @@ export class StylistsComponent implements OnInit {
       },
     },
     {
-      id: '11',
-      nameFirst: 'Ed',
-      nameLast: 'Allison',
-      bookingMethod: BookingMethodType.PHONE,
-      bookingPhone: `(720) 849-9643`,
-      socialMedia: SocialMediaType.NONE,
-      thumbnailInfo: {
-        type: SiteSections.STYLISTS,
-      },
-    },
-    {
       id: '13',
       nameFirst: 'Chandlier',
       nameLast: 'Fantauzzi',
