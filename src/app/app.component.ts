@@ -1,4 +1,4 @@
-import { AsyncPipe, CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   Component,
   computed,
@@ -18,7 +18,6 @@ import { filter } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { slideInAnimation } from './shared/animations';
 
 @Component({
@@ -31,8 +30,6 @@ import { slideInAnimation } from './shared/animations';
     CommonModule,
     MainNavComponent,
     FooterComponent,
-    ErrorPageComponent,
-    AsyncPipe,
   ],
   animations: [slideInAnimation],
 })
@@ -59,7 +56,7 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private contexts: ChildrenOutletContexts
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.router.events

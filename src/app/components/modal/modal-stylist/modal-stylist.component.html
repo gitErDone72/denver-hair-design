@@ -1,6 +1,9 @@
 <dhd-thumbnail class="modal-stylist__thumbnail" [thumbnailItem]="stylist.thumbnailInfo"
   [isClickable]="false"></dhd-thumbnail>
-<p class="paragraph modal-stylist__paragraph" [ngClass]="{'modal-stylist__paragraph_empty': stylist.bio === undefined}">{{stylist.bio}}</p>
+@if(stylist.bio){
+<p class="paragraph modal-stylist__paragraph">
+  {{stylist.bio}}</p>
+}
 @if(stylist.bookingMethod !== bookingMethodType.NONE){
 <dhd-booking-button [stylist]="stylist"></dhd-booking-button>
 }

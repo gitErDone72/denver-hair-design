@@ -14,7 +14,8 @@
 <dhd-main-nav
   [ngClass]="{
     'main-nav_home': isHomePage(),
-    'main-nav_collapsed': isMainNavCollapsed()
+    'main-nav_collapsed': isMainNavCollapsed(),
+    'main-nav_mobile': isMobile()
   }"
   [isMobileMode]="isMobile()"
   [isHomePage]="isHomePage()"

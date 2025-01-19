@@ -1,14 +1,15 @@
-import { Component, input, OnInit, output, signal } from '@angular/core';
+import { Component, input, OnInit, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DhdNavRoutes } from '../../shared/routing.config';
 import { IDhdNavDataItem } from './nav-item.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'dhd-main-nav',
   templateUrl: './main-nav.component.html',
   host: { class: 'main-nav' },
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
 })
 export class MainNavComponent implements OnInit {
   isHomePage = input.required<boolean>();

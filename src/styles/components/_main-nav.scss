@@ -63,12 +63,14 @@ $navItemsLength: length(
     font-size: 1.7rem;
     text-transform: uppercase;
     @include flexCenter();
+    flex-direction: column;
     height: var(--hit-zone);
     background-color: var(--color-primary-dark);
     position: absolute;
     left: 0;
     right: 0;
-    transition: top 500ms, border-bottom 500ms, background-color 500ms, color 500ms;
+    transition: top 500ms, border-bottom 500ms, background-color 500ms,
+      color 500ms;
 
     @for $i from 0 through $navItemsLength {
       &_#{$i} {
@@ -120,5 +122,25 @@ $navItemsLength: length(
   &_collapsed &__link {
     top: 0;
     height: var(--collapsed-container-height);
+  }
+
+  &_mobile &__link {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      height: 0px;
+      width: 15px;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      background-color: var(--color-primary-light);
+      transition: height 500ms;
+    }
+  }
+
+  &_mobile#{&}_collapsed &__link_active {
+      &::after {
+        height: 6px;
+      }
+
   }
 }
