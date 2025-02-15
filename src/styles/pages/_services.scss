@@ -1,9 +1,19 @@
 .services {
   align-content: start;
   &__listing {
-    grid-column: var(--full-page-column-span);
+    // grid-column: var(--full-page-column-span);
+    grid-template-rows:
+      [row-start] 1fr [row-end row-start] minmax(min-content, 20rem)
+      [row-end];
+    justify-items: center;
+    align-items: center;
+    // height: var(--page-container-height);
+    @include respond(small) {
+      min-height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
+    }
   }
   &__item {
+    height: 100%;
     grid-column: 1 / -1;
     grid-template-columns: subgrid;
     grid-template-rows: min-content repeat(3, auto min-content);
@@ -25,8 +35,10 @@
         grid-column: span 4;
       }
     }
-    @include respond(phone) {
-      // grid-column: span 6;
+    @include respond(squeezeNarrowTablet) {
+      .text-block_title {
+        grid-column: 1 / 4;
+}
     }
     @include respond(tablet) {
       grid-column: span 4;

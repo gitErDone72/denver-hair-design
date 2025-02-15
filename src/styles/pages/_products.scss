@@ -2,20 +2,18 @@
   align-content: start;
   &__listing {
     grid-template-rows:
-      [row-start] min-content [row-end row-start] minmax(min-content, 20rem)
+      [row-start] 1fr [row-end row-start] minmax(min-content, 25rem)
       [row-end];
     justify-items: center;
     align-items: center;
     height: var(--page-container-height);
     @include respond(small) {
-      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
     }
     @include respond(phone) {
-      height: auto;
+      height: calc(var(--page-container-height) - (var(--spacing-main) * 2));
     }
-
     @include respond(stubbyHeight) {
-      height: auto;
+      // height: auto;
     }
   }
   &__item {

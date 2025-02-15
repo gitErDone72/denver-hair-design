@@ -2,10 +2,10 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--spacing-main);
+  grid-gap: calc(var(--spacing-main) * 7);
   justify-items: center;
   align-content: center;
-  padding: calc(var(--spacing-main) * 2);
+  padding: calc(var(--spacing-main) * 3);
   text-align: center;
   color: var(--color-primary-dark);
   background-color: var(--color-white);
@@ -15,15 +15,20 @@
   }
   .paragraph,
   &__paragraph {
-    margin: calc(var(--spacing-main) * 6) calc(var(--spacing-main) * 4);
+    margin-bottom: 0;
+    // margin: calc(var(--spacing-main) * 6) calc(var(--spacing-main) * 4);
     @include respond(phone) {
-      margin: calc(var(--spacing-main) * 2) 0;
+      // margin: calc(var(--spacing-main) * 2) 0;
     }
     font-size: 1.1em;
-    &_empty.paragraph {
-      @include respond(phone) {
-        margin: 0;
-      }
-    }
+  }
+  @include respond(small){
+    grid-gap: calc(var(--spacing-main)* 2);
+  }
+  @include respond(phone){
+    grid-gap: calc(var(--spacing-main)* 3);
+  }
+  @include respond(tablet) {
+    grid-gap: calc(var(--spacing-main)* 2);
   }
 }

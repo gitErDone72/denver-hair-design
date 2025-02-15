@@ -12,10 +12,9 @@
     grid-column: 1 / -1;
     max-width: 570px;
     justify-self: center;
-    margin: calc(var(--spacing-main)* -2);
+    margin: 0;
     @include respond(small) {
       grid-column: 2 / -2;
-      margin: 0;
       border: var(--border-width) solid var(--color-white);
     }
     @include respond(beyondMobileWidth) {

@@ -45,7 +45,7 @@ body {
     padding-bottom: 0.9rem;
     margin: 1rem 0 0.75rem;
     border-image-slice: 1;
-    border-bottom: var(--border-width) solid var(--color-primary-grey);
+    border-bottom: calc(var(--border-width) / 2) solid var(--color-primary-grey);
     border-image-source: linear-gradient(
       to right,
       transparent,
@@ -70,7 +70,7 @@ body {
     // grid-template-columns: subgrid;
     font-size: 2.7rem;
     line-height: 1.1em;
-    margin: calc(var(--spacing-main) * -1.5);
+    // margin: calc(var(--spacing-main) * -1.5);
     padding: calc(var(--spacing-main) * 3.5);
     background-color: var(--color-primary-dark);
     background-image: url(/assets/img/svg/mandalaBG.svg);
@@ -99,6 +99,10 @@ body {
       font-size: 3.2rem;
     }
     &_above {
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      justify-content: center;
       margin-bottom: var(--spacing-main);
       @include respond(small) {
         margin-bottom: 0;

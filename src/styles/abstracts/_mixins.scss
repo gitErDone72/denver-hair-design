@@ -96,6 +96,7 @@
 // 0 - 600px:      Phone
 // 600 - 900px:    Tablet portrait
 // 900 - 1200px:   Tablet landscape
+// 1060px only          SqueezeServices
 // [1200 - 1800] is where our normal styles apply
 // 1800px + :      Big desktop
 
@@ -138,6 +139,12 @@
       @content;
     }
   }
+
+@if $breakpoint == squeezeNarrowTablet {
+  @media only screen and (min-width: 895px) and (max-width: 1060px) {
+    @content;
+  }
+}
 
   @if $breakpoint == desktop {
     @media only screen and (min-width: 1200px) {
