@@ -1,4 +1,9 @@
 .stylists {
+  padding: var(--spacing-main);
+  // background-color: rgba(var(--rgb-primary-dark), 0.4);
+  @include respond(beyondMobileWidth) {
+    padding: var(--spacing-main) 0;
+  }
   .thumbnail {
     grid-row: auto;
     grid-column: span 12;
@@ -10,6 +15,21 @@
     }
     @include respond(tablet) {
       grid-column: span 3;
+    }
+  }
+  .page__subgrid {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    &::before {
+      content: "";
+      background-color: rgba(var(--rgb-primary-dark), 0.4);
+      position: absolute;
+      left: calc(-1 * var(--spacing-main));
+      right: calc(-1 * var(--spacing-main));
+      bottom: calc(-1 * var(--spacing-main));
+      top: calc(-1 * var(--spacing-main));
+      z-index: -1;
     }
   }
 }

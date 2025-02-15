@@ -1,10 +1,7 @@
 .services {
   align-content: start;
   &__listing {
-    // grid-column: var(--full-page-column-span);
-    grid-template-rows:
-      [row-start] 1fr [row-end row-start] minmax(min-content, 20rem)
-      [row-end];
+    grid-template-rows:[row-start] auto [row-end row-start] minmax(min-content, 20rem) [row-end];
     justify-items: center;
     align-items: center;
     // height: var(--page-container-height);
