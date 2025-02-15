@@ -4,6 +4,9 @@
   @include respond(beyondMobileWidth) {
     padding: var(--spacing-main) 0;
   }
+  @include respond(tablet) {
+    padding: calc(2 * var(--spacing-main)) 0
+  }
   .thumbnail {
     grid-row: auto;
     grid-column: span 12;
