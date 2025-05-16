@@ -6,7 +6,14 @@
         ></use>
       </svg>
     </div>
-  <img [src]="image" alt="" srcset="" (click)="onThumbnailClicked($event)">
+   <img
+    [ngSrc]="image"
+    alt=""
+    [width]="intrinsicThumbnailWidth"
+    [height]="intrinsicThumbnailHeight"
+    loading="lazy"
+    (click)="onThumbnailClicked($event)"
+  >
 </div>
 <div class="thumbnail__details">
   <ng-content></ng-content>

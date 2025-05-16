@@ -63,7 +63,10 @@ export class AppComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.isHomePage.set(event.url === '/');
+        this.hideAddressBar();;
       });
+    // Initial attempt to hide address bar
+    this.hideAddressBar();;
     this.setHomePageBackgroundImage();
   }
 
@@ -76,7 +79,6 @@ export class AppComponent implements OnInit {
   }
 
   getAnimationPageName(): string {
-    window.scrollTo(0, 1);
     this.routeContext = this.contexts.getContext('primary');
     return this.routeContext !== null
       ? this.routeContext?.route?.snapshot?.data?.['animation']
@@ -93,5 +95,9 @@ export class AppComponent implements OnInit {
       this.isMobileNavOpen.set(false);
     }
     this.toggleMobileNavExpanded(false);
+  }
+
+  private hideAddressBar(): void {
+    setTimeout(() => window.scrollTo(0, 1), 100);
   }
 }

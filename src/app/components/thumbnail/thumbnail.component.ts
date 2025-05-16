@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, input, OnInit, output } from '@angular/core';
 import { IThumbnailItem } from './thumbnail.model';
 
@@ -7,13 +7,15 @@ import { IThumbnailItem } from './thumbnail.model';
   selector: 'dhd-thumbnail',
   templateUrl: './thumbnail.component.html',
   host: { class: 'thumbnail' },
-  imports: [CommonModule]
+  imports: [CommonModule, NgOptimizedImage]
 })
 export class ThumbnailComponent implements OnInit {
   isClickable = input<boolean>(true);
   thumbnailItem = input.required<IThumbnailItem>();
   thumbnailClicked = output<MouseEvent>();
   image!: string;
+  intrinsicThumbnailWidth = 600;
+  intrinsicThumbnailHeight = 800;
 
   constructor() { }
 
